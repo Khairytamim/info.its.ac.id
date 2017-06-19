@@ -10,4 +10,15 @@ class Pertanyaan extends Model
     protected $primaryKey = 'id_pertanyaan';
     public $timestamps = true;
     public $incrementing = false;
+
+
+    public function jawaban()
+    {
+    	return $this->hasOne('App\Jawaban', 'id_pertanyaan');
+    }
+
+    public function data()
+    {
+    	return $this->hasMany('App\Data', 'id_pertanyaan');
+    }
 }

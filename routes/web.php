@@ -17,11 +17,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['prefix' => 'mailbox'], function () {
+Route::group(['prefix' => 'admin/mailbox'], function () {
 	Route::get('/', 'MailboxController@index')->name('mailbox');
 	Route::get('/compose', 'MailboxController@compose')->name('addmailbox');
 	Route::post('/compose', 'MailboxController@add')->name('compose');
-	Route::post('/delete', 'MailboxController@delete')->name('deletemailbox');    
+	Route::post('/delete', 'MailboxController@delete')->name('deletemailbox'); 
+	Route::get('/read', 'MailboxController@read')->name('readmail'); 
+	Route::post('/balas', 'MailboxController@balas')->name('balas');
+	Route::get('/sent', 'MailboxController@sent')->name('sent');    
+
+
+
+});
+
+Route::group(['prefix' => 'admin/organisasi'], function () {
+	Route::get('/', 'OrganisasiController@adminorganisasi')->name('adminorganisasi');
+	Route::get('/update', 'OrganisasiController@update')->name('updateorganisasi');  
+
 });
 
 Route::group(['prefix' => 'trending'], function () {

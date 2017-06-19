@@ -27,6 +27,9 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
     folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{url('/admindist/dist/css/skins/_all-skins.min.css')}}">
+    <!-- /admindist/plugins/iCheck/flat/blue.css -->
+    <link rel="stylesheet" href="{{url('/admindist/plugins/iCheck/flat/blue.css')}}">
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -87,7 +90,7 @@
             <li class="header">MAIN NAVIGATION</li>
         
         
-            <li id="aktifjadwal" class="treeview">
+            {{-- <li id="aktifjadwal" class="treeview">
               <a href="">
                 <i class="fa fa-calendar-check-o"></i> <span>Jadwal</span>
                 <span class="pull-right-container">
@@ -96,13 +99,16 @@
               </a>
               <ul class="treeview-menu">
                 <li id="anakjadwal" class=""><a href=""><i class="fa fa-circle-o"></i>Input</a></li>
-                <!-- <li id="anakhari" class=""><a href=""><i class="fa fa-circle-o"></i>Hari</a></li> -->
+                <!-- <li id="anakhari" class=""><a href=""><i class="fa fa-circle-o"></i>Hari</a></li>
                 <!-- <li id="anakjam" class=""><a href=""><i class="fa fa-circle-o"></i>Jam</a></li> -->
                 <li id="anakruangan" class=""><a href=""><i class="fa fa-circle-o"></i>Ruangan</a></li>
               </ul>
+            </li>  --}}
+            <li class="" id="aktifmailbox">
+              <a href="{{route('mailbox')}}"><i class="fa fa-envelope-o"></i> <span>Mailbox</span></a>
             </li>
-            <li class="" id="aktifkartu">
-              <a href=""><i class="fa fa-id-card-o"></i> <span>Kartu</span></a>
+            <li class="" id="aktiforganisasi">
+              <a href="{{route('adminorganisasi')}}"><i class="fa fa-users"></i> <span>Organisasi</span></a>
             </li>
         
             </ul>
@@ -144,10 +150,11 @@
 <script src="{{url('/admindist/plugins/fastclick/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{url('/admindist/dist/js/app.min.js')}}"></script>
+<!-- <script type="text/javascript" src="https://adminlte.io/themes/AdminLTE/dist/js/adminlte.min.js"></script> -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.2/socket.io.js"></script>
 <!-- AdminLTE for demo purposes -->
 
-  
+<script src="{{url('/admindist/plugins/iCheck/icheck.min.js')}}"></script>
 <script src="{{url('/admindist/dist/js/demo.js')}}"></script>
 <script type="text/javascript">
   $(function () {
@@ -156,11 +163,6 @@
   $(function () {
     $('#anak{{$page_title}}').toggleClass('active');
   });
-</script>
-<script>
-  $(document).ready(function () {
-    $('.sidebar-menu').tree()
-  })
 </script>
 
   @yield('js')

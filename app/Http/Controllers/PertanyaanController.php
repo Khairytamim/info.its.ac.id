@@ -9,6 +9,8 @@ use Uuid;
 
 class PertanyaanController extends Controller
 {
+    
+    
     public function index()
     {
         $this->setActive('tanyakan');

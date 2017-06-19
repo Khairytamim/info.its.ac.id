@@ -6,8 +6,9 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Jawaban;
 
-class test extends Mailable
+class BalasPertanyaan extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -17,11 +18,11 @@ class test extends Mailable
      * @return void
      */
 
-    public $eaaaa;
+    public $data = [];
 
-    public function __construct($order)
+    public function __construct($data)
     {
-        $this->eaaaa = $order;
+        $this->data['id'] = $data;
     }
 
     /**
@@ -31,7 +32,8 @@ class test extends Mailable
      */
     public function build()
     {
-        // echo $this->eaaaa;
-        return $this->subject('sss')->from('hlmn@vpn.muhammadhilman.com')->view('home');
+        $this->data['jawaban'] = Jawaban::find($this->data['id']);
+
+        return $this->subject('sss')->from('no-reply@info.its.ac.id')->view('');
     }
 }
