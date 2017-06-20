@@ -6,9 +6,9 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Jawaban;
+use App\Pertanyaan;
 
-class BalasPertanyaan extends Mailable
+class AddPertanyaan extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -17,13 +17,12 @@ class BalasPertanyaan extends Mailable
      *
      * @return void
      */
-
-    public $data = [];
+    public $data;
+    public $result;
 
     public function __construct($data)
     {
-        $this->data['id'] = $data;
-        // echo $data;
+        $this->data = $data;
     }
 
     /**
@@ -33,11 +32,9 @@ class BalasPertanyaan extends Mailable
      */
     public function build()
     {
-        $data = Jawaban::find($this->data['id']);
-        $this->data['jawaban'] = $data;
-        //dd($data);
-        //echo "$data->pertanyaan";
-        // dd($data);
-        return $this->subject($data->judul_jawaban)->from('no-reply@info.its.ac.id')->view('emailbalasan.index');
+
+        $this->result = Pertanyaan::find($this->data);
+
+        return $this->subject('Verifikasi Pertanyaan')->from('no-reply@info.its.ac.id')->view('verifikasiemail.index');
     }
 }

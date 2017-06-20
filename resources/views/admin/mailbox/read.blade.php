@@ -40,6 +40,9 @@
         <ul class="nav nav-pills nav-stacked">
           <li class="" id="aktifdalemmailbox"><a href="{{route('mailbox')}}"><i class="fa fa-inbox"></i> Inbox</a></li>
           <li class="" id="aktifdalemsent"><a href="{{route('sent')}}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+          @if(Auth::user()->hak == 'approver')
+          <li class="" id="aktifdalemsent"><a href="{{route('confirmation')}}"><i class="fa fa-check"></i> Confirmation</a></li>
+          @endif
 
         </ul>
       </div>
@@ -154,7 +157,7 @@
                       @if(!is_null($pertanyaan->id_jawaban))
                         {!!html_entity_decode($pertanyaan->jawaban->jawaban)!!}
                       @else
-                      <textarea id="compose-textarea" name="jawaban" class="form-control" >{{$pertanyaan->jawaban->jawaban}}
+                      <textarea id="compose-textarea" name="jawaban" class="form-control" >
                       </textarea>
                       @endif
                     </div>
@@ -205,8 +208,13 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                      @if(!is_null($pertanyaan->id_jawaban))
+                      @if(!is_null($pertanyaan->id_jawaban) || Auth::user()->hak == 'approver')
+                        <div class="pull-right">
+                        <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
+                        <a href="{{route('confirmationadd')}}?id={{$pertanyaan->id_jawaban}}" class="btn btn-primary"><i class="fa fa-check"></i> Confirm</a>
                         
+                      
+                        </div>
                       @else
                       <div class="pull-right">
                         <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->

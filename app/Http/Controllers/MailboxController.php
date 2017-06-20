@@ -15,18 +15,39 @@ use Validator;
 
 class MailboxController extends Controller
 {
-	public function __construct()
-    {
-        $this->middleware('auth');
-    }
+	// public function __construct()
+ //    {
+ //        $this->middleware('auth');
+ //    }
     public function index(Request $request)
     {
     	$this->setActive('mailbox');
     	$this->setTitle('mailbox');
-    	$this->data['pertanyaan'] = Pertanyaan::whereNull('id_jawaban')->paginate(10);
+    	$this->data['pertanyaan'] = Pertanyaan::whereNull('id_jawaban')->whereNotNull('status_email')->paginate(10);
 
         return view('admin.mailbox.index', $this->data);
     	
+    }
+
+    public function verifikasi(Request $request)
+    {
+        $update = Pertanyaan::find($request->verif);
+        $update->status_email = 1;
+        $update->save();
+
+        echo 'Email Telah Terverifikasi, Silahkan Tunggu Jawaban Lewat Inbox/Spam Email Anda';
+        //return view('verifikasi.index', $this->data);
+
+    }
+
+    public function emailbalasan(Request $request)
+    {
+        
+
+        //$this->data['pertanyaan'] = Pertanyaan::whereNotNull('id_jawaban')->paginate(10);
+
+        //return view('admin.mailbox.index', $this->data);
+
     }
 
     public function compose(Request $request)
@@ -90,6 +111,7 @@ class MailboxController extends Controller
     	$create->id_jawaban = $id;
     	$create->judul_jawaban = $request->judul_jawaban;
     	$create->id_pertanyaan = $request->id_pertanyaan;
+        $create->status_jawaban = 0;
     	$create->jawaban = $request->jawaban;
     	$create->save();
 
@@ -135,9 +157,9 @@ class MailboxController extends Controller
 
 
         }
-    	// Mail::to($request->email)->send(new BalasPertanyaan($id));
+        // dd($request->email);
     	
-    	return back()->with('status', 'suskses');
+    	return back()->with('status', 'sukses');
     }
 
 
@@ -146,10 +168,36 @@ class MailboxController extends Controller
     	$this->setActive('sent');
     	$this->setTitle('sent');
 
-    	$this->data['pertanyaan'] = Pertanyaan::whereNotNull('id_jawaban')->paginate(10);
+    	$this->data['pertanyaan'] = Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',1)->paginate(10);
 
     	return view('admin.mailbox.index', $this->data);
 
+    }
+
+    public function konfirmasiadd(Request $request)
+    {
+        $update = Jawaban::find($request->id);
+        $update->status_jawaban = 1;
+        $update->save();
+        $update = Jawaban::find($request->id);
+        
+        
+        Mail::to($update->pertanyaan->email_penanya)->send(new BalasPertanyaan($request->id));
+        // dd($request->id);
+
+        return back()->with('status', 'Pesan sudah di konfirmasi dan di kirim ke email penanya');
+    }
+
+    public function konfirmasi(Request $request)
+    {
+        $this->setActive('konfirmasi');
+        $this->setTitle('konfirmasi');
+
+        $this->data['pertanyaan']= Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',0)->paginate(10);
+        // dd($result);
+        // dd($this->data['pertanyaan']);
+        return view('admin.mailbox.index', $this->data);
+        // return view('')
     }
 
 

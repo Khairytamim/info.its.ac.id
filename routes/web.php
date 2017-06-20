@@ -25,16 +25,26 @@ Route::group(['prefix' => 'admin/mailbox'], function () {
 	Route::get('/read', 'MailboxController@read')->name('readmail'); 
 	Route::post('/balas', 'MailboxController@balas')->name('balas');
 	Route::get('/sent', 'MailboxController@sent')->name('sent');    
-
+	Route::get('/verifikasi', 'MailboxController@verifikasi')->name('verifikasi');
+	Route::get('/konfirmasi', 'MailboxController@konfirmasi')->name('confirmation');    
+	Route::get('/konfirmasi/add', 'MailboxController@konfirmasiadd')->name('confirmationadd');    
 
 
 });
+
+// Route::group(['prefix' => 'cek'], function () {
+// 	Route::get('/', 'TagController@index')->name('cek');
+// });
 
 Route::group(['prefix' => 'admin/organisasi'], function () {
 	Route::get('/', 'OrganisasiController@adminorganisasi')->name('adminorganisasi');
-	Route::get('/update', 'OrganisasiController@update')->name('updateorganisasi');  
-
+	Route::get('/update', 'OrganisasiController@update')->name('updateorganisasi');
 });
+
+Route::group(['prefix' => 'organisasi'], function () {
+	Route::get('/', 'OrganisasiController@index')->name('organisasi');  
+});
+
 
 Route::group(['prefix' => 'trending'], function () {
 	Route::get('/', 'TrendingController@index')->name('trending');  
@@ -44,10 +54,6 @@ Route::group(['prefix' => 'tanyakan'], function () {
 	Route::get('/', 'PertanyaanController@index')->name('tanyakan');
 	Route::post('/add', 'PertanyaanController@add')->name('addtanyakan'); 
 	Route::get('/list', 'PertanyaanController@list')->name('listtanyakan');  
-});
-
-Route::group(['prefix' => 'organisasi'], function () {
-	Route::get('/', 'OrganisasiController@index')->name('organisasi');  
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

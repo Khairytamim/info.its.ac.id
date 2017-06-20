@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Pertanyaan;
 use Uuid;
+use App\Mail\AddPertanyaan;
+use Mail;
 
 class PertanyaanController extends Controller
 {
@@ -27,10 +29,14 @@ class PertanyaanController extends Controller
         $create->alamat_penanya = $request->alamat;
         $create->nohp_penanya = $request->kontak;
         $create->email_penanya = $request->email;
+        $create->judul_pertanyaan = $request->judul;
         $create->pertanyaan = $request->pertanyaan;
         $create->save();
 
-        return back()->with('status', 'Sukses!');
+        Mail::to($request->email)->send(new AddPertanyaan($create->id_pertanyaan));
+
+
+        return back()->with('status', 'Silahkan Cek Inbox/Span Pada Email');
     }
 
     public function list()

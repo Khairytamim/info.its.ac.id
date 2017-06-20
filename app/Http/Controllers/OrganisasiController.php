@@ -20,4 +20,12 @@ class OrganisasiController extends Controller
 
     	return view('admin.organisasi.index', $this->data);
     }
+
+    public function index()
+    {
+        $this->setActive('organisasi');
+        $this->setTitle('organisasi');
+
+        return view('organisasi.index', $this->data);
+    }
 }

@@ -28,7 +28,9 @@
         <ul class="nav nav-pills nav-stacked">
           <li class="" id="aktifdalemmailbox"><a href="{{route('mailbox')}}"><i class="fa fa-inbox"></i> Inbox</a></li>
           <li class="" id="aktifdalemsent"><a href="{{route('sent')}}"><i class="fa fa-envelope-o"></i> Sent</a></li>
-
+          @if(Auth::user()->hak == 'approver')
+          <li class="" id="aktifdalemsent"><a href="{{route('confirmation')}}"><i class="fa fa-check"></i> Confirmation</a></li>
+          @endif
         </ul>
       </div>
       <!-- /.box-body -->
@@ -74,11 +76,12 @@
               <div class="table-responsive mailbox-messages">
                 <table class="table table-hover table-striped">
                   <tbody>
+                  @isset($pertaanyaan)
                   @foreach($pertanyaan as $value)
                     <tr>
                       <td><input type="checkbox"></td>
                       <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-                      <td class="mailbox-name"><a href="read-mail.html">{{$value->nama_penanya}}</a></td>
+                      <td class="mailbox-name"><a href="{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}">{{$value->nama_penanya}}</a></td>
                       <td class="mailbox-subject"><b>{{$value->judul_pertanyaan}}</b> - Trying to find a solution to this problem...
                       </td>
                       <td class="mailbox-attachment"></td>
@@ -86,6 +89,7 @@
                       <td class="mailbox-date"><a href="{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}">View</a></td>
                     </tr>
                   @endforeach
+                  @endisset
                   </tbody>
                 </table>
                 <!-- /.table -->
@@ -99,7 +103,10 @@
                 
                 <!-- /.btn-group -->
                 <div class="pull-right">
+                @isset($pertaanyaan)
                   {{ $pertanyaan->links() }}
+                  @endisset
+                  
                   <!-- /.btn-group -->
                 </div>
                 <!-- /.pull-right -->
