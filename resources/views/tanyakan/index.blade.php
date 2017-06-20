@@ -11,7 +11,7 @@
 </div>
 <div class="container">
 <div class="row">
-    <div class="content" style="margin: 0 20vw; margin-top: 5vh">
+    <div class="content" style="margin-top: 5vh">
     <h2 style="font-size: 10vh">Form Pertanyaan</h2>
     @if (session('status'))
       <div class="alert alert-success">

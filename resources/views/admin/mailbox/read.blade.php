@@ -208,7 +208,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                      @if(!is_null($pertanyaan->id_jawaban) || Auth::user()->hak == 'approver')
+                      @if(!is_null($pertanyaan->id_jawaban))
                         <div class="pull-right">
                         <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
                         <a href="{{route('confirmationadd')}}?id={{$pertanyaan->id_jawaban}}" class="btn btn-primary"><i class="fa fa-check"></i> Confirm</a>

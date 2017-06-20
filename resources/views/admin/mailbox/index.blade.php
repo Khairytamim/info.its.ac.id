@@ -76,7 +76,7 @@
               <div class="table-responsive mailbox-messages">
                 <table class="table table-hover table-striped">
                   <tbody>
-                  @isset($pertaanyaan)
+                  {{-- @isset($pertaanyaan) --}}
                   @foreach($pertanyaan as $value)
                     <tr>
                       <td><input type="checkbox"></td>
@@ -89,7 +89,7 @@
                       <td class="mailbox-date"><a href="{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}">View</a></td>
                     </tr>
                   @endforeach
-                  @endisset
+                  {{-- @endisset --}}
                   </tbody>
                 </table>
                 <!-- /.table -->
@@ -103,9 +103,9 @@
                 
                 <!-- /.btn-group -->
                 <div class="pull-right">
-                @isset($pertaanyaan)
+                {{-- @isset($pertaanyaan) --}}
                   {{ $pertanyaan->links() }}
-                  @endisset
+                  {{-- @endisset --}}
                   
                   <!-- /.btn-group -->
                 </div>

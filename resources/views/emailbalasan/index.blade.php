@@ -38,14 +38,20 @@
              </tr>
              <tr>
               <td style="padding: 20px 0 30px 0;">
-               {{($data['jawaban']->jawaban)}}
+               {!!html_entity_decode($data['jawaban']->jawaban)!!}
               </td>
              </tr>
              <tr>
               @foreach($data['jawaban']->data as $link)
-              <td>
-                {{urldecode($link->data)}}
-              </td>
+                @if ($link->tipe == 'file')
+                <td>
+                  {{url("$link->data")}}
+                </td>
+                @else
+                <td>
+                  {{urldecode($link->data)}}
+                </td>
+                @endif
               @endforeach
              </tr>
             </table>
