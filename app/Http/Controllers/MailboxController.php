@@ -12,13 +12,17 @@ use App\Data;
 use File;
 use Storage;
 use Validator;
+use Illuminate\Routing\Route;
+
 
 class MailboxController extends Controller
 {
-	// public function __construct()
- //    {
- //        $this->middleware('auth');
- //    }
+	public function __construct(Route $route)
+    {
+        // $this->middleware('auth');
+        if($route->getActionMethod($route)!='verifikasi') $this->middleware('auth');
+
+    }
     public function index(Request $request)
     {
     	$this->setActive('mailbox');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Storage;
+use File;
 
 use App\Pertanyaan;
 use Uuid;
@@ -31,12 +33,19 @@ class PertanyaanController extends Controller
         $create->email_penanya = $request->email;
         $create->judul_pertanyaan = $request->judul;
         $create->pertanyaan = $request->pertanyaan;
+        $file = $request->ktp;
+        $filename = 'ktp/'. Uuid::generate(4) . '.' . $file->getClientOriginalExtension();             
+        if ($file) {
+            Storage::disk('public')->put($filename, File::get($file));
+        }
+
+        $create->ktp = "storage/$filename";
         $create->save();
 
         Mail::to($request->email)->send(new AddPertanyaan($create->id_pertanyaan));
 
 
-        return back()->with('status', 'Silahkan Cek Inbox/Span Pada Email');
+        return back()->with('status', 'Silahkan Cek Spam Pada Email');
     }
 
     public function list()

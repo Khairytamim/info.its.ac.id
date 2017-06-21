@@ -2,23 +2,24 @@
 
 @section('content')
 <div class="top-left links">
-    <a href="{{ url('/home') }}" style="padding: 0 5px">Informasi Publik ITS</a>
+    <a href="{{ url('/') }}" style="padding: 0 5px; display: block;width: 6vw;">Informasi Publik ITS</a>
 </div>
 <div class="top-right links">
-    <a href="{{ url('/home') }}" style="padding: 0 5px">Trending</a>
-    <a href="{{ url('/login') }}" style="padding: 0 5px">Tanyakan</a>
-    <a href="{{ url('/register')}}" style="padding: 0 5px" >Laporan</a>
+    <a href="{{ route('tanyakan') }}" style="padding: 5px">Tanyakan</a>
+    <a href="#" style="padding: 5px">Laporan</a>
+    <a href="{{ url('organisasi') }}" style="padding: 5px">Organisasi</a>
 </div>
 <div class="container">
-<div class="row">
-    <div class="content" style="margin-top: 5vh">
+    <div class="content" style="margin-top: 15vh">
     <h2 style="font-size: 10vh">Form Pertanyaan</h2>
     @if (session('status'))
       <div class="alert alert-success">
           {{ session('status') }}
       </div>
     @endif
-    <form action="{{ route('addtanyakan') }}" method="post">
+<div class="row">
+
+    <form action="{{ route('addtanyakan') }}" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
         <div class="col-sm-12 col-md-4">
             <div class="form-group">
@@ -37,6 +38,13 @@
                 <label>Email</label>
                 <input type="email" class="form-control" name="email">
             </div>
+             <div class="form-group">
+                <label class="btn btn-primary" for="my-file-selector">
+                    <input id="my-file-selector" type="file" style="display:none;" onchange="$('#upload-file-info').html($(this).val().replace(/C:\\fakepath\\/i, ''));">Upload KTP/SIM/PASPOR
+                </label>
+                <span class='label label-info' id="upload-file-info"></span>
+              
+            </div>
         </div>
         <div class="col-sm-12 col-md-8">
             <div class="form-group">
@@ -47,13 +55,14 @@
                 <label>Pertanyaan</label>
                 <textarea id="" rows="6" name="pertanyaan" class="form-control" ></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group pull-right">
                 <button type="submit" class="btn btn-primary">Submit Pertanyaan</button>
             </div>
         </div>
+</div>
+
     </form>
     </div>   
-</div>
 </div>
 @endsection
 

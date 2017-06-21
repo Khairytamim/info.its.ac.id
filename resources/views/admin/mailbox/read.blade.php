@@ -104,6 +104,12 @@
                     <div class="mailbox-read-message">
                       {{$pertanyaan->pertanyaan}}
                     </div>
+                    <div class="mailbox-read-message">
+                      <h3>ID Penanya</h3>
+                      @isset($pertanyaan->ktp)
+                      <img src="{{asset($pertanyaan->ktp)}}" style="overflow: hidden; height: 30vh ">
+                      @endisset
+                    </div>
                     <!-- /.mailbox-read-message -->
                   </div>
                   <!-- /.box-body -->
