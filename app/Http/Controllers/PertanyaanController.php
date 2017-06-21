@@ -34,12 +34,14 @@ class PertanyaanController extends Controller
         $create->judul_pertanyaan = $request->judul;
         $create->pertanyaan = $request->pertanyaan;
         $file = $request->ktp;
-        $filename = 'ktp/'. Uuid::generate(4) . '.' . $file->getClientOriginalExtension();             
+                     
         if ($file) {
+            $filename = 'ktp/'. Uuid::generate(4) . '.' . $file->getClientOriginalExtension();
             Storage::disk('public')->put($filename, File::get($file));
+            $create->ktp = "storage/$filename";
+
         }
 
-        $create->ktp = "storage/$filename";
         $create->save();
 
         Mail::to($request->email)->send(new AddPertanyaan($create->id_pertanyaan));
