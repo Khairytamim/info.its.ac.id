@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="flex-center position-ref full-height">
-<div class="content" id="content">
-    <div class="title m-b-md" id="title" style="margin: 2vw">
+<div class="content" id="content" style="background-color: white; opacity: 0.8">
+    <div class="title m-b-md" id="title" style="margin: 2vw;border: 4px solid #20417f; color: black">
         Informasi Publik ITS
     </div>
 

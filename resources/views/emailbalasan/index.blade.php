@@ -4,12 +4,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Informasi Publik ITS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <style type="text/css">
     html, body {
         background-color: #fff;
         color: #000;
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 100;
         height: 100vh;
         margin: 0;
@@ -19,8 +19,8 @@
 <body style="margin: 0; padding: 0;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
         <tr>
-            <td align="center" bgcolor="#70bbd9" style="padding: 40px 0 30px 0;">
-                <h1>INFORMASI PUBLIK ITS</h1>
+            <td align="center" bgcolor="#20417f" style="padding: 40px 0 30px 0;">
+                <h1 style="color: white">INFORMASI PUBLIK ITS</h1>
             </td>
         </tr>
         <tr>
@@ -58,7 +58,7 @@
             </td>
         </tr>
         <tr>
-            <td bgcolor="#ee4c50" style="padding: 30px 30px 30px 30px;">
+            <td bgcolor="#ffcb10" style="padding: 30px 30px 30px 30px;">
              <table border="0" cellpadding="0" cellspacing="0" width="100%">
              <tr>
                 <td width="75%" style="text-align: right;" >

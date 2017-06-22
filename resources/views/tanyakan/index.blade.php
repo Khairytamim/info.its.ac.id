@@ -11,14 +11,13 @@
 </div>
 <div class="container">
     <div class="content" style="margin-top: 15vh">
-    <h2 style="font-size: 10vh">Form Pertanyaan</h2>
+    <h2 style="font-size: 9vh">Form Pertanyaan</h2>
     @if (session('status'))
       <div class="alert alert-success">
           {{ session('status') }}
       </div>
     @endif
-<div class="row">
-
+    <div class="row">
     <form action="{{ route('addtanyakan') }}" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
         <div class="col-sm-12 col-md-4">
@@ -59,10 +58,10 @@
                 <button type="submit" class="btn btn-primary">Submit Pertanyaan</button>
             </div>
         </div>
-</div>
 
     </form>
-    </div>   
+    </div> 
+    </div>  
 </div>
 @endsection
 

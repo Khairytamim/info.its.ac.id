@@ -124,7 +124,7 @@
       </section>
     </div>
 
-    <footer class="main-footer">
+    <footer>
       <strong>Copyright &copy; 2017 <a href="/">MMT</a>.</strong> All rights reserved.
     </footer>
 

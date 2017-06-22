@@ -38,7 +38,7 @@ Route::group(['prefix' => 'admin/mailbox'], function () {
 
 Route::group(['prefix' => 'admin/organisasi'], function () {
 	Route::get('/', 'OrganisasiController@adminorganisasi')->name('adminorganisasi');
-	Route::get('/update', 'OrganisasiController@update')->name('updateorganisasi');
+	Route::post('/update', 'OrganisasiController@update')->name('updateorganisasi');
 });
 
 Route::group(['prefix' => 'organisasi'], function () {

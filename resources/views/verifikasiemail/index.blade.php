@@ -19,8 +19,8 @@
 <body style="margin: 0; padding: 0;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
         <tr>
-            <td align="center" bgcolor="#70bbd9" style="padding: 40px 0 30px 0;">
-                <h1>INFORMASI PUBLIK ITS</h1>
+            <td align="center" bgcolor="#20417f" style="padding: 40px 0 30px 0;">
+                <h1 style="color: white">INFORMASI PUBLIK ITS</h1>
             </td>
         </tr>
         <tr>
@@ -46,7 +46,7 @@
             </td>
         </tr>
         <tr>
-            <td bgcolor="#ee4c50" style="padding: 30px 30px 30px 30px;">
+            <td bgcolor="#ffcb10" style="padding: 30px 30px 30px 30px;">
              <table border="0" cellpadding="0" cellspacing="0" width="100%">
              <tr>
                 <td width="75%" style="text-align: right;" >
