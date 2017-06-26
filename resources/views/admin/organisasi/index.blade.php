@@ -7,7 +7,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Add About</h3>
+              <h3 class="box-title">Organisasi</h3>
             </div>
             <div class="box-body">
               @if (session('status'))
@@ -17,21 +17,21 @@
               @endif
               <form action="{{route('updateorganisasi')}}" method="post" enctype="multipart/form-data">
               <div class="form-group">
-                  <label>Visi</label>
-                  <textarea class="form-control" rows="3" placeholder="Enter ..." name="visi" id="visi"></textarea>
+                  <label for="exampleInputFile">Koordinator PPID</label>
+                  <input type="file" id="files" name="photos" />
               </div>
               <!-- <div class="form-group">
                   <label>Date</label>
                   <input type="text" class="form-control" name="enddate" placeholder="Enter date">
               </div> -->
               <div class="form-group">
-                  <label>Misi</label>
-                  <textarea class="form-control" rows="3" placeholder="Enter ..." name="misi" id="misi"></textarea>
+                  <label for="exampleInputFile">PPID Kementrian</label>
+                  <input type="file" id="files" name="kementrian" />
               </div>
 
               <div class="form-group">
-                  <label for="exampleInputFile">Organigram</label>
-                  <input type="file" id="files" name="photos" />
+                  <label for="exampleInputFile">PPID ITS</label>
+                  <input type="file" id="files" name="its" />
               </div>
               <!-- <div class="form-group">
                   <label for="exampleInputFile">Photos</label>

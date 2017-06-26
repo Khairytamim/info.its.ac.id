@@ -5,7 +5,6 @@
     <a href="{{ url('/') }}" style="padding: 0 5px; display: block;width: 6vw;">Informasi Publik ITS</a>
 </div>
 <div class="top-right links">
-    <a href="{{ route('tanyakan') }}" style="padding: 5px">Tanyakan</a>
     <a href="#" style="padding: 5px">Laporan</a>
     <a href="{{ url('organisasi') }}" style="padding: 5px">Organisasi</a>
 </div>

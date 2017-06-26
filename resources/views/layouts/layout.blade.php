@@ -27,8 +27,10 @@
                 color: #636b6f;
                 font-family: 'Montserrat', sans-serif;
                 font-weight: 100;
-                height: 100vh;
+                height: 100%;
                 margin: 0;
+                position: relative;
+                overflow: auto;
             }
 
             .full-height {
@@ -82,7 +84,7 @@
     </head>
     <body style="background-image:url('bg.png'); background-repeat: repeat;background-size: 100%">
         @yield('content')
-        <footer class="container" style="position: absolute; right: 0; bottom: 0;left: 0; padding-bottom: 1vh">
+        <footer class="container" style="position: relative; right: 0; bottom: 0;left: 0; padding-bottom: 1vh">
           <strong>Copyright &copy; 2017 <a href="/">Informasi Publik ITS</a>.</strong> All rights reserved.
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
