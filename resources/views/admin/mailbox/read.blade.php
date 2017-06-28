@@ -160,6 +160,18 @@
                       <!-- <input class="form-control" name="judul_jawaban" placeholder="Subject:" value="Re: {{$pertanyaan->judul_pertanyaan}}"> -->
                     </div>
                     <div class="form-group">
+                      <label class="radio-inline">
+                        <input type="radio" name="tipe" id="inlineRadio1" value="publik"> Publik
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="tipe" id="inlineRadio2" value="kondisional"> Kondisional
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="tipe" id="inlineRadio3" value="rahasia"> Rahasia
+                      </label>
+                      <!-- <input class="form-control" name="judul_jawaban" placeholder="Subject:" value="Re: {{$pertanyaan->judul_pertanyaan}}"> -->
+                    </div>
+                    <div class="form-group">
                       @if(!is_null($pertanyaan->id_jawaban))
                         {!!html_entity_decode($pertanyaan->jawaban->jawaban)!!}
                       @else
@@ -168,8 +180,8 @@
                       @endif
                     </div>
 
-                    <button title="Tambah Data Pelamar" type="button" onclick="createRow()" class="btn btn-info">
-                      <span class="fa fa-plus"></span>
+                    <button title="Tambah Data Pelamar" type="button" onclick="createRow()" class="btn btn-primary">
+                      <span class="fa fa-plus"></span> Link 
                     </button>
                     <table class="table table-sriped tableganteng" id="tableToModify" >
                       <thead>
@@ -190,16 +202,17 @@
                             @endforeach
                          
 
-                          @else
-                          @for ($i = 0; $i < (count(old('link')) == 0 ? 1 : count(old('link'))); $i++)
-                          <tr>
+                          {{-- @elseif(count(old('link')) == 0) --}}
+                          @elseif(count(old('link')) > 0)
+                            @for ($i = 0; $i < (count(old('link')) == 0 ? 1 : count(old('link'))); $i++)
+                            <tr>
 
-                            <td><input class="form-control" name="link[]" type="text" value='{{old("link.$i") }}' ></td>
+                              <td><input class="form-control" name="link[]" type="text" value='{{old("link.$i") }}' ></td>
 
-                            <td><button type="button" class="btn btn-danger tombol" title="Hapus Data Pelamar"><span class="fa fa-trash"></span></button></td>
-                          </tr>
-                          @endfor
-
+                              <td><button type="button" class="btn btn-danger tombol" title="Hapus Data Pelamar"><span class="fa fa-trash"></span></button></td>
+                            </tr>
+                            @endfor
+                            {{-- {{}} --}}
                           @endif
                         </tbody>
 
