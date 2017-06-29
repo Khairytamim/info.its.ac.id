@@ -42,22 +42,60 @@
     <a href="#" style="padding: 5px">Organisasi</a>
 </div>
 <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
-	<div class="row">
-        <div class="content">
+	<div class="content">
+        <div class="row">
     		<h2>Informasi Publik ITS</h2>
             <div id="custom-search-input">
-	        	<form action="{{ route('searchlaporan') }}" method="get">
+	        	<form action="{{ route('searchlaporan') }}" method="post">
 	                <div class="input-group col-md-12">
-	                    <input type="text" name="cari" class="form-control input-lg" placeholder="Ranking ITS" />
+	                    <input type="text" class="form-control input-lg" placeholder="Ranking ITS" />
 	                    <span class="input-group-btn">
-	                        <button class="btn btn-info btn-lg" type="submit">
-	                            Cari
-	                        </button>
+	                        <button class="btn btn-info btn-lg" type="button">Cari</button>
 	                    </span>
 	                </div>
 	        	</form>
             </div>
         </div>
+		<div class="row" style="border-bottom: solid 1px #ccc;">
+			<div >
+				<div class="col-md-12">
+					<h3>Judul Data / Isi Data</h3>
+				</div>
+				<div class="col-md-12">
+					<p>Link Data</p>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="border-bottom: solid 1px #ccc;">
+			<div >
+				<div class="col-md-12">
+					<h3>Judul Data / Isi Data</h3>
+				</div>
+				<div class="col-md-12">
+					<p>Link Data</p>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="border-bottom: solid 1px #ccc;">
+			<div >
+				<div class="col-md-12">
+					<h3>Judul Data / Isi Data</h3>
+				</div>
+				<div class="col-md-12">
+					<p>Link Data</p>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="border-bottom: solid 1px #ccc;">
+			<div >
+				<div class="col-md-12">
+					<h3>Judul Data / Isi Data</h3>
+				</div>
+				<div class="col-md-12">
+					<p>Link Data</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 @endsection

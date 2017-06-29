@@ -47,9 +47,9 @@
       </div>
       <div class="box-body no-padding">
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="#"><i class="fa fa-circle-o text-red"></i> Important</a></li>
-          <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Promotions</a></li>
-          <li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Social</a></li>
+          <li class="" id="aktiftipepublik"><a href="#"><i class="fa fa-circle-o text-red"></i> Publik</a></li>
+          <li class="" id="aktiftipekondisional"><a href="#"><i class="fa fa-circle-o text-yellow"></i> Kondisional</a></li>
+          <li class="" id="aktiftiperahasia"><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Rahasia</a></li>
         </ul>
       </div>
       <!-- /.box-body -->
@@ -79,8 +79,8 @@
                   {{-- @isset($pertaanyaan) --}}
                   @foreach($pertanyaan as $value)
                     <tr>
-                      <td><input type="checkbox"></td>
-                      <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                      <td>{{$value->tipe}}</td>
+                      {{-- <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td> --}}
                       <td class="mailbox-name"><a href="{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}">{{$value->nama_penanya}}</a></td>
                       <td class="mailbox-subject"><b>{{$value->judul_pertanyaan}}</b> - Trying to find a solution to this problem...
                       </td>
@@ -172,6 +172,7 @@
   $(function () {
     $('#aktifdalem{{$active}}').toggleClass('active');
   });
+  
 </script>
 @endsection
 

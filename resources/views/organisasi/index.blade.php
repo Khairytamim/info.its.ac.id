@@ -7,8 +7,8 @@
     <a href="{{ route('tanyakan') }}" style="padding: 5px">Tanyakan</a>
     <a href="#" style="padding: 5px">Laporan</a>
 </div>
-<div class="container" style="padding-top: 15vh">
-	<div class="row">
+<div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
+	<div class="row" style="background-color: white; opacity: 0.8">
 		<div class="col-xs-12">
 			<div class="col-sm-12 col-md-5" align="right">
 				<h1>Koordinator PPID</h1>

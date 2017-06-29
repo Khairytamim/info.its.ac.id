@@ -8,8 +8,8 @@
     <a href="#" style="padding: 5px">Laporan</a>
     <a href="{{ url('organisasi') }}" style="padding: 5px">Organisasi</a>
 </div>
-<div class="container">
-    <div class="content" style="margin-top: 15vh">
+<div class="container" style="margin-top: 15vh;margin-bottom: 15vh">
+    <div class="content">
     <h2 style="font-size: 9vh">Form Pertanyaan</h2>
     @if (session('status'))
       <div class="alert alert-success">

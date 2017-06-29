@@ -27,7 +27,8 @@ Route::group(['prefix' => 'admin/mailbox'], function () {
 	Route::get('/sent', 'MailboxController@sent')->name('sent');    
 	Route::get('/verifikasi', 'MailboxController@verifikasi')->name('verifikasi');
 	Route::get('/konfirmasi', 'MailboxController@konfirmasi')->name('confirmation');    
-	Route::get('/konfirmasi/add', 'MailboxController@konfirmasiadd')->name('confirmationadd');    
+	Route::get('/konfirmasi/add', 'MailboxController@konfirmasiadd')->name('confirmationadd');
+	Route::post('/type/change', 'MailboxController@type')->name('changetype');    
 
 
 });
@@ -45,6 +46,10 @@ Route::group(['prefix' => 'organisasi'], function () {
 	Route::get('/', 'OrganisasiController@index')->name('organisasi');  
 });
 
+Route::group(['prefix' => 'laporan'], function () {
+	Route::get('/', 'DataController@laporan')->name('laporan');
+	Route::get('/search', 'DataController@search')->name('searchlaporan');    
+});
 
 Route::group(['prefix' => 'trending'], function () {
 	Route::get('/', 'TrendingController@index')->name('trending');  

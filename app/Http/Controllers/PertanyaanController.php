@@ -44,7 +44,7 @@ class PertanyaanController extends Controller
 
         $create->save();
 
-        Mail::to($request->email)->send(new AddPertanyaan($create->id_pertanyaan));
+        // Mail::to($request->email)->send(new AddPertanyaan($create->id_pertanyaan));
 
 
         return back()->with('status', 'Silahkan Cek Spam Pada Email');

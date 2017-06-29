@@ -83,31 +83,33 @@ class MailboxController extends Controller
 
     public function balas(Request $request)
     {   
-    	foreach ($request->link as $key => $value) {
-            $key1=$key+1;
-            
-            $result["link.$key.url"]="URL $key1 tidak sesuai format!";
-            // $result["nama.$key.min"]="Nama $key1 minimal 3";
-            // $result["nim.$key.required"]="NIM $key1 harus diisi";
-            // $result["Kota.required"]="Kota universitas harus diisi";
-            // $result["ipk.$key.numeric"]="IPK $key1 yang anda masukkan belum sesuai format";
-            // $result["ipk.$key.min"]="IPK $key1 harus lebih besar dari 0";
-            // $result["ipk.$key.max"]="IPK $key1 harus lebih kecil dari 4";
+    	if($request->link){
+            foreach ($request->link as $key => $value) {
+                $key1=$key+1;
+                
+                $result["link.$key.url"]="URL $key1 tidak sesuai format!";
+                // $result["nama.$key.min"]="Nama $key1 minimal 3";
+                // $result["nim.$key.required"]="NIM $key1 harus diisi";
+                // $result["Kota.required"]="Kota universitas harus diisi";
+                // $result["ipk.$key.numeric"]="IPK $key1 yang anda masukkan belum sesuai format";
+                // $result["ipk.$key.min"]="IPK $key1 harus lebih besar dari 0";
+                // $result["ipk.$key.max"]="IPK $key1 harus lebih kecil dari 4";
 
-        }
+            }
 
-        //echo var_dump($result);
-        $validator = Validator::make($request->all(), [
-            
-            'link.*' => 'url',
-            
-            
-        ], $result);
+            //echo var_dump($result);
+            $validator = Validator::make($request->all(), [
+                
+                'link.*' => 'url',
+                
+                
+            ], $result);
 
-        if ($validator->fails()) {
-            return back()
-                        ->withErrors($validator)
-                        ->withInput();
+            if ($validator->fails()) {
+                return back()
+                            ->withErrors($validator)
+                            ->withInput();
+            }
         }
     	$id = Uuid::generate(4);
 
@@ -148,19 +150,24 @@ class MailboxController extends Controller
 
         $links = $request->link;
 
-        foreach ($links as $link) {
-        	if($link == '') continue;
+        if($links){
+            foreach ($links as $link) {
+                if($link == '') continue;
 
-        	$photo = new Data;
-            $iddata = UUID::generate(4);
-			$photo->id_data = $iddata;
-            $photo->data = $link;
-            $photo->id_jawaban = $id;
-            $photo->tipe = "link";
-            $photo->save();
+                $photo = new Data;
+                $iddata = UUID::generate(4);
+                $photo->id_data = $iddata;
+                $photo->data = $link;
+                $photo->id_jawaban = $id;
+                $photo->tipe = "link";
+                $photo->save();
 
+
+            }
 
         }
+
+        
         // dd($request->email);
     	
     	return back()->with('status', 'sukses');
@@ -186,7 +193,7 @@ class MailboxController extends Controller
         $update = Jawaban::find($request->id);
         
         
-        Mail::to($update->pertanyaan->email_penanya)->send(new BalasPertanyaan($request->id));
+        // Mail::to($update->pertanyaan->email_penanya)->send(new BalasPertanyaan($request->id));
         // dd($request->id);
 
         return back()->with('status', 'Pesan sudah di konfirmasi dan di kirim ke email penanya');
@@ -194,6 +201,7 @@ class MailboxController extends Controller
 
     public function konfirmasi(Request $request)
     {
+        // $this->data['tipe'] = 'kondisional'
         $this->setActive('konfirmasi');
         $this->setTitle('konfirmasi');
 
@@ -202,6 +210,17 @@ class MailboxController extends Controller
         // dd($this->data['pertanyaan']);
         return view('admin.mailbox.index', $this->data);
         // return view('')
+    }
+
+
+    public function type(Request $request)
+    {
+        $update = Pertanyaan::find($request->id);
+        // dd($update);
+        $update->tipe = $request->tipe;
+        $update->save();
+
+        return back()->with('status', 'Sukses!');
     }
 
 

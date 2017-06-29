@@ -85,6 +85,11 @@
               <h3>{{$pertanyaan->judul_pertanyaan}}</h3>
               <h5>From: {{$pertanyaan->nama_penanya}}{{urldecode('%3C')}}{{$pertanyaan->email_penanya}}{{urldecode('%3E')}}
                 <span class="mailbox-read-time pull-right">{{$pertanyaan->created_at}}</span></h5>
+              @if($pertanyaan->tipe == '')
+              <h5>Tipe: -</h5>
+              @else
+              <h5>Tipe: {{$pertanyaan->tipe}}</h5>
+              @endif
               </div>
               <!-- /.mailbox-read-info -->
                   <!-- <div class="mailbox-controls with-border text-center">
@@ -105,7 +110,7 @@
                       {{$pertanyaan->pertanyaan}}
                     </div>
                     <div class="mailbox-read-message">
-                      <h3>ID Penanya</h3>
+                      <h4>ID Penanya</h4>
                       @isset($pertanyaan->ktp)
                       <img src="{{asset($pertanyaan->ktp)}}" style="overflow: hidden; height: 30vh ">
                       @endisset
@@ -116,19 +121,14 @@
 
                   <!-- /.box-footer -->
                   <div class="box-footer">
-                  <!-- <div class="pull-right">
-                    <button type="button" class="btn btn-default"><i class="fa fa-reply"></i> Reply</button>
-                    <button type="button" class="btn btn-default"><i class="fa fa-share"></i> Forward</button>
-                  </div> -->
 
-                  <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i> Delete</button>
-                  <button type="button" class="btn btn-default"><i class="fa fa-print"></i> Print</button>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#settipe"><i class="fa fa-reply"></i> Set Tipe Pertanyaan</button>
+                  <button type="button" class="btn btn-default"><i class="fa fa-trash"></i> Delete</button>
                 </div>
                 <!-- /.box-footer -->
               </div>
             </div>
             <div class="col-md-12">
-
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Reply Message</h3>
@@ -157,18 +157,6 @@
                       @else
                       <input class="form-control" name="judul_jawaban" placeholder="Subject:" value="Re: {{$pertanyaan->judul_pertanyaan}}">
                       @endif
-                      <!-- <input class="form-control" name="judul_jawaban" placeholder="Subject:" value="Re: {{$pertanyaan->judul_pertanyaan}}"> -->
-                    </div>
-                    <div class="form-group">
-                      <label class="radio-inline">
-                        <input type="radio" name="tipe" id="inlineRadio1" value="publik"> Publik
-                      </label>
-                      <label class="radio-inline">
-                        <input type="radio" name="tipe" id="inlineRadio2" value="kondisional"> Kondisional
-                      </label>
-                      <label class="radio-inline">
-                        <input type="radio" name="tipe" id="inlineRadio3" value="rahasia"> Rahasia
-                      </label>
                       <!-- <input class="form-control" name="judul_jawaban" placeholder="Subject:" value="Re: {{$pertanyaan->judul_pertanyaan}}"> -->
                     </div>
                     <div class="form-group">
@@ -227,24 +215,28 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                      @if(!is_null($pertanyaan->id_jawaban))
+                    @if(!is_null($pertanyaan->id_jawaban))
+                      @if($pertanyaan->jawaban->status_jawaban == 0)
                         <div class="pull-right">
                         <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
                         <a href="{{route('confirmationadd')}}?id={{$pertanyaan->id_jawaban}}" class="btn btn-primary"><i class="fa fa-check"></i> Confirm</a>
                         
                       
                         </div>
+                      @elseif($pertanyaan->jawaban->status_jawaban == 1)
+                      @endif
+
                       @else
                       <div class="pull-right">
                         <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
                         <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
                         {{csrf_field()}}
-                      </form>
+                      
                       </div>
 
                       <a href="{{route('mailbox')}}" class="btn btn-default"><i class="fa fa-times"></i> Discard</a>
                       @endif
-                      
+                      </form>
                     </div>
                   <!-- /.box-footer -->
                 </div>
@@ -254,7 +246,46 @@
             <!-- /. box -->
           </div>
           <!-- /.col -->
+        
+        <!-- Modal -->
+        
+      </div>
+
+      <div class="modal fade" id="settipe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+                <form action="{{route('changetype')}}" method="post">
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input type="radio" name="tipe" id="inlineRadio1" value="publik"> Publik
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="tipe" id="inlineRadio2" value="kondisional"> Kondisional
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="tipe" id="inlineRadio3" value="rahasia"> Rahasia
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>Pesan</label>
+                    <textarea id="test1" name="jawaban" class="form-control" ></textarea>
+                  </div>
+                  <input type="hidden" name="id" value="{{$pertanyaan->id_pertanyaan}}">
+                  {{csrf_field()}}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button></form>
+            
+          </div>
         </div>
+      </div>
+    </div>
 
 
 
@@ -331,6 +362,40 @@
   //   $('#aktifdalem{{$active}}').toggleClass('active');
   // });
     </script>
+    <script>
+
+          tinymce.init({
+            selector: 'textarea#test1',
+            height: 200,
+            theme: 'modern',
+            plugins: [
+            'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+            'searchreplace wordcount visualblocks visualchars code fullscreen',
+            'insertdatetime media nonbreaking save table contextmenu directionality',
+            'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
+            ],
+            toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            toolbar2: 'print preview media | forecolor backcolor emoticons | codesample help',
+            image_advtab: true,
+            templates: [
+            { title: 'Test template 1', content: 'Test 1' },
+            { title: 'Test template 2', content: 'Test 2' }
+            ],
+            content_css: [
+            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+            '//www.tinymce.com/css/codepen.min.css'
+            ],
+            setup: function (editor) {
+              editor.addButton('ea', {
+                text: 'My button',
+                icon: false,
+                onclick: function () {
+                  editor.insertContent('&nbsp;<b>It\'s my button!</b>&nbsp;');
+                }
+              });
+            }
+          });
+        </script>
     @endsection
 
 

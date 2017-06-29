@@ -9,7 +9,7 @@
 
     <div class="links" id="links">
         <a href="{{ route('tanyakan') }}">Tanyakan</a>
-        <a href="#">Laporan</a>
+        <a href="{{ route('laporan') }}">Laporan</a>
         <a href="{{ url('organisasi') }}">Organisasi</a>
     </div>
 
