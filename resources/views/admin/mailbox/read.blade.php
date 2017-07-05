@@ -262,13 +262,13 @@
                 <form action="{{route('changetype')}}" method="post">
                   <div class="form-group">
                     <label class="radio-inline">
-                      <input type="radio" name="tipe" id="inlineRadio1" value="publik"> Publik
+                      <input type="radio" name="tipe" id="inlineRadio1" value="Publik"> Publik
                     </label>
                     <label class="radio-inline">
-                      <input type="radio" name="tipe" id="inlineRadio2" value="kondisional"> Kondisional
+                      <input type="radio" name="tipe" id="inlineRadio2" value="Kondisional"> Kondisional
                     </label>
                     <label class="radio-inline">
-                      <input type="radio" name="tipe" id="inlineRadio3" value="rahasia"> Rahasia
+                      <input type="radio" name="tipe" id="inlineRadio3" value="Rahasia"> Rahasia
                     </label>
                   </div>
                   <div class="form-group">
