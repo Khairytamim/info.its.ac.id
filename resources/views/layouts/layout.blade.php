@@ -12,6 +12,7 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/landing-page.css') }}" rel="stylesheet">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -83,6 +84,37 @@
         </style>
     </head>
     <body style="background-image:url('bg.png'); background-repeat: repeat;background-size: 100%">
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation" style="background-color: rgba(32,65,127,0.7); border-bottom: 4px solid #20417f">
+          <div class="container topnav">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand topnav" href="#" style="padding:0"><img style="height: 100%" src="{{ asset('logo/its.png') }}"></a>
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li>
+                          <a href="#cari">Pencarian Data</a>
+                      </li>
+                      <li>
+                          <a href="#tanyakan">Pengajuan Pertanyaan</a>
+                      </li>
+                      <li>
+                          <a href="#organisasi">Struktur Organisasi</a>
+                      </li>
+                  </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container -->
+      </nav>
         @yield('content')
         <!--footer start from here-->
         <style type="text/css">
@@ -129,14 +161,14 @@
           <div class="container">
             <div class="row">
               <div class="col-md-4 col-sm-6 footerleft ">
-                <div class="logofooter"> Logo</div>
+                <div class="logofooter"><img style="width: 100%" src="{{ asset('logo/its.png') }}"></a></div>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-                <p><i class="fa fa-map-pin"></i> 210, Aggarwal Tower, Rohini sec 9, New Delhi -        110085, INDIA</p>
-                <p><i class="fa fa-phone"></i> Phone (India) : +91 9999 878 398</p>
-                <p><i class="fa fa-envelope"></i> E-mail : info@webenlance.com</p>
+                <p><i class="fa fa-map-pin"></i>Jalan Raya ITS, Sukolilo, Surabaya, Jawa Timur, Indonesia</p>
+                <p><i class="fa fa-phone"></i> Phone (Indonesia) : +62 81703434379</p>
+                <p><i class="fa fa-envelope"></i> E-mail : fikry.labsky08@gmail.com</p>
                 
               </div>
-              <div class="col-md-2 col-sm-6 paddingtop-bottom">
+              {{-- <div class="col-md-2 col-sm-6 paddingtop-bottom">
                 <h6 class="heading7">GENERAL LINKS</h6>
                 <ul class="footer-ul">
                   <li><a href="#"> Career</a></li>
@@ -155,11 +187,18 @@
                   <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
                   <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
                 </div>
-              </div>
+              </div> --}}
               <div class="col-md-3 col-sm-6 paddingtop-bottom">
                 <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                   <div class="fb-xfbml-parse-ignore">
-                    <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+                    <blockquote cite="https://www.facebook.com/facebook"><label>FACEBOOK</label>
+                    </blockquote>
+                    <blockquote cite="https://www.facebook.com/facebook">
+                    <label>TWITTER</label>
+                    </blockquote>
+                    <blockquote cite="https://www.facebook.com/facebook">
+                    <label>EMAIL</label>
+                    </blockquote>
                   </div>
                 </div>
               </div>
@@ -171,21 +210,20 @@
         <div class="copyright">
           <div class="container">
             <div class="col-md-6">
-              <p>© 2016 - All Rights with Webenlance</p>
+              <p>© 2017 - All Rights with Informasi Publik ITS</p>
             </div>
             <div class="col-md-6">
               <ul class="bottom_ul">
-                <li><a href="#">webenlance.com</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Faq's</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Site Map</a></li>
+                <li><a href="#">info.its.ac.is</a></li>
+                <li><a href="#">Pencarian Data</a></li>
+                <li><a href="#">Pengajuan Pertanyaan</a></li>
+                <li><a href="#">Struktur Organisasi</a></li>
               </ul>
             </div>
           </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="{{ asset('js/jquery-2.1.0.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> --}}
         @yield('js')
     </body>
