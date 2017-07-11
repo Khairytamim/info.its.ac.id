@@ -29,7 +29,7 @@ Route::group(['prefix' => 'admin/mailbox'], function () {
 	Route::get('/konfirmasi', 'MailboxController@konfirmasi')->name('confirmation');    
 	Route::get('/konfirmasi/add', 'MailboxController@konfirmasiadd')->name('confirmationadd');
 	Route::post('/type/change', 'MailboxController@type')->name('changetype');
-	Route::post('/type/change', 'MailboxController@type')->name('changetype');    
+	// Route::post('/type/change', 'MailboxController@type')->name('changetype');    
 	// Route::post('/pertanyaan/delete','MailboxController@delete')    
 
 
