@@ -122,8 +122,12 @@
                   <!-- /.box-footer -->
                   <div class="box-footer">
 
-                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#settipe"><i class="fa fa-reply"></i> Set Tipe Pertanyaan</button>
-                  <button type="button" class="btn btn-default"><i class="fa fa-trash"></i> Delete</button>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#settipe"><i class="fa fa-reply"></i> Tipe Pertanyaan</button>
+                  <form action="{{route('deletemailbox')}}" method="post" style="display: inline;">
+                    <input type="hidden" name="id_pertanyaan" value="{{$pertanyaan->id_pertanyaan}}">
+                    {{csrf_field()}}
+                    <button type="submit" class="btn btn-default"><i class="fa fa-trash"></i> Delete</button>
+                  </form>
                 </div>
                 <!-- /.box-footer -->
               </div>

@@ -25,6 +25,7 @@ class PertanyaanController extends Controller
 
     public function add(Request $request)
     {
+        
         $create = new Pertanyaan;
         $create->id_pertanyaan = Uuid::generate(4);
         $create->nama_penanya = $request->nama;
@@ -44,7 +45,7 @@ class PertanyaanController extends Controller
 
         $create->save();
 
-        // Mail::to($request->email)->send(new AddPertanyaan($create->id_pertanyaan));
+        Mail::to($request->email)->send(new AddPertanyaan($create->id_pertanyaan));
 
 
         return back()->with('status', 'Silahkan Cek Spam Pada Email');

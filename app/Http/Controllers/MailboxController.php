@@ -223,6 +223,38 @@ class MailboxController extends Controller
         return back()->with('status', 'Sukses!');
     }
 
+    public function delete(Request $request)
+    {
+        if($request->id_pertanyaan){
+            
+                
+            $messages["id_pertanyaan.required"]="id_pertanyaan dibutuhkan";
+            
+
+
+            //echo var_dump($result);
+            $validator = Validator::make($request->all(), [
+                
+                'id_pertanyaan' => 'required|exists:pertanyaan,id_pertanyaan',
+                
+                
+            ], $messages);
+
+            if ($validator->fails()) {
+                return back()
+                            ->withErrors($validator)
+                            ->withInput();
+            }
+        }
+
+        $pertanyaan = Pertanyaan::find($request->id_pertanyaan);
+        $pertanyaan->delete();
+
+        dd($request->path());
+
+        return redirect('')->with('status', 'Sukses!');
+    }
+
 
 }
 
