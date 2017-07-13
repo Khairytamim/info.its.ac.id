@@ -1,20 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
- <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Informasi Publik ITS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-  <style type="text/css">
-        html, body {
-            background-color: #fff;
-            color: #000;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 100;
-            height: 100vh;
-            margin: 0;
-        }
-  </style>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Informasi Publik ITS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<style type="text/css">
+    html, body {
+        background-color: #fff;
+        color: #000;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 100;
+        height: 100vh;
+        margin: 0;
+    }
+</style>
 </head>
 <body style="margin: 0; padding: 0; background-image:url('bg.png'); background-repeat: repeat;background-size: 100%">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
@@ -28,18 +28,17 @@
              <table border="0" cellpadding="0" cellspacing="0" width="100%">
              <tr>
               <td>
-               <h3>Verifikasi Email</h3>
+               <h3>Jenis dari tipe pertanyaan adalah <b>Rahasia</b></h3>
               </td>
              </tr>
              <tr>
               <td style="padding: 20px 0 30px 0;">
-               Terima kasih telah bertanya kepada kami. Jawaban akan dikirim lewat email dan silahkan lakukan verifikasi
-               ke link ini terlebih dahulu.
+                <p>Apakah ITS saudaraan sama ITB?</p>
               </td>
              </tr>
              <tr>
-              <td>
-                {{ URL::to(route("verifikasi").'?verif='. $result->id_pertanyaan) }}
+              <td style="padding: 20px 0 30px 0;">
+                <p>Terima kasih telah menghubungi Informasi Publik ITS. Dikarenakan pertanyaan yang disampaikan masuk pada tipe pertanyaan rahasia, maka jawaban tidak dapat kami berikan. Terima kasih.</p>
               </td>
              </tr>
             </table>

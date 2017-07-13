@@ -16,15 +16,15 @@
     }
 </style>
 </head>
-<body style="margin: 0; padding: 0;">
+<body style="margin: 0; padding: 0; background-image:url('bg.png'); background-repeat: repeat;background-size: 100%">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
         <tr>
-            <td align="center" bgcolor="#20417f" style="padding: 40px 0 30px 0;">
+            <td align="center" style="padding: 40px 0 30px 0;background-color: rgba(32,65,127,0.7); border-bottom: 4px solid #20417f">
                 <h1 style="color: white">INFORMASI PUBLIK ITS</h1>
             </td>
         </tr>
         <tr>
-            <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+            <td style="padding: 40px 30px 40px 30px;">
              <table border="0" cellpadding="0" cellspacing="0" width="100%">
              <tr>
               <td>
@@ -58,7 +58,7 @@
             </td>
         </tr>
         <tr>
-            <td bgcolor="#ffcb10" style="padding: 30px 30px 30px 30px;">
+            <td bgcolor="#ff670f" style="padding: 30px 30px 30px 30px;">
              <table border="0" cellpadding="0" cellspacing="0" width="100%">
              <tr>
                 <td width="75%" style="text-align: right;" >
