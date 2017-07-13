@@ -24,7 +24,8 @@ Route::group(['prefix' => 'admin/mailbox'], function () {
 	Route::post('/delete', 'MailboxController@delete')->name('deletemailbox'); 
 	Route::get('/read', 'MailboxController@read')->name('readmail'); 
 	Route::post('/balas', 'MailboxController@balas')->name('balas');
-	Route::get('/sent', 'MailboxController@sent')->name('sent');    
+	Route::get('/sent', 'MailboxController@sent')->name('sent');
+	Route::get('/label', 'MailboxController@label')->name('label');     
 	Route::get('/verifikasi', 'MailboxController@verifikasi')->name('verifikasi');
 	Route::get('/konfirmasi', 'MailboxController@konfirmasi')->name('confirmation');    
 	Route::get('/konfirmasi/add', 'MailboxController@konfirmasiadd')->name('confirmationadd');
