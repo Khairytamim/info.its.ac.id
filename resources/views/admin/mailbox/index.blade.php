@@ -80,16 +80,16 @@
                   <tbody>
                   {{-- @isset($pertaanyaan) --}}
                   @foreach($pertanyaan as $value)
-                    <tr>
+                    <tr class='clickable-row' data-href='{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}'>
                       <td>{{$value->tipe}}</td>
                       {{-- <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td> --}}
-                      <td class="mailbox-name"><a href="mailto:{{$value->email_penanya}}">{{$value->nama_penanya}}</a></td>
+                      <td class="mailbox-name"><a href="#">{{$value->nama_penanya}}</a></td>
                       @php $tanyaan = explode(" ", $value->pertanyaan); @endphp
                       <td class="mailbox-subject"><b>{{$value->judul_pertanyaan}}</b> - {{implode(' ', array_splice($tanyaan, 0, 5))}}
                       </td>
                       <td class="mailbox-attachment"></td>
                       <td class="mailbox-date">{{$value->created_at->timezone('Asia/Jakarta')}}</td>
-                      <td class="mailbox-date"><a href="{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}">View</a></td>
+                      {{-- <td class="mailbox-date"><a href="{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}">View</a></td> --}}
                     </tr>
                   @endforeach
                   {{-- @endisset --}}
@@ -174,6 +174,11 @@
   });
   $(function () {
     $('#aktifdalem{{$active}}').toggleClass('active');
+  });
+  jQuery(document).ready(function($) {
+      $(".clickable-row").click(function() {
+          window.location = $(this).data("href");
+      });
   });
   
 </script>

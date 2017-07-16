@@ -16,7 +16,7 @@
     }
 </style>
 </head>
-<body style="margin: 0; padding: 0; background-image:url('bg.png'); background-repeat: repeat;background-size: 100%">
+<body style="margin: 0; padding: 0; background-image:url({{ URL::asset('bg.png') }}); background-repeat: repeat;background-size: 100%">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
         <tr>
             <td align="center" style="padding: 40px 0 30px 0;background-color: rgba(32,65,127,0.7); border-bottom: 4px solid #20417f">
@@ -45,11 +45,11 @@
             </td>
         </tr>
         <tr>
-            <td bgcolor="#ff670f" style="padding: 30px 30px 30px 30px;">
+            <td bgcolor="#ffcb10" style="padding: 30px 30px 30px 30px;">
              <table border="0" cellpadding="0" cellspacing="0" width="100%">
              <tr>
                 <td width="75%" style="text-align: right;" >
-                 <b>&reg; Informasi Publik ITS, 2017</b><br/>
+                 <b style="color: #20417f">&reg; Informasi Publik ITS, 2017</b><br/>
                 </td>
              </tr>
             </table>

@@ -48,7 +48,7 @@ class PertanyaanController extends Controller
         Mail::to($request->email)->send(new AddPertanyaan($create->id_pertanyaan));
 
 
-        return back()->with('status', 'Silahkan Cek Spam Pada Email');
+        return back()->with('status', 'Silahkan Cek Email/Spam Pada Email');
     }
 
     public function list()
