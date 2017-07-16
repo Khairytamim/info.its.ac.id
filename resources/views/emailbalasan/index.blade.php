@@ -37,7 +37,7 @@
               </td>
              </tr>
              <tr>
-              <td style="padding: 20px 0 30px 0;">
+              <td style="padding: 10px 0 30px 0;">
                {!!html_entity_decode($data['jawaban']->jawaban)!!}
               </td>
              </tr>

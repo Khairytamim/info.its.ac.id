@@ -60,9 +60,9 @@
       </div>
       <div class="box-body no-padding">
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="#"><i class="fa fa-circle-o text-red"></i> Important</a></li>
-          <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Promotions</a></li>
-          <li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Social</a></li>
+          <li class="" id="aktiftipepublik"><a href="{{route('label')}}?name=Publik" ><i class="fa fa-circle-o text-light-blue"></i> Publik</a></li>
+          <li class="" id="aktiftipekondisional"><a href="{{route('label')}}?name=Kondisional" ><i class="fa fa-circle-o text-yellow"></i> Kondisional</a></li>
+          <li class="" id="aktiftiperahasia"><a href="{{route('label')}}?name=Rahasia" ><i class="fa fa-circle-o text-red"></i> Rahasia</a></li>
         </ul>
       </div>
       <!-- /.box-body -->

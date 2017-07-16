@@ -49,9 +49,9 @@
       {{-- Labels --}}  
       <div class="box-body no-padding">
         <ul class="nav nav-pills nav-stacked">
-          <li class="" id="aktiftipepublik"><a href="{{route('label')}}?name=Publik" ><i class="fa fa-circle-o text-red"></i> Publik</a></li>
+          <li class="" id="aktiftipepublik"><a href="{{route('label')}}?name=Publik" ><i class="fa fa-circle-o text-light-blue"></i> Publik</a></li>
           <li class="" id="aktiftipekondisional"><a href="{{route('label')}}?name=Kondisional" ><i class="fa fa-circle-o text-yellow"></i> Kondisional</a></li>
-          <li class="" id="aktiftiperahasia"><a href="{{route('label')}}?name=Rahasia" ><i class="fa fa-circle-o text-light-blue"></i> Rahasia</a></li>
+          <li class="" id="aktiftiperahasia"><a href="{{route('label')}}?name=Rahasia" ><i class="fa fa-circle-o text-red"></i> Rahasia</a></li>
         </ul>
       </div>
       <!-- /.box-body -->
@@ -62,7 +62,7 @@
         <div class="col-md-9">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Inbox</h3>
+              <h3 class="box-title"></h3>
 
               <div class="box-tools pull-right">
                 <div class="has-feedback">

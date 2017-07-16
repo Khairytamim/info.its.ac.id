@@ -206,7 +206,7 @@ class MailboxController extends Controller
         $update = Jawaban::find($request->id);
         
         
-        // Mail::to($update->pertanyaan->email_penanya)->send(new BalasPertanyaan($request->id));
+        Mail::to($update->pertanyaan->email_penanya)->send(new BalasPertanyaan($request->id));
         // dd($request->id);
 
         return back()->with('status', 'Pesan sudah di konfirmasi dan di kirim ke email penanya');
