@@ -2,11 +2,11 @@
 @section('content')
 <style type="text/css">
 	#custom-search-input{
-    padding: 3px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
-    margin: 0 10vw;
+	    padding: 3px;
+	    border: solid 1px #E4E4E4;
+	    border-radius: 3px;
+	    background-color: #fff;
+	    box-shadow: 0px 5px 5px lightgray;
 	}
 
 	#custom-search-input input{
@@ -34,67 +34,42 @@
 	    font-size: 23px;
 	}
 </style>
-<div class="top-left links">
-    <a href="{{ url('/') }}" style="padding: 0 5px; display: block;width: 6vw;">Informasi Publik ITS</a>
+<div class="container" style="padding-top: 15vh; padding-bottom: 5vh">
+	<div class="row" style="text-align: center;">
+		<h2>Informasi Publik ITS</h2>
+		<div class="col-sm-10 col-sm-offset-1">
+	    <div id="custom-search-input">
+	    	<form action="{{ route('searchlaporan') }}" method="post">
+	            <div class="input-group col-md-12">
+	                <input type="text" class="form-control input-lg" placeholder="Ranking ITS" />
+	                <span class="input-group-btn">
+	                    <button class="btn btn-info btn-lg" type="button">Cari</button>
+	                </span>
+	            </div>
+	    	</form>
+	    </div>
+	    </div>
+	</div>
 </div>
-<div class="top-right links">
-    <a href="{{ route('tanyakan') }}" style="padding: 5px">Tanyakan</a>
-    <a href="#" style="padding: 5px">Organisasi</a>
-</div>
-<div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
-	<div class="content">
-        <div class="row">
-    		<h2>Informasi Publik ITS</h2>
-            <div id="custom-search-input">
-	        	<form action="{{ route('searchlaporan') }}" method="post">
-	                <div class="input-group col-md-12">
-	                    <input type="text" class="form-control input-lg" placeholder="Ranking ITS" />
-	                    <span class="input-group-btn">
-	                        <button class="btn btn-info btn-lg" type="button">Cari</button>
-	                    </span>
-	                </div>
-	        	</form>
-            </div>
-        </div>
-		<div class="row" style="border-bottom: solid 1px #ccc;">
-			<div >
-				<div class="col-md-12">
-					<h3>Judul Data / Isi Data</h3>
-				</div>
-				<div class="col-md-12">
-					<p>Link Data</p>
-				</div>
-			</div>
+<div class="row" style="background-color: white; border-top: 1px solid lightgrey">
+	<div class="container">
+		<div class="col-sm-10 col-sm-offset-1" style="margin-top: 2vh">
+			<p style="color: gray">About 368,000 results (1.05 seconds) </p>
 		</div>
-		<div class="row" style="border-bottom: solid 1px #ccc;">
-			<div >
-				<div class="col-md-12">
-					<h3>Judul Data / Isi Data</h3>
-				</div>
-				<div class="col-md-12">
-					<p>Link Data</p>
-				</div>
-			</div>
+		<div class="col-sm-10 col-sm-offset-1" style="margin-bottom: 12px">
+			<a style="color: #1a0dab; font-size: 18px">Bootstrap Snippet Carousel Inside Modal using HTML CSS</a>
+			<p style="color: #006621; font-size: 14px; margin: 0">https://bootsnipp.com/snippets/featured/carousel-inside-modal</p>
+			<span style="font-size: small;">The script depends on bootstrap-modal-fullscreen , bootstrap-modal-local and ... and .force-fullscreen (to place header and footer away) to the modal box.</span>
 		</div>
-		<div class="row" style="border-bottom: solid 1px #ccc;">
-			<div >
-				<div class="col-md-12">
-					<h3>Judul Data / Isi Data</h3>
-				</div>
-				<div class="col-md-12">
-					<p>Link Data</p>
-				</div>
-			</div>
+		<div class="col-sm-10 col-sm-offset-1" style="margin-bottom: 12px">
+			<a style="color: #1a0dab; font-size: 18px">Bootstrap Snippet Carousel Inside Modal using HTML CSS</a>
+			<p style="color: #006621; font-size: 14px; margin: 0">https://bootsnipp.com/snippets/featured/carousel-inside-modal</p>
+			<span style="font-size: small;">The script depends on bootstrap-modal-fullscreen , bootstrap-modal-local and ... and .force-fullscreen (to place header and footer away) to the modal box.</span>
 		</div>
-		<div class="row" style="border-bottom: solid 1px #ccc;">
-			<div >
-				<div class="col-md-12">
-					<h3>Judul Data / Isi Data</h3>
-				</div>
-				<div class="col-md-12">
-					<p>Link Data</p>
-				</div>
-			</div>
+		<div class="col-sm-10 col-sm-offset-1" style="margin-bottom: 12px">
+			<a style="color: #1a0dab; font-size: 18px">Bootstrap Snippet Carousel Inside Modal using HTML CSS</a>
+			<p style="color: #006621; font-size: 14px; margin: 0">https://bootsnipp.com/snippets/featured/carousel-inside-modal</p>
+			<span style="font-size: small;">The script depends on bootstrap-modal-fullscreen , bootstrap-modal-local and ... and .force-fullscreen (to place header and footer away) to the modal box.</span>
 		</div>
 	</div>
 </div>

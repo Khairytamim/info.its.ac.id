@@ -27,7 +27,7 @@
         #custom-search-input{
         padding: 3px;
         border: solid 1px #E4E4E4;
-        border-radius: 6px;
+        border-radius: 3px;
         background-color: #fff;
         margin: 0 10vw;
         }

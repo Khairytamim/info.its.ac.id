@@ -83,7 +83,7 @@
             }
         </style>
     </head>
-    <body style="background-image:url('bg.png'); background-repeat: repeat;background-size: 100%">
+    <body style="background-image:url({{ URL::asset('bg.png') }}); background-repeat: repeat;background-size: 100%">
       <!-- Navigation -->
       <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation" style="background-color: rgba(32,65,127,0.7); border-bottom: 4px solid #20417f">
           <div class="container topnav">
@@ -95,7 +95,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand topnav" href="#" style="padding:0"><img style="height: 100%" src="{{ asset('logo/its.png') }}"></a>
+                  <a class="navbar-brand topnav" href="{{ url('/') }}" style="padding:0"><img style="height: 100%" src="{{ asset('logo/its.png') }}"></a>
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -160,12 +160,8 @@
         <footer>
           <div class="container">
             <div class="row">
-              <div class="col-md-4 col-sm-6 footerleft ">
+              <div class="col-md-2 col-sm-6 footerleft ">
                 <div class="logofooter"><img style="width: 100%" src="{{ asset('logo/its.png') }}"></a></div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-                <p><i class="fa fa-map-pin"></i>Jalan Raya ITS, Sukolilo, Surabaya, Jawa Timur, Indonesia</p>
-                <p><i class="fa fa-phone"></i> Phone (Indonesia) : +62 81703434379</p>
-                <p><i class="fa fa-envelope"></i> E-mail : fikry.labsky08@gmail.com</p>
                 
               </div>
               {{-- <div class="col-md-2 col-sm-6 paddingtop-bottom">
@@ -188,16 +184,24 @@
                   <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
                 </div>
               </div> --}}
+              <div class="col-md-4 col-sm-6 paddingtop-bottom">
+                <p style="color: white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+              </div>
+              <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                <p style="color: white"><i class="fa fa-map-pin"></i>Jalan Raya ITS, Sukolilo, Surabaya, Jawa Timur, Indonesia</p>
+                <p style="color: white"><i class="fa fa-phone"></i> Phone (Indonesia) : +62 81703434379</p>
+                <p style="color: white"><i class="fa fa-envelope"></i> E-mail : fikry.labsky08@gmail.com</p>
+              </div>
               <div class="col-md-3 col-sm-6 paddingtop-bottom">
                 <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                   <div class="fb-xfbml-parse-ignore">
-                    <blockquote cite="https://www.facebook.com/facebook"><label>FACEBOOK</label>
+                    <blockquote cite="https://www.facebook.com/facebook"><label style="color: white">FACEBOOK</label>
                     </blockquote>
                     <blockquote cite="https://www.facebook.com/facebook">
-                    <label>TWITTER</label>
+                    <label style="color: white">TWITTER</label>
                     </blockquote>
                     <blockquote cite="https://www.facebook.com/facebook">
-                    <label>EMAIL</label>
+                    <label style="color: white">EMAIL</label>
                     </blockquote>
                   </div>
                 </div>
@@ -214,7 +218,7 @@
             </div>
             <div class="col-md-6">
               <ul class="bottom_ul">
-                <li><a href="#">info.its.ac.is</a></li>
+                <li><a href="#">info.its.ac.id</a></li>
                 <li><a href="#">Pencarian Data</a></li>
                 <li><a href="#">Pengajuan Pertanyaan</a></li>
                 <li><a href="#">Struktur Organisasi</a></li>
