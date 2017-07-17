@@ -232,6 +232,7 @@ class MailboxController extends Controller
         $update = Pertanyaan::find($request->id);
         // dd($update);
         $update->tipe = $request->tipe;
+        $update->notes = $request->notes;
         $update->save();
 
         $update = Pertanyaan::find($request->id);
@@ -239,7 +240,7 @@ class MailboxController extends Controller
         $this->data['jawaban'] = $request->jawaban;
 
         Mail::to($update->email_penanya)->send(new TipePertanyaan($request->id, $request->jawaban));
-
+        //echo "SUKSES SHOB";
         return back()->with('status', 'Sukses!');
     }
 

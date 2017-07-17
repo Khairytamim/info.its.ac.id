@@ -284,7 +284,7 @@
                   </div>
                   <div class="form-group">
                     <label>Pesan</label>
-                    <textarea id="test1" name="jawaban" class="form-control" ></textarea>
+                    <textarea id="test1" name="notes" class="form-control" ></textarea>
                   </div>
                   <input type="hidden" name="id" value="{{$pertanyaan->id_pertanyaan}}">
                   {{csrf_field()}}
