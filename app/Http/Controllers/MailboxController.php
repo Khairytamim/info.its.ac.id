@@ -181,7 +181,7 @@ class MailboxController extends Controller
     	$this->setActive('sent');
     	$this->setTitle('sent');
 
-    	$this->data['pertanyaan'] = Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',1)->paginate(10);
+    	$this->data['pertanyaan'] = Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',1)->orderBy('jawaban.created_at', 'DESC')->paginate(10);
 
     	return view('admin.mailbox.index', $this->data);
 
@@ -219,7 +219,7 @@ class MailboxController extends Controller
         $this->setActive('konfirmasi');
         $this->setTitle('konfirmasi');
 
-        $this->data['pertanyaan']= Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',0)->paginate(10);
+        $this->data['pertanyaan']= Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',0)->orderBy('jawaban.created_at', 'DESC')->paginate(10);
         // dd($result);
         // dd($this->data['pertanyaan']);
         return view('admin.mailbox.index', $this->data);
