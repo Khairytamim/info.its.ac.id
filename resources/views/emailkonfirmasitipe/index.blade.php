@@ -28,17 +28,18 @@
              <table border="0" cellpadding="0" cellspacing="0" width="100%">
              <tr>
               <td>
-               <h3>Jenis dari tipe pertanyaan adalah <b>Rahasia</b></h3>
+               <h3>Jenis dari tipe pertanyaan adalah <b>{{$data['pertanyaan']->tipe}}</b></h3>
               </td>
              </tr>
              <tr>
               <td style="padding: 20px 0 30px 0;">
-                <p>Apakah ITS saudaraan sama ITB?</p>
+                <p>{{$data['pertanyaan']->judul_pertanyaan}}</p>
+                {!!html_entity_decode($data['jawaban'])!!}
               </td>
              </tr>
              <tr>
               <td style="padding: 20px 0 30px 0;">
-                <p>Terima kasih telah menghubungi Informasi Publik ITS. Dikarenakan pertanyaan yang disampaikan masuk pada tipe pertanyaan rahasia, maka jawaban tidak dapat kami berikan. Terima kasih.</p>
+                <p>Terima kasih telah menghubungi Informasi Publik ITS. Dikarenakan pertanyaan yang disampaikan masuk pada kategori pertanyaan rahasia, maka jawaban tidak dapat kami berikan. Terima kasih.</p>
               </td>
              </tr>
             </table>

@@ -38,6 +38,6 @@ class BalasPertanyaan extends Mailable
         //dd($data);
         //echo "$data->pertanyaan";
         // dd($data);
-        return $this->subject($data->judul_jawaban)->from('no-reply@info.its.ac.id')->view('emailbalasan.index');
+        return $this->subject('Re: '.$data->judul_jawaban)->from('no-reply@info.its.ac.id')->view('emailbalasan.index');
     }
 }

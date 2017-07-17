@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mail\BalasPertanyaan;
+use App\Mail\TipePertanyaan;
+
 use Illuminate\Support\Facades\Mail;
 use App\Pertanyaan;
 use App\Jawaban;
@@ -27,7 +29,7 @@ class MailboxController extends Controller
     {
     	$this->setActive('mailbox');
     	$this->setTitle('mailbox');
-    	$this->data['pertanyaan'] = Pertanyaan::whereNull('id_jawaban')->whereNotNull('status_email')->paginate(10);
+    	$this->data['pertanyaan'] = Pertanyaan::whereNull('id_jawaban')->whereNotNull('status_email')->orderBy('created_at', 'DESC')->paginate(10);
 
         return view('admin.mailbox.index', $this->data);
     	
@@ -170,7 +172,7 @@ class MailboxController extends Controller
         
         // dd($request->email);
     	
-    	return back()->with('status', 'sukses');
+    	return back()->with('status', 'Balasan Pertanyaan sudah terkirim!');
     }
 
 
@@ -203,10 +205,9 @@ class MailboxController extends Controller
         $update = Jawaban::find($request->id);
         $update->status_jawaban = 1;
         $update->save();
-        $update = Jawaban::find($request->id);
         
         
-        Mail::to($update->pertanyaan->email_penanya)->send(new BalasPertanyaan($request->id));
+        Mail::to($update->pertanyaan->email_penanya)->send(new BalasPertanyaan($request->id, $request->jawaban));
         // dd($request->id);
 
         return back()->with('status', 'Pesan sudah di konfirmasi dan di kirim ke email penanya');
@@ -232,6 +233,12 @@ class MailboxController extends Controller
         // dd($update);
         $update->tipe = $request->tipe;
         $update->save();
+
+        $update = Pertanyaan::find($request->id);
+        
+        $this->data['jawaban'] = $request->jawaban;
+
+        Mail::to($update->email_penanya)->send(new TipePertanyaan($request->id, $request->jawaban));
 
         return back()->with('status', 'Sukses!');
     }
