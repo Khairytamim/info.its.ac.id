@@ -37,7 +37,6 @@ Route::group(['prefix' => 'admin/mailbox'], function () {
 	// Route::post('/type/change', 'MailboxController@type')->name('changetype');    
 	// Route::post('/pertanyaan/delete','MailboxController@delete')    
 
-
 });
 
 // Route::group(['prefix' => 'cek'], function () {
@@ -47,6 +46,12 @@ Route::group(['prefix' => 'admin/mailbox'], function () {
 Route::group(['prefix' => 'admin/organisasi'], function () {
 	Route::get('/', 'OrganisasiController@adminorganisasi')->name('adminorganisasi');
 	Route::post('/update', 'OrganisasiController@update')->name('updateorganisasi');
+});
+
+Route::group(['prefix' => 'admin/users'], function () {
+	Route::get('/', 'UserController@index')->name('users');
+	Route::post('/add', 'UserController@add')->name('adduser');
+
 });
 
 Route::group(['prefix' => 'organisasi'], function () {
@@ -68,5 +73,18 @@ Route::group(['prefix' => 'tanyakan'], function () {
 	Route::get('/list', 'PertanyaanController@list')->name('listtanyakan');  
 });
 
+// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+// Route::post('login', 'Auth\LoginController@login');
+// Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+        // Registration Routes...
+// Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+// Route::post('register', 'Auth\RegisterController@register');
+
+//         // Password Reset Routes...
+// Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+// Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+// Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+// Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 // Route::get('/home', 'HomeController@index')->name('home');

@@ -110,6 +110,9 @@
             <li class="" id="aktiforganisasi">
               <a href="{{route('adminorganisasi')}}"><i class="fa fa-users"></i> <span>Organisasi</span></a>
             </li>
+            <li class="" id="aktifusers">
+              <a href="{{route('users')}}"><i class="fa fa-user"></i> <span>User</span></a>
+            </li>
         
             </ul>
           </section>

@@ -273,7 +273,7 @@ class MailboxController extends Controller
 
         dd($request->path());
 
-        return redirect('')->with('status', 'Sukses!');
+        return redirect('/admin/mailbox')->with('status', 'Sukses!');
     }
 
 
