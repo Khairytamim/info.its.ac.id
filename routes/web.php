@@ -68,4 +68,5 @@ Route::group(['prefix' => 'tanyakan'], function () {
 	Route::get('/list', 'PertanyaanController@list')->name('listtanyakan');  
 });
 
+
 // Route::get('/home', 'HomeController@index')->name('home');
