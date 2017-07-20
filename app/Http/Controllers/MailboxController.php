@@ -271,7 +271,7 @@ class MailboxController extends Controller
         $pertanyaan = Pertanyaan::find($request->id_pertanyaan);
         $pertanyaan->delete();
 
-        dd($request->path());
+        // dd($request->path());
 
         return redirect('/admin/mailbox')->with('status', 'Sukses!');
     }
