@@ -30,13 +30,14 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users,email',
             'username' => 'required|string|max:255|unique:users,username',
             'password' => 'required|string|min:6|confirmed',
+            'hak' => 'required'
         ])->validate();
 
         User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'username' => $request['username'],
-            'role' => $request['hak'],
+            'hak' => $request['hak'],
             'password' => bcrypt($request['password']),
         ]);
 

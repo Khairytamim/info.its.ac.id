@@ -41,8 +41,9 @@
                {!!html_entity_decode($data['jawaban']->jawaban)!!}
               </td>
              </tr>
+             @foreach($data['jawaban']->data as $link)
              <tr>
-              @foreach($data['jawaban']->data as $link)
+              
                 @if ($link->tipe == 'file')
                 <td>
                   {{url("$link->data")}}
@@ -52,8 +53,9 @@
                   {{urldecode($link->data)}}
                 </td>
                 @endif
-              @endforeach
+              
              </tr>
+             @endforeach
             </table>
             </td>
         </tr>
