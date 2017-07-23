@@ -160,8 +160,8 @@
         <footer>
           <div class="container">
             <div class="row">
-              <div class="col-md-2 col-sm-6 footerleft ">
-                <div class="logofooter"><img style="width: 100%" src="{{ asset('logo/its.png') }}"></a></div>
+              <div class="col-md-3 col-sm-6 footerleft ">
+                <div class="logofooter"><a><img style="width: 100%" src="{{ asset('logo/its.png') }}"></a></div>
                 
               </div>
               {{-- <div class="col-md-2 col-sm-6 paddingtop-bottom">
@@ -184,7 +184,7 @@
                   <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
                 </div>
               </div> --}}
-              <div class="col-md-4 col-sm-6 paddingtop-bottom">
+              <div class="col-md-2 col-sm-6 paddingtop-bottom">
                 <p style="color: white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
               </div>
               <div class="col-md-3 col-sm-6 paddingtop-bottom">
@@ -192,19 +192,8 @@
                 <p style="color: white"><i class="fa fa-phone"></i> Phone (Indonesia) : +62 81703434379</p>
                 <p style="color: white"><i class="fa fa-envelope"></i> E-mail : fikry.labsky08@gmail.com</p>
               </div>
-              <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                  <div class="fb-xfbml-parse-ignore">
-                    <blockquote cite="https://www.facebook.com/facebook"><label style="color: white">FACEBOOK</label>
-                    </blockquote>
-                    <blockquote cite="https://www.facebook.com/facebook">
-                    <label style="color: white">TWITTER</label>
-                    </blockquote>
-                    <blockquote cite="https://www.facebook.com/facebook">
-                    <label style="color: white">EMAIL</label>
-                    </blockquote>
-                  </div>
-                </div>
+              <div class="col-md-4 col-sm-6 paddingtop-bottom">
+                <div class="logofooter"><a href="https://www.lapor.go.id/" target="_blank"><img style="width: 100%" src="{{ asset('logo/lapor.png') }}"></a></div>
               </div>
             </div>
           </div>
