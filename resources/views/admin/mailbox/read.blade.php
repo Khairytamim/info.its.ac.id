@@ -227,9 +227,7 @@
                             @foreach($ea as $value4)
                               @continue($value4->tipe == 'link')
                                 <?php $file = explode('/', $value4->data); ?>
-                                <a href="{{url($value4->data)}}"><div class="btn btn-default btn-file">
-                                  {{end($file)}}
-                                </div></a>
+                                <a href="{{url($value4->data)}}"><div class="btn btn-default btn-file">{{end($file)}}</div></a>
                             @endforeach
                          
 
