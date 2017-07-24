@@ -224,17 +224,14 @@
                       {{-- <div class="form-group"> --}}
                       @if(!is_null($pertanyaan->id_jawaban))
                          <label>Uploaded file:</label><br>
-                            <div class="row">
-                              @foreach($ea as $value4)
-                                @continue($value4->tipe == 'link')
-                                  <?php $file = explode('/', $value4->data); ?>
-                                  <div class="col-md-3">
-                                    <a href="{{url($value4->data)}}"><div class="btn btn-default btn-file">
-                                      {{end($file)}}
-                                    </div></a>
-                                  </div>
-                              @endforeach
-                            </div>
+                            @foreach($ea as $value4)
+                              @continue($value4->tipe == 'link')
+                                <?php $file = explode('/', $value4->data); ?>
+                                <a href="{{url($value4->data)}}"><div class="btn btn-default btn-file">
+                                  {{end($file)}}
+                                </div></a>
+                            @endforeach
+                         
 
                         
                       @else
