@@ -125,6 +125,7 @@ class MailboxController extends Controller
 
     	$update = Pertanyaan::find($request->id_pertanyaan);
     	$update->id_jawaban = $id;
+        $tipe = $update->tipe;
     	$update->save();
 
     	$file = $request->data;
@@ -132,16 +133,23 @@ class MailboxController extends Controller
         if($file){
             foreach ($file as $key => $value) {
             // $name = UUID::generate(4);
+                // echo 'aa';
                 $photo = new Data;
                 $iddata = UUID::generate(4);
-                echo $filename = 'data/'. $id .'/'. $iddata . '.' . $value->getClientOriginalExtension();             
+                $filename = 'data/'. $id .'/'. $iddata . '/' . $value->getClientOriginalName();             
                 if ($value) {
                     Storage::disk('public')->put($filename, File::get($value));
                 }
 
                 $photo->id_data = $iddata;
-
                 $photo->data = "storage/$filename";
+
+                if($tipe == 'Publik' || $tipe == 'Kondisional'){
+                    $exec = '$HOME/solr-6.6.0/bin/post -c info "'.public_path($photo->data).'" -params "literal.tipe=file&literal.filename=' . urlencode($photo->data) . '&literal.ext=' . $value->getClientOriginalExtension() . '"';
+                    $output = exec($exec);
+                }
+                
+                // dd($exec);
                 $photo->id_jawaban = $id;
                 $photo->tipe = "file";
                 $photo->save();
@@ -161,6 +169,9 @@ class MailboxController extends Controller
                 $photo->id_data = $iddata;
                 $photo->data = $link;
                 $photo->id_jawaban = $id;
+                if($tipe == 'Publik' || $tipe == 'Kondisional'){
+                    $output = exec('$HOME/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params "literal.tipe=url"');
+                }
                 $photo->tipe = "link";
                 $photo->save();
 

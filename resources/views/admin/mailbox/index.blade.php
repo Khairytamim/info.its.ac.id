@@ -30,7 +30,7 @@
           <li class="" id="aktifdalemmailbox"><a href="{{route('mailbox')}}"><i class="fa fa-inbox"></i> Inbox</a></li>
           <li class="" id="aktifdalemsent"><a href="{{route('sent')}}"><i class="fa fa-envelope-o"></i> Sent</a></li>
           @if(Auth::user()->hak == 'approver')
-          <li class="" id="aktifdalemsent"><a href="{{route('confirmation')}}"><i class="fa fa-check"></i> Confirmation</a></li>
+          <li class="" id="aktifdalemkonfirmasi"><a href="{{route('confirmation')}}"><i class="fa fa-check"></i> Confirmation</a></li>
           @endif
         </ul>
       </div>

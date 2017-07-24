@@ -48,7 +48,7 @@
           <li class="" id="aktifdalemmailbox"><a href="{{route('mailbox')}}"><i class="fa fa-inbox"></i> Inbox</a></li>
           <li class="" id="aktifdalemsent"><a href="{{route('sent')}}"><i class="fa fa-envelope-o"></i> Sent</a></li>
           @if(Auth::user()->hak == 'approver')
-          <li class="" id="aktifdalemsent"><a href="{{route('confirmation')}}"><i class="fa fa-check"></i> Confirmation</a></li>
+          <li class="" id="aktifdalemkonfirmasi"><a href="{{route('confirmation')}}"><i class="fa fa-check"></i> Confirmation</a></li>
           @endif
 
         </ul>
@@ -139,6 +139,7 @@
                 <!-- /.box-footer -->
               </div>
             </div>
+            @if(!is_null($pertanyaan->tipe))
             <div class="col-md-12">
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -155,6 +156,7 @@
                         </ul>
                     </div>
                 @endif
+                
                   <form action="{{route('balas')}}" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                       <input class="form-control" placeholder="To:" disabled="" value="{{$pertanyaan->nama_penanya}}{{urldecode('%3C')}}{{$pertanyaan->email_penanya}}{{urldecode('%3E')}}">
@@ -191,13 +193,16 @@
                         </tr></thead>
                         <tbody id="body">
                           @if(!is_null($pertanyaan->id_jawaban) && !old('link'))
-                            @php $ea = $pertanyaan->jawaban->data; @endphp
+                            @php $ea = $pertanyaan->jawaban->data; 
+                            // dd($pertanyaan->jawaban->data);
+                            @endphp
                             @foreach($ea as $value)
-                            <tr>
-                              <td><input class="form-control" name="link[]" type="text" value='{{$value->data}}' disabled=""></td>
+                              @continue($value->tipe == 'file')
+                              <tr>
+                                <td><input class="form-control" name="link[]" type="text" value='{{$value->data}}' disabled=""></td>
 
-                              <td><button type="button" class="btn btn-danger tombol" title="Hapus Data Pelamar"><span class="fa fa-trash"></span></button></td>
-                            </tr>
+                                <td><button type="button" class="btn btn-danger tombol" title="Hapus Data Pelamar"><span class="fa fa-trash"></span></button></td>
+                              </tr>
                             @endforeach
                          
 
@@ -216,13 +221,32 @@
                         </tbody>
 
                       </table>
-                      <div class="form-group">
+                      {{-- <div class="form-group"> --}}
+                      @if(!is_null($pertanyaan->id_jawaban))
+                         <label>Uploaded file:</label><br>
+                            <div class="row">
+                              @foreach($ea as $value4)
+                                @continue($value4->tipe == 'link')
+                                  <?php $file = explode('/', $value4->data); ?>
+                                  <div class="col-md-3">
+                                    <a href="{{url($value4->data)}}"><div class="btn btn-default btn-file">
+                                      {{end($file)}}
+                                    </div></a>
+                                  </div>
+                              @endforeach
+                            </div>
+
+                        
+                      @else
                       <div class="btn btn-default btn-file">
-                        <i class="fa fa-paperclip"></i> Upload file
-                        <input type="file" name="data[]" multiple>
+                        
+                          <i class="fa fa-paperclip"></i> Upload file
+                          <input type="file" name="data[]" multiple>
+                        
                       </div>
+                      @endif
                       
-                    </div>
+                    {{-- </div> --}}
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
@@ -254,6 +278,7 @@
 
               </div>
             </div>
+            @endif
             <!-- /. box -->
           </div>
           <!-- /.col -->
