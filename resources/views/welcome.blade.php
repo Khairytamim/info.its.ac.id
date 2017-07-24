@@ -134,7 +134,7 @@
         </div>
     </div>
 </section>
-<section id="organisasi">
+<!--section id="organisasi">
     <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
         <div class="row">
             <h2>Struktur Organisasi</h2>
@@ -166,7 +166,7 @@
             </div>
         </div>
     </div>
-</section>
+</section-->
 @endsection
 @section('js')
 @endsection
