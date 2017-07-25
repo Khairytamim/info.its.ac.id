@@ -147,7 +147,9 @@ class MailboxController extends Controller
                 if($tipe == 'Publik' || $tipe == 'Kondisional'){
                     $exec = '$HOME/solr-6.6.0/bin/post -c info "'.public_path($photo->data).'" -params "literal.tipe=file&literal.filename=' . urlencode($photo->data) . '&literal.ext=' . $value->getClientOriginalExtension() . '" 2>&1';
                     $output = exec($exec, $test);
-                    dd($test);
+
+                    if ($test[0] == "sh: 1: /var/www/solr-6.6.0/bin/post: not found")
+                    dd('a');
 
                     // $output = exec($exec, $test);
                 }
