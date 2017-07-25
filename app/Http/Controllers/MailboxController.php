@@ -180,11 +180,12 @@ class MailboxController extends Controller
                 if($tipe == 'Publik' || $tipe == 'Kondisional'){
                     $exec = '$HOME/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params "literal.tipe=url" 2>&1';
                     $output = exec($exec, $teslink);
-                    dd($teslink);
+                    
                     if ($teslink[0] == "sh: 1: /var/www/solr-6.6.0/bin/post: not found")
                     {
-                        $exec = '/home/user/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params "literal.tipe=url" 2>&1';
-                        $output = exec($exec, $test);
+                        $exec2 = '/home/user/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params "literal.tipe=url" 2>&1';
+                        $output2 = exec($exec2, $test);
+                        dd($test);
                     }
                 }
                 $photo->tipe = "link";
