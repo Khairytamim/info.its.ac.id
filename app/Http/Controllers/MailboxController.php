@@ -147,6 +147,7 @@ class MailboxController extends Controller
                 if($tipe == 'Publik' || $tipe == 'Kondisional'){
                     $exec = '$HOME/solr-6.6.0/bin/post -c info "'.public_path($photo->data).'" -params "literal.tipe=file&literal.filename=' . urlencode($photo->data) . '&literal.ext=' . $value->getClientOriginalExtension() . '"';
                     $output = exec($exec);
+                    dd($exec);
                 }
                 
                 // dd($exec);
