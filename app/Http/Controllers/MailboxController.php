@@ -179,8 +179,9 @@ class MailboxController extends Controller
                 $photo->id_jawaban = $id;
                 if($tipe == 'Publik' || $tipe == 'Kondisional'){
                     $exec = '$HOME/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params "literal.tipe=url" 2>&1';
-                    $output = exec($exec, $test);
-                    if ($test[0] == "sh: 1: /var/www/solr-6.6.0/bin/post: not found")
+                    $output = exec($exec, $teslink);
+                    dd($teslink);
+                    if ($teslink[0] == "sh: 1: /var/www/solr-6.6.0/bin/post: not found")
                     {
                         $exec = '/home/user/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params "literal.tipe=url" 2>&1';
                         $output = exec($exec, $test);
