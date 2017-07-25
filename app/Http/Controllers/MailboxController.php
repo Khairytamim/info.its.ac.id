@@ -148,7 +148,7 @@ class MailboxController extends Controller
                     $exec = '$HOME/solr-6.6.0/bin/post -c info "'.public_path($photo->data).'" -params "literal.tipe=file&literal.filename=' . urlencode($photo->data) . '&literal.ext=' . $value->getClientOriginalExtension() . '" 2>&1';
                     $output = exec($exec, $test);
 
-                    print_r($exec);
+                    print_r($test);
                 }
                 
                 // dd($exec);
