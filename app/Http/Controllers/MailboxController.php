@@ -197,7 +197,7 @@ class MailboxController extends Controller
         
         // dd($request->email);
     	
-    	// return back()->with('status', 'Balasan Pertanyaan sudah terkirim!');
+    	return back()->with('status', 'Balasan Pertanyaan sudah terkirim!');
     }
 
 
