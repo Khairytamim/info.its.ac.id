@@ -185,7 +185,7 @@ class MailboxController extends Controller
                     {
                         $exec2 = '/home/user/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params "literal.tipe=url" 2>&1';
                         $output2 = exec($exec2, $test);
-                        dd($test);
+                        // dd($test);
                     }
                 }
                 $photo->tipe = "link";
