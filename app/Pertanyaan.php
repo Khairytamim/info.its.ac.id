@@ -10,7 +10,11 @@ class Pertanyaan extends Model
     protected $primaryKey = 'id_pertanyaan';
     public $timestamps = true;
     public $incrementing = false;
-
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'tanggal_tipe'
+    ];
 
     public function jawaban()
     {
