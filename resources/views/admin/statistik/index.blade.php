@@ -13,7 +13,7 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Daftar User</h3>
+              <h3 class="box-title">Daftar Pertanyaan</h3>
             </div>
             <div class="box-body">
               <div class="table-responsive">
@@ -21,6 +21,7 @@
                   <thead>
                     <tr>
                       <th>Judul Pertanyaan</th>
+                      <th>Tipe Pertanyaan</th>
                       <th>Respon 1</th>
                       <th>Respon 2</th>
                       
@@ -30,6 +31,7 @@
                     @foreach($pertanyaan as $value)
                       <tr class="clickable-row" data-href='{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}'>
                         <td>{{$value->judul_pertanyaan}}</td>
+                        <td>{{$value->tipe}}</td>
                         <td>{{$value->respon_1}}</td>
                         @if(!is_null($value->id_jawaban))
                         <td>{{$value->jawaban->created_at->diffInDays($value->created_at)}}</td>
@@ -53,7 +55,7 @@
                 <div class="box-header with-border">
                   <i class="fa fa-bar-chart-o"></i>
 
-                  <h3 class="box-title">Bar Chart</h3>
+                  <h3 class="box-title">Rata-Rata Respon</h3>
 
                   <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -140,6 +142,7 @@
             data : [['Respon 1', msg.avgrespon1], ['Respon 2', msg.avgrespon2]],
             color: '#3c8dbc'
           }
+
           $.plot('#bar-chart', [bar_data], {
             grid  : {
               borderWidth: 1,
@@ -179,7 +182,14 @@
               color    : '#f39c12',
               highlight: '#f39c12',
               label    : 'Rahasia'
+            },
+            {
+              value    : msg.belum,
+              color    : '#00c0ef',
+              highlight: '#00c0ef',
+              label    : 'NULL'
             }
+
           ]
           var pieOptions     = {
             //Boolean - Whether we should show a stroke on each segment
