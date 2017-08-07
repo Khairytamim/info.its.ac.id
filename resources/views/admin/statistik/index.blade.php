@@ -46,7 +46,8 @@
           </div>
           
         </div>
-        <div class='row'>
+        <div class="col-md-12">
+          <div class='row'>
           <div class="col-md-6">
             <div class="box">
                 <div class="box-header with-border">
@@ -84,6 +85,8 @@
               </div>
             </div>
         </div>
+        </div>
+        
         
         
         <!-- /.box-footer-->
