@@ -57,8 +57,15 @@ class StatistikController extends Controller
             }
     	}
 
-        $this->data['avgrespon1'] = $respon2/$jumlahrespon2;
-        $this->data['avgrespon2'] = $respon1/$jumlahrespon1;
+        // if($jumlahrespon1 == 0)
+        $this->data['avgrespon2'] = $respon2/$jumlahrespon2;
+        if($jumlahrespon2 == 0) $this->data['avgrespon2'] = 0;
+        else $this->data['avgrespon1'] = $respon2/$jumlahrespon2;
+
+        if($jumlahrespon1 == 0) $this->data['avgrespon1'] = 0;
+        else $this->data['avgrespon1'] = $respon1/$jumlahrespon1;
+
+        
         $this->data['jumlahpertanyaan'] = $pertanyaan->count();
         $this->data['publik'] = $pertanyaan->where('tipe', 'Publik')->count();
         $this->data['kondisional'] = $pertanyaan->where('tipe', 'Kondisional')->count();
