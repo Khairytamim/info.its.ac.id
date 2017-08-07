@@ -57,10 +57,9 @@ class StatistikController extends Controller
             }
     	}
 
-        // if($jumlahrespon1 == 0)
-        $this->data['avgrespon2'] = $respon2/$jumlahrespon2;
+      
         if($jumlahrespon2 == 0) $this->data['avgrespon2'] = 0;
-        else $this->data['avgrespon1'] = $respon2/$jumlahrespon2;
+        else $this->data['avgrespon2'] = $respon2/$jumlahrespon2;
 
         if($jumlahrespon1 == 0) $this->data['avgrespon1'] = 0;
         else $this->data['avgrespon1'] = $respon1/$jumlahrespon1;
