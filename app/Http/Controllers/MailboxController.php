@@ -15,6 +15,7 @@ use File;
 use Storage;
 use Validator;
 use Illuminate\Routing\Route;
+use Carbon\Carbon;
 
 
 class MailboxController extends Controller
@@ -260,7 +261,9 @@ class MailboxController extends Controller
         // dd($update);
         $update->tipe = $request->tipe;
         $update->notes = $request->notes;
+        $update->tanggal_tipe = Carbon::now();
         $update->save();
+
 
         $update = Pertanyaan::find($request->id);
         

@@ -16,7 +16,8 @@
         }
   </style>
 </head>
-<body style="margin: 0; padding: 0; background-image:url({{ URL::asset('bg.png') }}); background-repeat: repeat;background-size: 100%">
+{{-- <body style="margin: 0; padding: 0; background-image:url({{ URL::asset('bg.png') }}); background-repeat: repeat;background-size: 100%"> --}}
+<body style="margin: 0; padding: 0;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
         <tr>
             <td align="center" style="padding: 40px 0 30px 0;background-color: rgba(32,65,127,0.7); border-bottom: 4px solid #20417f">

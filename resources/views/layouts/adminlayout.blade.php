@@ -113,6 +113,9 @@
             <li class="" id="aktifusers">
               <a href="{{route('users')}}"><i class="fa fa-user"></i> <span>User</span></a>
             </li>
+            <li class="" id="aktifstatistik">
+              <a href="{{route('statistik')}}"><i class="fa fa-bar-chart"></i> <span>Statistik</span></a>
+            </li>
         
             </ul>
           </section>

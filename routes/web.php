@@ -53,6 +53,10 @@ Route::group(['prefix' => 'admin/users'], function () {
 	Route::post('/add', 'UserController@add')->name('adduser');
 
 });
+Route::group(['prefix' => 'admin/statistik'], function () {
+	Route::get('/', 'StatistikController@index')->name('statistik');
+	Route::get('/get/response', 'StatistikController@respon')->name('respon');
+});
 
 Route::group(['prefix' => 'organisasi'], function () {
 	Route::get('/', 'OrganisasiController@index')->name('organisasi');  
@@ -72,6 +76,7 @@ Route::group(['prefix' => 'tanyakan'], function () {
 	Route::post('/add', 'PertanyaanController@add')->name('addtanyakan'); 
 	Route::get('/list', 'PertanyaanController@list')->name('listtanyakan');  
 });
+
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
