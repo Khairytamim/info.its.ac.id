@@ -7,7 +7,11 @@
     display: block;
     margin: 0px;
   }
+  .clickable-row :hover {
+    cursor: pointer;
+  }
 </style>
+
 @endsection
 @section('content')
 
