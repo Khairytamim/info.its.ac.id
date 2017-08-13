@@ -41,7 +41,7 @@
 	    <div id="custom-search-input">
 	    	<form action="{{ route('searchlaporan') }}" method="get">
 	            <div class="input-group col-md-12">
-	                <input type="text" class="form-control input-lg" placeholder="Ranking ITS" />
+	                <input type="text" class="form-control input-lg" name="cari" placeholder="Ranking ITS" />
 	                <span class="input-group-btn">
 	                    <button class="btn btn-info btn-lg" type="button">Cari</button>
 	                </span>
