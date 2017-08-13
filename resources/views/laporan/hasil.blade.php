@@ -39,7 +39,7 @@
 		<h2>Informasi Publik ITS</h2>
 		<div class="col-sm-10 col-sm-offset-1">
 	    <div id="custom-search-input">
-	    	<form action="{{ route('searchlaporan') }}" method="post">
+	    	<form action="{{ route('searchlaporan') }}" method="get">
 	            <div class="input-group col-md-12">
 	                <input type="text" class="form-control input-lg" placeholder="Ranking ITS" />
 	                <span class="input-group-btn">
