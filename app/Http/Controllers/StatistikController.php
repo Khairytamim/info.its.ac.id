@@ -42,7 +42,7 @@ class StatistikController extends Controller
         $respon2=0;
         $jumlahrespon1=0;
         $jumlahrespon2=0;
-    	$pertanyaan = Pertanyaan::select('*', DB::raw('DATEDIFF(DATE(tanggal_tipe),DATE(created_at)) as respon_1'))->get();
+    	$pertanyaan = Pertanyaan::select('*', DB::raw('DATEDIFF(DATE(tanggal_tipe),DATE(created_at)) as respon_1'))->whereNotNull('status_email')->get();
 
     	foreach ($pertanyaan as $key => $value) {
             if(!is_null($value->respon_1))
