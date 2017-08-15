@@ -32,6 +32,7 @@ class AddPertanyaan extends Mailable
      */
     public function build()
     {
+        set_time_limit(0);
 
         $this->result = Pertanyaan::find($this->data);
 

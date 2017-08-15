@@ -33,6 +33,7 @@ class BalasPertanyaan extends Mailable
      */
     public function build()
     {
+        set_time_limit(0);
         $data = Jawaban::find($this->data['id']);
         $this->data['jawaban'] = $data;
         //dd($data);

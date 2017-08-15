@@ -33,6 +33,7 @@ class TipePertanyaan extends Mailable
      */
     public function build()
     {
+        set_time_limit(0);
         $this->data['pertanyaan'] = Pertanyaan::find($this->data['id']);
 
 
