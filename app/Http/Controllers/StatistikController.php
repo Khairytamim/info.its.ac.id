@@ -19,7 +19,7 @@ class StatistikController extends Controller
     	$this->setActive('statistik');
     	$this->setTitle('statistik');
 
-    	$this->data['pertanyaan'] = Pertanyaan::select('*', DB::raw('DATEDIFF(DATE(tanggal_tipe),DATE(created_at)) as respon_1'))->get();
+    	$this->data['pertanyaan'] = Pertanyaan::select('*', DB::raw('DATEDIFF(DATE(tanggal_tipe),DATE(created_at)) as respon_1'))->whereNotNull('status')->get();
     	// dd($this->data);
     	// foreach ($this->data['pertanyaan'] as $key => $value) {
     	// 	echo $value->respon_1 . ' ' . $value->id_pertanyaan. ' ';
