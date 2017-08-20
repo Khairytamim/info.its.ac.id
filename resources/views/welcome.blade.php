@@ -125,7 +125,7 @@
           </div>
         @endif
         <div class="row">
-        <form action="{{ route('addtanyakan') }}" method="post" enctype="multipart/form-data">
+        <form id="sent" action="{{ route('addtanyakan') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="col-sm-12 col-md-4">
                 <div class="form-group">
@@ -201,6 +201,13 @@
         </div>
     </div>
 </section-->
+<script>
+$( "#sent" ).submit(function( event ) {
+  // swal("Loading","done","success");
+  swal('Submit Pertanyaan')
+  swal.showLoading()
+});
+</script>
 @endsection
 @section('js')
 @endsection
