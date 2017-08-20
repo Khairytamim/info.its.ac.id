@@ -11,7 +11,7 @@ class StatistikController extends Controller
 {
 	public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     public function index(Request $request)
@@ -20,19 +20,7 @@ class StatistikController extends Controller
     	$this->setTitle('statistik');
 
     	$this->data['pertanyaan'] = Pertanyaan::select('*', DB::raw('DATEDIFF(DATE(tanggal_tipe),DATE(created_at)) as respon_1'))->whereNotNull('status_email')->get();
-    	// dd($this->data);
-    	// foreach ($this->data['pertanyaan'] as $key => $value) {
-    	// 	echo $value->respon_1 . ' ' . $value->id_pertanyaan. ' ';
-
-
-    	// 	if(!is_null($value->id_jawaban)){
-    		
-    	// 		echo $value->jawaban->created_at->diffInDays($value->created_at);
-
-    	// 		echo  '<br>';
-    	// 	}
-    	// 	else echo '<br>';
-    	
+         
     	return view('admin.statistik.index', $this->data);
     }
 
@@ -42,7 +30,17 @@ class StatistikController extends Controller
         $respon2=0;
         $jumlahrespon1=0;
         $jumlahrespon2=0;
+
     	$pertanyaan = Pertanyaan::select('*', DB::raw('DATEDIFF(DATE(tanggal_tipe),DATE(created_at)) as respon_1'))->whereNotNull('status_email')->get();
+
+        $pertanyaan = $pertanyaan->map(function ($value) {
+            if($value->tipe != null && $value->id_jawaban == null) $value->status = 'IN PROGRESS';
+            else if($value->tipe != null && $value->id_jawaban != null) $value->status = 'DONE';
+            else if($value->tipe == null && $value->id_jawaban == null) $value->status = 'PENDING';
+            else $value->status = 'OTHER';
+
+            return $value;
+        });
 
     	foreach ($pertanyaan as $key => $value) {
             if(!is_null($value->respon_1))
@@ -64,10 +62,14 @@ class StatistikController extends Controller
         if($jumlahrespon1 == 0) $this->data['avgrespon1'] = 0;
         else $this->data['avgrespon1'] = $respon1/$jumlahrespon1;
 
-        
         $this->data['jumlahpertanyaan'] = $pertanyaan->count();
         $this->data['publik'] = $pertanyaan->where('tipe', 'Publik')->count();
         $this->data['kondisional'] = $pertanyaan->where('tipe', 'Kondisional')->count();
+        $this->data['in_progress'] = $pertanyaan->where('status', 'IN PROGRESS')->count();
+        $this->data['done'] = $pertanyaan->where('status', 'DONE')->count();
+        $this->data['pending'] = $pertanyaan->where('status', 'PENDING')->count();
+        $this->data['other'] = $pertanyaan->where('status', 'OTHER')->count();
+
         $this->data['rahasia'] = $pertanyaan->where('tipe', 'Rahasia')->count();
         $this->data['belum'] = $pertanyaan->where('tipe', null)->count();
 

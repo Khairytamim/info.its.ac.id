@@ -22,6 +22,7 @@
                     <tr>
                       <th>Judul Pertanyaan</th>
                       <th>Tipe Pertanyaan</th>
+                      <th>Status</th>
                       <th>Respon 1</th>
                       <th>Respon 2</th>
                       
@@ -32,6 +33,13 @@
                       <tr class="clickable-row" data-href='{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}'>
                         <td>{{$value->judul_pertanyaan}}</td>
                         <td>{{$value->tipe}}</td>
+                        <td>
+                          @if($value->tipe != null && $value->id_jawaban == null) IN PROGRESS
+                          @elseif($value->tipe != null && $value->id_jawaban != null) DONE
+                          @elseif($value->tipe == null && $value->id_jawaban == null) PENDING
+                          @else OTHER
+                          @endif
+                        </td>
                         <td>{{$value->respon_1}}</td>
                         @if(!is_null($value->id_jawaban))
                         <td>{{$value->jawaban->created_at->diffInDays($value->created_at)}}</td>
@@ -72,7 +80,7 @@
             <div class="col-md-6">
               <div class="box box-danger">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Donut Chart</h3>
+                  <h3 class="box-title">Type Chart</h3>
 
                   <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -82,6 +90,23 @@
                 </div>
                 <div class="box-body">
                   <canvas id="pieChart" style="height: 424px; width: 849px;" width="849" height="424"></canvas>
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="box box-danger">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Progress Chart</h3>
+
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <canvas id="pieChart2" style="height: 424px; width: 849px;" width="849" height="424"></canvas>
                 </div>
                 <!-- /.box-body -->
               </div>
@@ -188,6 +213,62 @@
               color    : '#00c0ef',
               highlight: '#00c0ef',
               label    : 'NULL'
+            }
+
+          ]
+          var pieOptions     = {
+            //Boolean - Whether we should show a stroke on each segment
+            segmentShowStroke    : true,
+            //String - The colour of each segment stroke
+            segmentStrokeColor   : '#fff',
+            //Number - The width of each segment stroke
+            segmentStrokeWidth   : 2,
+            //Number - The percentage of the chart that we cut out of the middle
+            percentageInnerCutout: 50, // This is 0 for Pie charts
+            //Number - Amount of animation steps
+            animationSteps       : 100,
+            //String - Animation easing effect
+            animationEasing      : 'easeOutBounce',
+            //Boolean - Whether we animate the rotation of the Doughnut
+            animateRotate        : true,
+            //Boolean - Whether we animate scaling the Doughnut from the centre
+            animateScale         : false,
+            //Boolean - whether to make the chart responsive to window resizing
+            responsive           : true,
+            // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+            maintainAspectRatio  : true,
+            //String - A legend template
+            legendTemplate       : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
+          }
+          //Create pie or douhnut chart
+          // You can switch between pie and douhnut using the method below.
+          pieChart.Doughnut(PieData, pieOptions)
+          var pieChartCanvas = $('#pieChart2').get(0).getContext('2d')
+          var pieChart       = new Chart(pieChartCanvas)
+          var PieData        = [
+            {
+              value    : msg.in_progress,
+              color    : '#f56954',
+              highlight: '#f56954',
+              label    : 'IN PROGRESS'
+            },
+            {
+              value    : msg.done,
+              color    : '#00a65a',
+              highlight: '#00a65a',
+              label    : 'DONE'
+            },
+            {
+              value    : msg.pending,
+              color    : '#f39c12',
+              highlight: '#f39c12',
+              label    : 'PENDING'
+            },
+            {
+              value    : msg.other,
+              color    : '#00c0ef',
+              highlight: '#00c0ef',
+              label    : 'OTHER'
             }
 
           ]
