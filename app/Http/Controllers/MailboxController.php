@@ -257,19 +257,19 @@ class MailboxController extends Controller
 
     public function type(Request $request)
     {
-        $update = Pertanyaan::find($request->id);
-        // dd($update);
-        $update->tipe = $request->tipe;
-        $update->notes = $request->notes;
-        $update->tanggal_tipe = Carbon::now();
-        $update->save();
+        // $update = Pertanyaan::find($request->id);
+        // // dd($update);
+        // $update->tipe = $request->tipe;
+        // $update->notes = $request->notes;
+        // $update->tanggal_tipe = Carbon::now();
+        // $update->save();
 
 
-        $update = Pertanyaan::find($request->id);
+        // $update = Pertanyaan::find($request->id);
         
-        $this->data['jawaban'] = $request->jawaban;
+        // $this->data['jawaban'] = $request->jawaban;
 
-        Mail::to($update->email_penanya)->send(new TipePertanyaan($request->id, $request->jawaban));
+        // Mail::to($update->email_penanya)->send(new TipePertanyaan($request->id, $request->jawaban));
         //echo "SUKSES SHOB";
         return back()->with('status', 'Sukses!');
     }

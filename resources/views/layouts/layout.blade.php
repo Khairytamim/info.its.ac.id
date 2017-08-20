@@ -184,15 +184,15 @@
                   <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
                 </div>
               </div> --}}
-              <div class="col-md-2 col-sm-6 paddingtop-bottom">
-                <p style="color: white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+              <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                <p style="color: white; font-size: 14px; text-align: justify;">Informasi Publik ITS melayani berbagai informasi terkait penyelenggaraan pendidikan di ITS.</p>
               </div>
               <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                <p style="color: white"><i class="fa fa-map-pin"></i>Jalan Raya ITS, Sukolilo, Surabaya, Jawa Timur, Indonesia</p>
-                <p style="color: white"><i class="fa fa-phone"></i> Phone (Indonesia) : +62 81703434379</p>
-                <p style="color: white"><i class="fa fa-envelope"></i> E-mail : fikry.labsky08@gmail.com</p>
+                <p style="color: white; font-size: 12px"><i class="fa fa-map-pin"></i>Jalan Raya ITS, Sukolilo, Surabaya, Jawa Timur, Indonesia</p>
+                <p style="color: white; font-size: 12px"><i class="fa fa-phone"></i> Phone (Indonesia) : +62 81703434379</p>
+                <p style="color: white; font-size: 12px"><i class="fa fa-envelope"></i> E-mail : fikry.labsky08@gmail.com</p>
               </div>
-              <div class="col-md-4 col-sm-6 paddingtop-bottom">
+              <div class="col-md-3 col-sm-6 paddingtop-bottom">
                 <div class="logofooter"><a href="https://www.lapor.go.id/" target="_blank"><img style="width: 100%" src="{{ asset('logo/lapor.png') }}"></a></div>
               </div>
             </div>

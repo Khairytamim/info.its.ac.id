@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="{{url('/admindist/dist/css/skins/_all-skins.min.css')}}">
     <!-- /admindist/plugins/iCheck/flat/blue.css -->
     <link rel="stylesheet" href="{{url('/admindist/plugins/iCheck/flat/blue.css')}}">
+    {{-- <link rel="stylesheet" href="{{url('/admindist/dist/css/sweetalert.css')}}"> --}}
+    <link href="https://cdn.jsdelivr.net/sweetalert2/5.3.8/sweetalert2.css" rel="stylesheet"/>
     
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -166,6 +168,8 @@
 
 <script src="{{url('/admindist/plugins/iCheck/icheck.min.js')}}"></script>
 <script src="{{url('/admindist/dist/js/demo.js')}}"></script>
+{{-- <script src="{{url('/admindist/dist/js/sweetalert.min.js')}}"></script> --}}
+<script src="https://cdn.jsdelivr.net/sweetalert2/5.3.8/sweetalert2.js"></script>
 <script type="text/javascript">
   $(function () {
     $('#aktif{{$active}}').toggleClass('active');

@@ -98,21 +98,6 @@
               <h5>Tipe: {{$pertanyaan->tipe}}</h5>
               @endif
               </div>
-              <!-- /.mailbox-read-info -->
-                  <!-- <div class="mailbox-controls with-border text-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
-                        <i class="fa fa-trash-o"></i></button>
-                      <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
-                        <i class="fa fa-reply"></i></button>
-                      <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
-                        <i class="fa fa-share"></i></button>
-                    </div>
-                    /.btn-group
-                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
-                      <i class="fa fa-print"></i></button>
-                    </div> -->
-                    <!-- /.mailbox-controls -->
                     <div class="mailbox-read-message">
                       {{$pertanyaan->pertanyaan}}
                     </div>
@@ -287,7 +272,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            <h4 class="modal-title" id="myModalLabel">Tipe Pertanyaan</h4>
           </div>
           <div class="modal-body">
                 <form action="{{route('changetype')}}" method="post">
@@ -311,7 +296,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button></form>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
+            </form>
             
           </div>
         </div>
@@ -394,7 +380,6 @@
   // });
     </script>
     <script>
-
           tinymce.init({
             selector: 'textarea#test1',
             height: 200,
@@ -427,6 +412,16 @@
             }
           });
         </script>
+        <script>
+        $( "form" ).submit(function( event ) {
+          // swal("Loading","done","success");
+          swal('Mengirimkan Pesan')
+          swal.showLoading()
+          // alert( "Handler for .submit() called." );
+          // event.preventDefault();
+        });
+        </script>
+
     @endsection
 
 

@@ -22,7 +22,7 @@
     </div>
     </div>
 </section>
-<section id="cari" style="background: rgba(255,255,255,0.7);">
+<section id="cari" style="background: rgba(255,255,255,0.8);">
     <style type="text/css">
         #custom-search-input{
         padding: 3px;
@@ -77,7 +77,41 @@
         </div>
     </div>
 </section>
-<section id="tanyakan" style="background: rgba(32,65,127,0.7);">
+<section id="petunjuk" style="background: rgba(255,203,16,0.8);">
+    <div class="container" style="margin-top: 15vh;margin-bottom: 15vh;">
+        <h2 style="font-size: 9vh">Tata Cara dan Formulir</h2>
+        <p style="color: white; font-size: 18px">Permohonan dan Penyampaian Informasi Publik ITS</p>
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Permohonan Informasi</p></a>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengajuan Keberatan</p></a>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengaduan Penyalahgunaan Wewenang</p></a>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengujian Konsekuensi</p></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Permohonan Informasi Publik</p></a>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Pengajuan Keberatan</p></a>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Keberatan Atas Permohonan Informasi Publik</p></a>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Pengaduan Penyalahgunaan Wewenang</p></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="tanyakan" style="background: rgba(32,65,127,0.8);">
     <div class="container" style="margin-top: 15vh;margin-bottom: 15vh">
         <style type="text/css">
             label,h2{
