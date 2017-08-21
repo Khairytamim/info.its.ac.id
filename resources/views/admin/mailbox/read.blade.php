@@ -234,7 +234,7 @@
                       @if($pertanyaan->jawaban->status_jawaban == 0)
                         <div class="pull-right">
                         <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
-                        <a href="{{route('confirmationadd')}}?id={{$pertanyaan->id_jawaban}}" class="btn btn-primary"><i class="fa fa-check"></i> Confirm</a>
+                        <a id="sent1" href="{{route('confirmationadd')}}?id={{$pertanyaan->id_jawaban}}" class="btn btn-primary"><i class="fa fa-check"></i> Confirm</a>
                         
                       
                         </div>
@@ -275,7 +275,7 @@
             <h4 class="modal-title" id="myModalLabel">Tipe Pertanyaan</h4>
           </div>
           <div class="modal-body">
-                <form action="{{route('changetype')}}" method="post">
+                <form id="sent" action="{{route('changetype')}}" method="post">
                   <div class="form-group">
                     <label class="radio-inline">
                       <input type="radio" name="tipe" id="inlineRadio1" value="Publik"> Publik
@@ -413,12 +413,14 @@
           });
         </script>
         <script>
-        $( "form" ).submit(function( event ) {
+        $( "#sent" ).submit(function( event ) {
           // swal("Loading","done","success");
           swal('Mengirimkan Pesan')
           swal.showLoading()
-          // alert( "Handler for .submit() called." );
-          // event.preventDefault();
+        });
+        $( "#sent1" ).click(function() {
+          swal('Mengirimkan Pesan')
+          swal.showLoading()
         });
 
 

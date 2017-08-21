@@ -13,6 +13,8 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/landing-page.css') }}" rel="stylesheet">
+        {{-- <link rel="stylesheet" href="{{url('/admindist/dist/css/sweetalert.css')}}"> --}}
+        <link href="https://cdn.jsdelivr.net/sweetalert2/5.3.8/sweetalert2.css" rel="stylesheet"/>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -217,6 +219,8 @@
         </div>
         <script src="{{ asset('js/jquery-2.1.0.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        {{-- <script src="{{url('/admindist/dist/js/sweetalert.min.js')}}"></script> --}}
+        <script src="https://cdn.jsdelivr.net/sweetalert2/5.3.8/sweetalert2.js"></script>
         {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> --}}
         @yield('js')
     </body>

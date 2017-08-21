@@ -65,11 +65,11 @@
 
                   <h3 class="box-title">Rata-Rata Respon</h3>
 
-                  <div class="box-tools pull-right">
+                  {{-- <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
                     <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
+                  </div> --}}
                 </div>
                 <div class="box-body">
                   <div id="bar-chart" style="height: 300px; padding: 0px; position: relative;"><canvas class="flot-base" width="829" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 829px; height: 300px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 184px; top: 283px; left: 38px; text-align: center;">January</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 184px; top: 283px; left: 178px; text-align: center;">February</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 184px; top: 283px; left: 328px; text-align: center;">March</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 184px; top: 283px; left: 475px; text-align: center;">April</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 184px; top: 283px; left: 619px; text-align: center;">May</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 184px; top: 283px; left: 759px; text-align: center;">June</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 270px; left: 7px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 203px; left: 7px; text-align: right;">5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 135px; left: 1px; text-align: right;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 68px; left: 1px; text-align: right;">15</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 1px; text-align: right;">20</div></div></div><canvas class="flot-overlay" width="829" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 829px; height: 300px;"></canvas></div>
@@ -80,16 +80,27 @@
             <div class="col-md-6">
               <div class="box box-danger">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Type Chart</h3>
+                  <h3 class="box-title">Tipe Pertanyaan</h3>
 
-                  <div class="box-tools pull-right">
+                  {{-- <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
                     <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
+                  </div> --}}
                 </div>
                 <div class="box-body">
-                  <canvas id="pieChart" style="height: 424px; width: 849px;" width="849" height="424"></canvas>
+                  <div class="row">
+                    <div class="col-xs-9">
+                      <canvas id="pieChart" style="height: 424px; width: 849px;" width="849" height="424"></canvas>
+                    </div>
+                    <div class="col-xs-3">
+                      <ul class="chart-legend clearfix">
+                        <li><i class="fa fa-circle text-red"></i> Publik</li>
+                        <li><i class="fa fa-circle text-green"></i> Kondisional</li>
+                        <li><i class="fa fa-circle text-aqua"></i> Rahasia</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
                 <!-- /.box-body -->
               </div>
@@ -97,16 +108,26 @@
             <div class="col-md-6">
               <div class="box box-danger">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Progress Chart</h3>
+                  <h3 class="box-title">Kondisi Pertanyaan</h3>
 
-                  <div class="box-tools pull-right">
+                  {{-- <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
                     <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
+                  </div> --}}
                 </div>
                 <div class="box-body">
-                  <canvas id="pieChart2" style="height: 424px; width: 849px;" width="849" height="424"></canvas>
+                  <div class="row">
+                    <div class="col-xs-9">
+                      <canvas id="pieChart2" style="height: 424px; width: 849px;" width="849" height="424"></canvas>
+                    </div>
+                    <div class="col-xs-3">
+                      <ul class="chart-legend clearfix">
+                        <li><i class="fa fa-circle text-green"></i> Terjawab</li>
+                        <li><i class="fa fa-circle text-aqua"></i> Belum Terjawab</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
                 <!-- /.box-body -->
               </div>
