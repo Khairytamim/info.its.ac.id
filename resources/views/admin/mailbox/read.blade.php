@@ -87,7 +87,7 @@
 
           </div>
           <!-- /.box-header -->
-          <div class="box-body no-padding">
+          <div class="box-body no-padding" >
             <div class="mailbox-read-info">
               <h3>{{$pertanyaan->judul_pertanyaan}}</h3>
               <h5>From: {{$pertanyaan->nama_penanya}}{{urldecode('%3C')}}{{$pertanyaan->email_penanya}}{{urldecode('%3E')}}
@@ -114,7 +114,7 @@
                   <!-- /.box-footer -->
                   <div class="box-footer">
 
-                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#settipe"><i class="fa fa-reply"></i> Tipe Pertanyaan</button>
+                  <button type="button" class="btn btn-default" data-toggle="modal"{{--  data-target="#settipe" --}}><i class="fa fa-reply"></i> Tipe Pertanyaan</button>
                   <form action="{{route('deletemailbox')}}" method="post" style="display: inline;">
                     <input type="hidden" name="id_pertanyaan" value="{{$pertanyaan->id_pertanyaan}}">
                     {{csrf_field()}}
@@ -420,6 +420,10 @@
           // alert( "Handler for .submit() called." );
           // event.preventDefault();
         });
+
+
+
+
         </script>
 
     @endsection
