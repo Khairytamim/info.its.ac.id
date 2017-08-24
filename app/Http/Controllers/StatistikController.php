@@ -43,6 +43,8 @@ class StatistikController extends Controller
         });
 
     	foreach ($pertanyaan as $key => $value) {
+            // if($value->status == 'PENDING' || $value->tipe == 'OTHER') continue;
+
             if(!is_null($value->respon_1))
             {
                 $jumlahrespon1++;
@@ -51,7 +53,16 @@ class StatistikController extends Controller
     		
             if(!is_null($value->id_jawaban)){
                 $jumlahrespon2++;
-                $respon2 = $respon2 + $value->jawaban->created_at->diffInDays($value->created_at);
+                $datepertanyaan = Carbon::parse($value->created_at);
+                $datepertanyaan->hour = 0;
+                $datepertanyaan->minute = 0;
+                $datepertanyaan->second = 0;
+
+                $datejawaban = Carbon::parse($value->jawaban->created_at);
+                $datejawaban->hour = 0;
+                $datejawaban->minute = 0;
+                $datejawaban->second = 0;
+                $respon2 = $respon2 + $datejawaban->diffInDays($datepertanyaan);
             }
     	}
 
