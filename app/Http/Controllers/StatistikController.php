@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pertanyaan;
 use DB;
-// use Carbon\Carbon;
+use Carbon\Carbon;
 use Response;
 class StatistikController extends Controller
 {
