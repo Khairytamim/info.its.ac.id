@@ -103,10 +103,10 @@
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
                       <li>
-                          <a href="#cari">Pencarian Data</a>
+                          <a href="#cari">Informasi Umum</a>
                       </li>
                       <li>
-                          <a href="#tanyakan">Pengajuan Pertanyaan</a>
+                          <a href="#tanyakan">Informasi Khusus</a>
                       </li>
                       <li>
                           <a href="#organisasi">Struktur Organisasi</a>
@@ -210,8 +210,8 @@
             <div class="col-md-6">
               <ul class="bottom_ul">
                 <li><a href="#">info.its.ac.id</a></li>
-                <li><a href="#">Pencarian Data</a></li>
-                <li><a href="#">Pengajuan Pertanyaan</a></li>
+                <li><a href="#">Informasi Umum</a></li>
+                <li><a href="#">Informasi Khusus</a></li>
                 <li><a href="#">Struktur Organisasi</a></li>
               </ul>
             </div>

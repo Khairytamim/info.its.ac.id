@@ -9,10 +9,10 @@
 
         <ul class="list-inline intro-social-buttons" style="margin-top: 10vh">
             <li>
-                <a href="#cari" class="btn btn-primary" style="background-color: #ffcb10;border: none; color: #20417f"><span class="network-name">Pencarian Data</span></a>
+                <a href="#cari" class="btn btn-primary" style="background-color: #ffcb10;border: none; color: #20417f"><span class="network-name">Informasi Umum</span></a>
             </li>
             <li>
-                <a href="#tanyakan" class="btn btn-primary" style="background-color: #ffcb10;border: none; color: #20417f"><span class="network-name">Pengajuan Pertanyaan</span></a>
+                <a href="#tanyakan" class="btn btn-primary" style="background-color: #ffcb10;border: none; color: #20417f"><span class="network-name">Informasi Khusus</span></a>
             </li>
             <li>
                 <a href="#organisasi" class="btn btn-primary" style="background-color: #ffcb10; border:none; color: #20417f"><span class="network-name">Struktur Organisasi</span></a>
@@ -61,10 +61,11 @@
         <div class="row">
             <div class="content">
                 <h2 style="color: #20417f">Pencarian Data ITS</h2>
+                <p><h4>Bagian ini merupakan informasi yang dapat diketahui oleh publik secara langsung. Untuk mendapatkan informasi yang diinginkan, anda dapat mengisi kotak pencarian yang sudah kami sediakan dibawah ini. Apabila informasi yang dimaksud tidak dapat ditemukan, maka anda dapat mengajukan permintaan layanan informasi melalui bagian <a href="#tanyakan">pengajuan pertanyaan</a> dengan mengikuti prosedur yang tersedia.</h4></p>
                 <div id="custom-search-input" style="border-color: #ffcb10">
                     <form action="{{ route('searchlaporan') }}" method="get">
                         <div class="input-group col-md-12">
-                            <input type="text" name="cari" class="form-control input-lg" placeholder="Ranking ITS" />
+                            <input type="text" name="cari" class="form-control input-lg" placeholder="Pencarian data" />
                             <span class="input-group-btn">
                                 <button class="btn btn-info btn-lg" type="submit">
                                     Cari
@@ -118,7 +119,7 @@
                 color: white;
             }
         </style>
-        <h2 style="font-size: 9vh">Form Pertanyaan</h2>
+        <h2 style="font-size: 9vh">Informasi Khusus</h2>
         @if (session('status'))
           <div class="alert alert-success">
               {{ session('status') }}
@@ -201,13 +202,14 @@
         </div>
     </div>
 </section-->
-<script>
-$( "#sent" ).submit(function( event ) {
-  // swal("Loading","done","success");
-  swal('Submit Pertanyaan')
-  swal.showLoading()
-});
-</script>
+
 @endsection
 @section('js')
+    <script>
+        $("#sent").submit(function( event ) {
+          // swal("Loading","done","success");
+          swal('Pengajuan pertanyaan')
+          swal.showLoading()
+        });
+    </script>
 @endsection
