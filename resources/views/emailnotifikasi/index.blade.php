@@ -28,14 +28,13 @@
             <td style="padding: 40px 30px 40px 30px;">
              <table border="0" cellpadding="0" cellspacing="0" width="100%">
              <tr>
-              <td>
-                <h3>Notifikasi Pertanyaan</h3>
+              <td style="padding: 20px 0 30px 0;">
+                <p>{{$result->judul_pertanyaan}}</p>
               </td>
              </tr>
              <tr>
-              <td style="padding: 20px 0 30px 0;">
-               Email ini menunjukkan bahwa ada pertanyaan baru, untuk melihat pertanyaan dapat melihatnya
-               melalui link dibawah
+              <td>
+               <h3>Jenis dari tipe pertanyaan adalah <b>{{urldecode($result->pertanyaan)}}</b></h3>
               </td>
              </tr>
              <tr>
