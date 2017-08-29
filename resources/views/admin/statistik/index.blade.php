@@ -98,7 +98,7 @@
                         <li><i class="fa fa-circle" style="color: #f56954"></i> Publik</li>
                         <li><i class="fa fa-circle" style="color: #00a65a"></i> Kondisional</li>
                         <li><i class="fa fa-circle" style="color: #f39c12"></i> Rahasia</li>
-                        <li><i class="fa fa-circle" style="color: #00c0ef"></i> Null</li>
+                        <li><i class="fa fa-circle" style="color: #00c0ef"></i> Tidak Diketahui</li>
                       </ul>
                     </div>
                   </div>
@@ -124,8 +124,8 @@
                     </div>
                     <div class="col-xs-3">
                       <ul class="chart-legend clearfix">
-                        <li><i class="fa fa-circle" style="color: #00a65a"></i> Done</li>
                         <li><i class="fa fa-circle" style="color: #f56954"></i> In Progress</li>
+                        <li><i class="fa fa-circle" style="color: #00a65a"></i> Done</li>
                         <li><i class="fa fa-circle" style="color: #f39c12"></i> Pending</li>
                         <li><i class="fa fa-circle" style="color: #00c0ef"></i> Other</li>
                       </ul>
