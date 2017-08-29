@@ -140,7 +140,7 @@ class MailboxController extends Controller
                 // echo 'aa';
                 $photo = new Data;
                 $iddata = UUID::generate(4);
-                $filename = 'data/'. $id .'/'. $iddata . '/' . $value->getClientOriginalName();             
+                $filename = 'data/' . $value->getClientOriginalName();             
                 if ($value) {
                     Storage::disk('public')->put($filename, File::get($value));
                 }

@@ -53,7 +53,12 @@ Route::group(['prefix' => 'admin/users'], function () {
 	Route::post('/add', 'UserController@add')->name('adduser');
 
 });
-Route::group(['prefix' => 'admin/statistik'], function () {
+Route::group(['prefix' => 'admin/data'], function () {
+	Route::get('/', 'DataController@admin')->name('data');
+	// Route::post('/add', 'UserController@add')->name('adduser');
+
+});
+Route::group(['prefix' => 'admin/statistik', 'middleware' => 'auth'], function () {
 	Route::get('/', 'StatistikController@index')->name('statistik');
 	Route::get('/get/response', 'StatistikController@respon')->name('respon');
 });

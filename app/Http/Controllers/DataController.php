@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Curl;
+use App\Data;
 
 class DataController extends Controller
 {
-    protected $table = 'data';
-    protected $primaryKey = 'id_data';
-    public $timestamps = true;
-    public $incrementing = false;
+    // protected $table = 'data';
+    // protected $primaryKey = 'id_data';
+    // public $timestamps = true;
+    // public $incrementing = false;
 
 
     public function laporan()
@@ -31,5 +32,16 @@ class DataController extends Controller
         // dd($results->response->docs);
        
         return view('laporan.hasil', $this->data);
+    }
+
+    public function admin(Request $request)
+    {
+        $this->setActive('data');
+        $this->setTitle('data');
+
+        $this->data['data'] = Data::orderBy('created_at', 'desc')->get();
+
+
+        return view('admin.data.index', $this->data);
     }
 }
