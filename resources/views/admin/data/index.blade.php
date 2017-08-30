@@ -31,6 +31,7 @@
                       <th>Path</th>
                       <th>Tipe</th>
                       <th>Pertanyaan</th>
+                      <th>Action</th>
                       {{-- <th>Role</th> --}}
                     </tr>
                   </thead>
@@ -44,6 +45,13 @@
                           @if($value->id_jawaban)
                             <a href="{{route('readmail').'?mail_id='. $value->jawaban->id_pertanyaan}}">{{$value->jawaban->id_pertanyaan}}</a>
                           @endif
+                        </td>
+                        <td>
+                          <form action="{{route('deletedata')}}" method="post">
+                            <input type="hidden" name="id" value="{{$value->id_data}}">
+                            {{csrf_field()}}
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                          </form>
                         </td>
                       </tr>
                     @endforeach

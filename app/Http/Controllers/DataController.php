@@ -97,13 +97,13 @@ class DataController extends Controller
         $photo->data = $link;
         // $photo->id_jawaban = $id;
         if($request->tipe == 'Publik'){
-            $exec = '$HOME/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params "literal.tipe=url" 2>&1';
+            $exec = '$HOME/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params "literal.tipe=url&literal.url_asli=' . urlencode($link) . '" 2>&1';
             // dd($exec);
             $output = exec($exec, $teslink);
             
             if ($teslink[0] == "sh: 1: /var/www/solr-6.6.0/bin/post: not found")
             {
-                $exec2 = '/home/user/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params "literal.tipe=url" 2>&1';
+                $exec2 = '/home/user/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params literal.tipe=url&literal.url_asli=' . urlencode($link) . '" 2>&1';
                 $output2 = exec($exec2, $test);
                 // dd($test);
             }
@@ -111,6 +111,27 @@ class DataController extends Controller
         $photo->tipe = "link";
         $photo->save();
 
-        return back()->with('status', 'sukses');
+        return back()->with('status', 'Sukses!');
     }
+
+    public function delete(Request $request)
+    {
+        $data = Data::find($request->id);
+
+        if($data->tipe == 'file'){
+
+            $path = urlencode(public_path() . '/' . $data->data);
+            $response = Curl::to('http://localhost:8983/solr/info/update?stream.body=<delete><query>id:"'. $path .'"</query></delete>&commit=true')->returnResponseObject()->get();
+        }
+        else{
+            $path = $data->data;
+            $response = Curl::to('http://localhost:8983/solr/info/update?stream.body=<delete><query>url_asli:"'. $path .'"</query></delete>&commit=true')->returnResponseObject()->get();
+        }
+
+        $data->delete();
+
+        return back()->with('status', 'Sukses!');
+    }
+
+
 }
