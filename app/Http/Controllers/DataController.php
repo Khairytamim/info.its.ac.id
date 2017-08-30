@@ -105,7 +105,7 @@ class DataController extends Controller
             {
                 $exec2 = '/home/user/solr-6.6.0/bin/post -c info '.$link.' -recursive 0 -delay 1 -params "literal.tipe=url&literal.url_asli=' . urlencode($link) . '" 2>&1';
                 $output2 = exec($exec2, $test);
-                // dd($test);
+                dd($exec2);
             }
         }
         $photo->tipe = "link";
