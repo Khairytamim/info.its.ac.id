@@ -84,30 +84,30 @@
         <p style="color: white; font-size: 18px">Permohonan dan Penyampaian Informasi Publik ITS</p>
         <div class="row">
             <div class="col-md-3 col-xs-6">
-                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Permohonan Informasi</p></a>
+                <a href="{{url('panduan/Tata_Cara_Memperoleh_Informasi_Publik_di_Lingkungan_ITS.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Permohonan Informasi</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengajuan Keberatan</p></a>
+                <a href="{{url('panduan/Tata_Cara_Mengajukan_Keberatan_atas_Permohonan_Informasi_Publik.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengajuan Keberatan</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengaduan Penyalahgunaan Wewenang</p></a>
+                <a href="{{url('panduan/Tata_Cara_Pengaduan_Penyalahgunaan_Wewenang.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengaduan Penyalahgunaan Wewenang</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengujian Konsekuensi</p></a>
+                <a href="{{url('panduan/Tata_Cara_Pengajuan_Konsekuensi.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengujian Konsekuensi</p></a>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 col-xs-6">
-                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Permohonan Informasi Publik</p></a>
+                <a href="{{url('panduan/Form_Permohonan_Informasi.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Permohonan Informasi Publik</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Pengajuan Keberatan</p></a>
+                <a href="{{url('panduan/Form_Pengaduan_Layanan.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Pengajuan Keberatan</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Keberatan Atas Permohonan Informasi Publik</p></a>
+                <a href="{{url('panduan/Form_Keberatan_Atas_Permohonan_Informasi.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Keberatan Atas Permohonan Informasi Publik</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="#" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Pengaduan Penyalahgunaan Wewenang</p></a>
+                <a href="{{url('panduan/UU_No_14_Tahun_2008.pdf')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">UU No. 14 2008</p></a>
             </div>
         </div>
     </div>

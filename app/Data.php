@@ -10,8 +10,9 @@ class Data extends Model
     protected $primaryKey = 'id_data';
     public $timestamps = true;
     public $incrementing = false;
-    public function data()
+
+    public function jawaban()
     {
-    	return $this->hasMany('App\Data', 'id_jawaban');
+    	return $this->belongsTo('App\Jawaban', 'id_jawaban');
     }
 }

@@ -118,6 +118,9 @@
             <li class="" id="aktifstatistik">
               <a href="{{route('statistik')}}"><i class="fa fa-bar-chart"></i> <span>Statistik</span></a>
             </li>
+            <li class="" id="aktifdata">
+              <a href="{{route('data')}}"><i class="fa fa-paperclip"></i> <span>Data</span></a>
+            </li>
         
             </ul>
           </section>

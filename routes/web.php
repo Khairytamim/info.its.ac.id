@@ -53,8 +53,13 @@ Route::group(['prefix' => 'admin/users'], function () {
 	Route::post('/add', 'UserController@add')->name('adduser');
 
 });
-Route::group(['prefix' => 'admin/data'], function () {
+Route::group(['prefix' => 'admin/data', 'middleware' => 'auth'], function () {
 	Route::get('/', 'DataController@admin')->name('data');
+	Route::post('/add/file', 'DataController@addFile')->name('addfile');
+	Route::post('/add/url', 'DataController@addURL')->name('addURL');
+
+
+
 	// Route::post('/add', 'UserController@add')->name('adduser');
 
 });

@@ -83,7 +83,14 @@
                 <table class="table table-hover table-striped">
                   <tbody>
                   {{-- @isset($pertaanyaan) --}}
+                  @if($pertanyaan->count() == 0)
+                    <tr>
+                      <td colspan="5"><center>Tidak ada Pertanyaan</center></td>
+                    </tr>
+                    
+                  @endif
                   @foreach($pertanyaan as $value)
+
                     <tr class='clickable-row' data-href='{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}'>
                       <td>{{$value->tipe}}</td>
                       {{-- <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td> --}}
@@ -104,21 +111,24 @@
               <!-- /.mail-box-messages -->
             </div>
             <!-- /.box-body -->
-            <div class="box-footer ">
-              
-                <!-- Check all button -->
+            @if($pertanyaan->count() != 0)
+              <div class="box-footer ">
                 
-                <!-- /.btn-group -->
-                <div class="pull-right">
-                {{-- @isset($pertaanyaan) --}}
-                  {{ $pertanyaan->links() }}
-                  {{-- @endisset --}}
+                  <!-- Check all button -->
                   
                   <!-- /.btn-group -->
-                </div>
-                <!-- /.pull-right -->
-              
-            </div>
+                  <div class="pull-right">
+                  {{-- @isset($pertaanyaan) --}}
+                    {{ $pertanyaan->links() }}
+                    {{-- @endisset --}}
+                    
+                    <!-- /.btn-group -->
+                  </div>
+                  <!-- /.pull-right -->
+                
+              </div>
+            @endif
+            
           </div>
           <!-- /. box -->
         </div>
