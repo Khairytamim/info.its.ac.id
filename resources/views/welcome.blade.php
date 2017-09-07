@@ -80,6 +80,7 @@
 </section>
 <section id="petunjuk" style="background: rgba(255,203,16,0.8);">
     <div class="container" style="margin-top: 15vh;margin-bottom: 15vh;">
+    {{-- <iframe src="{{url('panduan/UU_No_14_Tahun_2008.pdf')}}" width="100%" height="600px"></iframe> --}}
         <h2 style="font-size: 9vh">Tata Cara dan Formulir</h2>
         <p style="color: white; font-size: 18px">Permohonan dan Penyampaian Informasi Publik ITS</p>
         <div class="row">
