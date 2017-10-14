@@ -11,7 +11,8 @@
         <title>Informasi Publik ITS</title>
 
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('css/landing-page.css') }}" rel="stylesheet">
         {{-- <link rel="stylesheet" href="{{url('/admindist/dist/css/sweetalert.css')}}"> --}}
         <link href="https://cdn.jsdelivr.net/sweetalert2/5.3.8/sweetalert2.css" rel="stylesheet"/>
@@ -28,9 +29,7 @@
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Montserrat', sans-serif;
                 font-weight: 100;
-                height: 100%;
                 margin: 0;
                 position: relative;
                 overflow: auto;
@@ -87,137 +86,127 @@
     </head>
     <body style="background-image:url({{ URL::asset('bg.png') }}); background-repeat: repeat;background-size: 100%">
       <!-- Navigation -->
-      <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation" style="background-color: rgba(32,65,127,0.7); border-bottom: 4px solid #20417f">
-          <div class="container topnav">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand topnav" href="{{ url('/') }}" style="padding:0"><img style="height: 100%" src="{{ asset('logo/its.png') }}"></a>
-              </div>
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav navbar-right">
-                      <li>
-                          <a href="#cari">Informasi Umum</a>
-                      </li>
-                      <li>
-                          <a href="#tanyakan">Informasi Khusus</a>
-                      </li>
-                      <li>
-                          <a href="#organisasi">Struktur Organisasi</a>
-                      </li>
-                  </ul>
-              </div>
-              <!-- /.navbar-collapse -->
-          </div>
-          <!-- /.container -->
-      </nav>
+      <div class="section-menu">
+            <nav class="navbar navbar-default">
+                <div class="container container-header">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href={{URL::to('/')}}>
+                            <img src="{{url('/img/icons/logo-its.png')}}" class="logo">
+                        </a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div class="clearfix">
+                            <ul id="menu-secondary-menu" class="nav navbar-nav secondary-top-menu">
+                                <li><a href="#cari">Informasi Umum</a></li>
+                                <li><a href="#tanyakan">Informasi Khusus</a></li>
+                                <li><a href="#organisasi">Struktur Organisasi</a></li>
+                                <li class="login hidden-xs">
+                                    <a href="http://its.ac.id">
+                                        <img src="{{url('/img/icons/logo-login.png')}}" class="logo">
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
         @yield('content')
         <!--footer start from here-->
-        <style type="text/css">
-            footer { background-color:#20417f; min-height:350px; font-family: 'Open Sans', sans-serif; }
-            .footerleft { margin-top:50px; padding:0 36px; }
-            .logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
-
-            .footerleft p { color:#fff; font-size:12px !important; font-family: 'Open Sans', sans-serif; margin-bottom:15px;}
-            .footerleft p i { width:20px; color:#999;}
-
-
-            .paddingtop-bottom {  margin-top:50px;}
-            .footer-ul { list-style-type:none;  padding-left:0px; margin-left:2px;}
-            .footer-ul li { line-height:29px; font-size:12px;}
-            .footer-ul li a { color:#a0a3a4; transition: color 0.2s linear 0s, background 0.2s linear 0s; }
-            .footer-ul i { margin-right:10px;}
-            .footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f; }
-
-            .social:hover {
-                 -webkit-transform: scale(1.1);
-                 -moz-transform: scale(1.1);
-                 -o-transform: scale(1.1);
-             }
-             
-             
-
-             
-             .icon-ul { list-style-type:none !important; margin:0px; padding:0px;}
-             .icon-ul li { line-height:75px; width:100%; float:left;}
-             .icon { float:left; margin-right:5px;}
-             
-             
-             .copyright { min-height:40px; background-color:#000000;}
-             .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0px;}
-             .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
-             .post p { font-size:12px; color:#FFF; line-height:20px;}
-             .post p span { display:block; color:#8f8f8f;}
-             .bottom_ul { list-style-type:none; float:right; margin-bottom:0px;}
-             .bottom_ul li { float:left; line-height:40px;}
-             .bottom_ul li:after { content:"/"; color:#FFF; margin-right:8px; margin-left:8px;}
-             .bottom_ul li a { color:#FFF;  font-size:12px;}
-        </style>
-        <footer>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-3 col-sm-6 footerleft ">
-                <div class="logofooter"><a><img style="width: 100%" src="{{ asset('logo/its.png') }}"></a></div>
-                
-              </div>
-              {{-- <div class="col-md-2 col-sm-6 paddingtop-bottom">
-                <h6 class="heading7">GENERAL LINKS</h6>
-                <ul class="footer-ul">
-                  <li><a href="#"> Career</a></li>
-                  <li><a href="#"> Privacy Policy</a></li>
-                  <li><a href="#"> Terms & Conditions</a></li>
-                  <li><a href="#"> Client Gateway</a></li>
-                  <li><a href="#"> Ranking</a></li>
-                  <li><a href="#"> Case Studies</a></li>
-                  <li><a href="#"> Frequently Ask Questions</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                <h6 class="heading7">LATEST POST</h6>
-                <div class="post">
-                  <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
-                  <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
-                  <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
+        <!--footer-->
+        <div class="section_footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-5">
+                            <img src="{{url('/img/logo.png')}}" class="logo-in-footer">
+                        </div>
+                        <div class="col-sm-3 col-xs-7">
+                            <p>Rektorat Building 1st Floor
+                            <br>Kampus ITS, Jalan Raya ITS, Keputih, Sukolilo, Keputih, Surabaya
+                            <br>Jawa Timur 60117, Indonesia</p>
+                        </div>
+                        <div class="col-sm-3 col-xs-4 border-right-white-in-mobile">
+                            <div class="footer-top-content border-left-white">
+                                <div class="menu-footer-top-menu-container">
+                                    <ul class="menu">
+                                        <li>Kontak Kami</li>
+                                        <li style="font-size: 12px">(031) 456-7890</li>
+                                        <li><a href="mailto:fikry.labsky08@gmail.com" class="btn btn-primary">Developed By</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4 border-right-white-in-mobile">
+                            <div class="footer-top-content border-left-white">
+                                <div class="title-footer padding-left-35 text-center">
+                                    Temukan Kami :
+                                </div>
+                                <ul class="sosmed">
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="{{url('/img/icons/logo-youtube.png')}}">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="{{url('/img/icons/logo-instagram.png')}}">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="{{url('/img/icons/logo-facebook.png')}}">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <a href="#" target="_blank">
+                                            <img src="{{url('/img/icons/twitter.png')}}">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="{{url('/img/icons/logo-medsos-A.png')}}">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <a href="#" target="_blank">
+                                            <img src="{{url('/img/icons/logo-line.png')}}">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <div class="footer-top-content border-left-white">
+                                <a href="https://www.lapor.go.id/" target="_blank"><img style="width: 100%" src="http://info.its.ac.id/logo/lapor.png"></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div> --}}
-              <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                <p style="color: white; font-size: 14px; text-align: justify;">Informasi Publik ITS melayani berbagai informasi terkait penyelenggaraan pendidikan di ITS.</p>
-              </div>
-              <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                <p style="color: white; font-size: 12px"><i class="fa fa-map-pin"></i>Jalan Raya ITS, Sukolilo, Surabaya, Jawa Timur, Indonesia</p>
-                <p style="color: white; font-size: 12px"><i class="fa fa-phone"></i> Phone (Indonesia) : +62 81703434379</p>
-                <p style="color: white; font-size: 12px"><i class="fa fa-envelope"></i> E-mail : fikry.labsky08@gmail.com</p>
-              </div>
-              <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                <div class="logofooter"><a href="https://www.lapor.go.id/" target="_blank"><img style="width: 100%" src="{{ asset('logo/lapor.png') }}"></a></div>
-              </div>
             </div>
-          </div>
-        </footer>
-        <!--footer start from here-->
-
-        <div class="copyright">
-          <div class="container">
-            <div class="col-md-6">
-              <p>© 2017 - All Rights with Informasi Publik ITS</p>
+            
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            Copyright © Informasi Publik ITS 2017
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-              <ul class="bottom_ul">
-                <li><a href="#">info.its.ac.id</a></li>
-                <li><a href="#">Informasi Umum</a></li>
-                <li><a href="#">Informasi Khusus</a></li>
-                <li><a href="#">Struktur Organisasi</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
-        <script src="{{ asset('js/jquery-2.1.0.min.js') }}"></script>
+        <!--footer start from here-->
+        <script src="{{ asset('js/jquery-2.2.4.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         {{-- <script src="{{url('/admindist/dist/js/sweetalert.min.js')}}"></script> --}}
         <script src="https://cdn.jsdelivr.net/sweetalert2/5.3.8/sweetalert2.js"></script>
