@@ -5,7 +5,7 @@
     <div class="intro-header">
     <div class="content" id="content" style="height: 100vh">
         <div class="intro-message" id="title" >
-        <h1 style="margin: 2vw; color: black;">INFORMASI PUBLIK ITS</h1>
+        <h1 style="margin: 2vw; color: #20417f; text-shadow: none;">INFORMASI PUBLIK ITS</h1>
 
         <ul class="list-inline intro-social-buttons" style="margin-top: 10vh">
             <li>
