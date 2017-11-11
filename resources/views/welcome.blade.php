@@ -5,7 +5,7 @@
     <div class="intro-header">
     <div class="content" id="content" style="height: 100vh">
         <div class="intro-message" id="title" >
-        <span style="margin: 2vw;border-bottom: 4px solid #20417f; color: black; font-size: 10vh">Informasi Publik ITS</span>
+        <h1 style="margin: 2vw; color: #20417f; text-shadow: none;">INFORMASI PUBLIK ITS</h1>
 
         <ul class="list-inline intro-social-buttons" style="margin-top: 10vh">
             <li>
@@ -59,21 +59,22 @@
     </style>
     <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
         <div class="row">
-            <div class="content">
-                <h2 style="color: #20417f">Pencarian Data ITS</h2>
-                <p><h4>Bagian ini merupakan informasi yang dapat diketahui oleh publik secara langsung. Untuk mendapatkan informasi yang diinginkan, anda dapat mengisi kotak pencarian yang sudah kami sediakan dibawah ini. Apabila informasi yang dimaksud tidak dapat ditemukan, maka anda dapat mengajukan permintaan layanan informasi melalui bagian <a href="#tanyakan">pengajuan pertanyaan</a> dengan mengikuti prosedur yang tersedia.</h4></p>
-                <div id="custom-search-input" style="border-color: #ffcb10">
-                    <form action="{{ route('searchlaporan') }}" method="get">
-                        <div class="input-group col-md-12">
-                            <input type="text" name="cari" class="form-control input-lg" placeholder="Pencarian data" />
-                            <span class="input-group-btn">
-                                <button class="btn btn-info btn-lg" type="submit">
-                                    Cari
-                                </button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
+            
+            <div id="custom-search-input" style="border-color: #ffcb10">
+                <form action="{{ route('searchlaporan') }}" method="get">
+                    <div class="col-md-12">
+                        <h2 style="color: #20417f">Pencarian Data ITS</h2>
+                        <span style="font-size: 18px; text-align: justify;">Bagian ini merupakan informasi yang dapat diketahui oleh publik secara langsung. Untuk mendapatkan informasi yang diinginkan, anda dapat mengisi kotak pencarian yang sudah kami sediakan dibawah ini. Apabila informasi yang dimaksud tidak dapat ditemukan, maka anda dapat mengajukan permintaan layanan informasi melalui bagian <a href="#tanyakan">pengajuan pertanyaan</a> dengan mengikuti prosedur yang tersedia.</span>
+                    </div>
+                    <div class="input-group col-md-12">
+                        <input type="text" name="cari" class="form-control input-lg" placeholder="Pencarian data" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-info btn-lg" type="submit">
+                                 <img src="{{url('/img/icons/ic_search_yellow.png')}}">
+                            </button>
+                        </span>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -83,34 +84,36 @@
     {{-- <iframe src="{{url('panduan/UU_No_14_Tahun_2008.pdf')}}" width="100%" height="600px"></iframe> --}}
         <h2 style="font-size: 9vh">Tata Cara dan Formulir</h2>
         <p style="color: white; font-size: 18px">Permohonan dan Penyampaian Informasi Publik ITS</p>
+        <center>
         <div class="row">
             <div class="col-md-3 col-xs-6">
-                <a href="{{url('panduan/Tata_Cara_Memperoleh_Informasi_Publik_di_Lingkungan_ITS.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Permohonan Informasi</p></a>
+                <a href="{{url('panduan/Tata_Cara_Memperoleh_Informasi_Publik_di_Lingkungan_ITS.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white;">Tata Cara Permohonan Informasi</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="{{url('panduan/Tata_Cara_Mengajukan_Keberatan_atas_Permohonan_Informasi_Publik.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengajuan Keberatan</p></a>
+                <a href="{{url('panduan/Tata_Cara_Mengajukan_Keberatan_atas_Permohonan_Informasi_Publik.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white;  ">Tata Cara Pengajuan Keberatan</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="{{url('panduan/Tata_Cara_Pengaduan_Penyalahgunaan_Wewenang.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengaduan Penyalahgunaan Wewenang</p></a>
+                <a href="{{url('panduan/Tata_Cara_Pengaduan_Penyalahgunaan_Wewenang.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white;  ">Tata Cara Pengaduan Penyalahgunaan Wewenang</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="{{url('panduan/Tata_Cara_Pengajuan_Konsekuensi.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Tata Cara Pengujian Konsekuensi</p></a>
+                <a href="{{url('panduan/Tata_Cara_Pengajuan_Konsekuensi.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white;  ">Tata Cara Pengujian Konsekuensi</p></a>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 col-xs-6">
-                <a href="{{url('panduan/Form_Permohonan_Informasi.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Permohonan Informasi Publik</p></a>
+                <a href="{{url('panduan/Form_Permohonan_Informasi.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white;  ">Formulir Permohonan Informasi Publik</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="{{url('panduan/Form_Pengaduan_Layanan.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Pengajuan Keberatan</p></a>
+                <a href="{{url('panduan/Form_Pengaduan_Layanan.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white;  ">Formulir Pengajuan Keberatan</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="{{url('panduan/Form_Keberatan_Atas_Permohonan_Informasi.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">Formulir Keberatan Atas Permohonan Informasi Publik</p></a>
+                <a href="{{url('panduan/Form_Keberatan_Atas_Permohonan_Informasi.docx')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white;  ">Formulir Keberatan Atas Permohonan Informasi Publik</p></a>
             </div>
             <div class="col-md-3 col-xs-6">
-                <a href="{{url('panduan/UU_No_14_Tahun_2008.pdf')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white; width: 50%; text-align: center;">UU No. 14 2008</p></a>
+                <a href="{{url('panduan/UU_No_14_Tahun_2008.pdf')}}" target="_blank"><img src="{{ asset('logo/document.png') }}"><p style="color: white;  ">UU No. 14 2008</p></a>
             </div>
         </div>
+        </center>
     </div>
 </section>
 <section id="tanyakan" style="background: rgba(32,65,127,0.8);">
@@ -127,6 +130,7 @@
           </div>
         @endif
         <div class="row">
+        <div class="article-detail">
         <form id="sent" action="{{ route('addtanyakan') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="col-sm-12 col-md-4">
@@ -167,6 +171,7 @@
                 </div>
             </div>
         </form>
+        </div>
         </div>
     </div>
 </section>
