@@ -34,7 +34,7 @@
              </tr>
              <tr>
               <td>
-               <h3>Jenis dari tipe pertanyaan adalah <b>{{urldecode($result->pertanyaan)}}</b></h3>
+               <h3><b>{{urldecode($result->pertanyaan)}}</b></h3>
               </td>
              </tr>
              <tr>
