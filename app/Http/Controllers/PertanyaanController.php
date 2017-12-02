@@ -33,7 +33,7 @@ class PertanyaanController extends Controller
             'email' => 'required',
             'judul' => 'required',
             'pertanyaan' => 'required',
-            'ktp' => 'required|images|max:5000',
+            'ktp' => 'required|image|max:5000',
         ]);
 
         if ($validator->fails()) {
