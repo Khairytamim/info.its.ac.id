@@ -129,6 +129,15 @@
               {{ session('status') }}
           </div>
         @endif
+        @if ($errors->gagalTambah->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->gagalTambah->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+        @endif
         <div class="row">
         <div class="article-detail">
         <form id="sent" action="{{ route('addtanyakan') }}" method="post" enctype="multipart/form-data">
