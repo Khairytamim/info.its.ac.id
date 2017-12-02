@@ -223,7 +223,7 @@
 @endsection
 @section('js')
     <script>
-        @if ($errors->any() || session('errormsg'))
+        @if ($errors->gagalTambah->any() || session('errormsg'))
         swal({
           title: "Error!",
           text: $('#errormsg').html(),
