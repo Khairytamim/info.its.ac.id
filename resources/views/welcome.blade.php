@@ -130,6 +130,7 @@
           </div>
         @endif
         @if ($errors->gagalTambah->any())
+        <div id="errormsg">
           <div class="alert alert-danger">
               <ul>
                   @foreach ($errors->gagalTambah->all() as $error)
@@ -137,6 +138,7 @@
                   @endforeach
               </ul>
           </div>
+        </div>
         @endif
         <div class="row">
         <div class="article-detail">
@@ -221,6 +223,16 @@
 @endsection
 @section('js')
     <script>
+        @if ($errors->any() || session('errormsg'))
+        swal({
+          title: "Error!",
+          text: $('#errormsg').html(),
+          
+        });
+        @endif
+        @if (session('status'))
+            swal("Sukses!", "Pengajuan pertanyaan Anda akan segera kami proses!", "success")
+        @endif
         $("#sent").submit(function( event ) {
           // swal("Loading","done","success");
           swal('Pengajuan pertanyaan')
