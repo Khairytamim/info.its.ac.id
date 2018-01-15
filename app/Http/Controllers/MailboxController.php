@@ -43,7 +43,7 @@ class MailboxController extends Controller
         $update->status_email = 1;
         $update->save();
 
-        Mail::to('melania.muntini@gmail.com')->cc(['hlmn.hg@gmail.com', 'advenfirman@gmail.com'])->send(new EmailNotifikasi($update->id_pertanyaan));
+        Mail::to('melania.muntini@gmail.com')->cc(['hlmn.hg@gmail.com', 'advenfirman@gmail.com', 'ppidits@gmail.com'])->send(new EmailNotifikasi($update->id_pertanyaan));
 
         echo 'Email Telah Terverifikasi, Silahkan Tunggu Jawaban Lewat Inbox/Spam Email Anda';
         //return view('verifikasi.index', $this->data);
