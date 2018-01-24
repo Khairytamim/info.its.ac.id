@@ -121,6 +121,9 @@
             <li class="" id="aktifdata">
               <a href="{{route('data')}}"><i class="fa fa-paperclip"></i> <span>Data</span></a>
             </li>
+            <li class="" id="aktifmenu">
+              <a href="{{route('admin.menu.index')}}"><i class="fa fa-paperclip"></i> <span>Menu</span></a>
+            </li>
         
             </ul>
           </section>

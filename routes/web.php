@@ -19,6 +19,7 @@ Route::get('/admin', function () {
     return redirect('/admin/mailbox');
 });
 
+
 // Auth::routes();
 
 Route::group(['prefix' => 'admin/mailbox'], function () {
@@ -38,6 +39,7 @@ Route::group(['prefix' => 'admin/mailbox'], function () {
 	// Route::post('/pertanyaan/delete','MailboxController@delete')    
 
 });
+
 
 // Route::group(['prefix' => 'cek'], function () {
 // 	Route::get('/', 'TagController@index')->name('cek');
@@ -89,9 +91,27 @@ Route::group(['prefix' => 'tanyakan'], function () {
 });
 
 
+Route::group(['prefix' => 'admin/menu'], function () {
+	Route::get('/', 'MenusController@adminIndex')->name('admin.menu.index');
+	Route::post('/add', 'MenusController@add')->name('admin.menu.add');
+	Route::post('/{menu}/update', 'MenusController@update')->name('admin.menu.update');
+	Route::get('/{menu}', 'MenusController@adminSubMenusIndex')->name('admin.menu.subMenu.index');
+
+});
+
+Route::group(['prefix' => 'admin/sub-menu'], function () {
+	// Route::get('/', 'MenusController@adminIndex')->name('admin.menu.index');
+	Route::post('/{subMenu}/update', 'SubMenusController@update')->name('admin.subMenu.update');
+	Route::post('/{menu}/add', 'SubMenusController@add')->name('admin.subMenu.add');
+	Route::get('/{subMenu}', 'SubMenusController@adminIndex')->name('admin.subMenu.index');
+
+});
+
+
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
 
         // Registration Routes...
 // Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
