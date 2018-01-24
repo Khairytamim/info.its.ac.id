@@ -89,7 +89,10 @@ Route::group(['prefix' => 'tanyakan'], function () {
 	Route::post('/add', 'PertanyaanController@add')->name('addtanyakan'); 
 	Route::get('/list', 'PertanyaanController@list')->name('listtanyakan');  
 });
-
+Route::group(['prefix' => 'photos'], function () {
+	Route::get('/', 'PhotosController@index')->name('photos');
+	Route::post('/store', 'PhotosController@store')->name('storePhoto');
+});
 
 Route::group(['prefix' => 'admin/menu'], function () {
 	Route::get('/', 'MenusController@adminIndex')->name('admin.menu.index');

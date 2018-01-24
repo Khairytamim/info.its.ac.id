@@ -124,7 +124,9 @@
             <li class="" id="aktifmenu">
               <a href="{{route('admin.menu.index')}}"><i class="fa fa-paperclip"></i> <span>Menu</span></a>
             </li>
-        
+            <li class="" id="aktifphotos">
+              <a href="{{route('photos')}}"><i class="fa fa-picture-o"></i> <span>Photos</span></a>
+            </li> 
             </ul>
           </section>
           <!-- /.sidebar -->
