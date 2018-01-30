@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'HomeController@index');
 
 Route::get('/admin', function () {
     return redirect('/admin/mailbox');
@@ -92,6 +94,11 @@ Route::group(['prefix' => 'tanyakan'], function () {
 Route::group(['prefix' => 'photos'], function () {
 	Route::get('/', 'PhotosController@index')->name('photos');
 	Route::post('/store', 'PhotosController@store')->name('storePhoto');
+});
+
+Route::group(['prefix' => 'menu'], function () {
+	Route::get('/{menu}', 'MenusController@menusIndex')->name('menu.index');
+	Route::get('/{menu}/{subMenu}', 'MenusController@submenusIndex')->name('submenu.index');
 });
 
 Route::group(['prefix' => 'admin/menu'], function () {

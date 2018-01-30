@@ -2,7 +2,43 @@
 
 @section('content')
 <section id="top">
-    <div class="intro-header">
+    <div class="section_slider">
+        <div id="carousel-example-generic" class="carousel slide caption-animate" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                    <hr class="transition-timer-carousel-progress-bar"">
+                </li>
+                <li data-target="#carousel-example-generic" data-slide-to="1">
+                    <hr class="transition-timer-carousel-progress-bar"">
+                </li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item full-screen active" style="background-image: url('https://www.its.ac.id/wp-content/uploads/2017/08/Picture1-1.jpg');">
+                    <div class="carousel-caption carousel-left">
+                        <h3 class="animated visible fadeInUp" style="visibility: visible;">Layanan Informasi Publik </h3>
+                        <div class="clearfix"></div>
+                        <h2 class="animated visible fadeInUp" style="visibility: visible;">Institut Teknologi Sepuluh Nopember </h2>
+                        <div class="clearfix"></div>
+                        <div class="content-carousel-caption animated visible fadeInUp" style="visibility: visible;">
+                            <p>Layanan ini merupakan sarana berbasis web bagi pemohon informasi publik ITS yang dikelola oleh Pejabat Pengelola Informasi dan Dokumentasi (PPID) ITS.
+                            </p>
+                            {{-- <a href="#" target="_blank">
+                                <img src="https://www.its.ac.id/wp-content/themes/ITS/assets/img/icons/slider_read.png" alt="...">
+                            </a> --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="item full-screen" style="background-image: url('https://www.its.ac.id/wp-content/uploads/2017/08/11226927_1457816264516133_7973153380646448602_oa-1.jpg');"></div>
+            </div>
+        </div>
+        <div class="container-arrow-down">
+            Pencarian Data Yang Bersangkutan Dengan ITS
+            <div class="container-arrow-slider">
+                <div class="arrow-down-slider"></div>
+            </div>
+        </div>
+    </div>
+    {{-- <div class="intro-header">
     <div class="content" id="content" style="height: 100vh">
         <div class="intro-message" id="title" >
         <h1 style="margin: 2vw; color: #20417f; text-shadow: none;">INFORMASI PUBLIK ITS</h1>
@@ -20,7 +56,7 @@
         </ul>
         </div>
     </div>
-    </div>
+    </div> --}}
 </section>
 <section id="cari" style="background: rgba(255,255,255,0.8);">
     <style type="text/css">
@@ -79,9 +115,8 @@
         </div>
     </div>
 </section>
-<section id="petunjuk" style="background: rgba(255,203,16,0.8);">
+{{-- <section id="petunjuk" style="background: rgba(255,203,16,0.8);">
     <div class="container" style="margin-top: 15vh;margin-bottom: 15vh;">
-    {{-- <iframe src="{{url('panduan/UU_No_14_Tahun_2008.pdf')}}" width="100%" height="600px"></iframe> --}}
         <h2 style="font-size: 9vh">Tata Cara dan Formulir</h2>
         <p style="color: white; font-size: 18px">Permohonan dan Penyampaian Informasi Publik ITS</p>
         <center>
@@ -185,7 +220,7 @@
         </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!--section id="organisasi">
     <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
         <div class="row">
@@ -239,4 +274,89 @@
           swal.showLoading()
         });
     </script>
+    <script type="text/javascript">
+    $(window).bind("load", function() {
+        console.log('Page has been loaded')
+        $('.section_slider').css({
+            'opacity' : '1',
+            'height' : '100%'
+        })
+    })
+</script>
+<script type="text/javascript">
+    $('.container-arrow-down').click(function () {
+        $("html, body").animate({ 
+            scrollTop: $('.section_slider').height()
+        },1000);
+    });
+</script>
+<script type="text/javascript">
+    var $item = $('.carousel .item'); 
+    var $wHeight = $(window).height();
+    $item.eq(0).addClass('active');
+    $item.height($wHeight); 
+    $item.addClass('full-screen');
+
+    $(window).on('resize', function (){
+        $wHeight = $(window).height();
+        $item.height($wHeight);
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+      var percent = 0,
+          crsl = $('#carousel-example-generic');
+        crsl.carousel({
+            interval: false,
+            pause: false
+        }).on('slid.bs.carousel', function () {
+            toggleCaption();
+        })
+
+        $('.carousel-indicators li').on('click', function() {
+            $(this).find('.transition-timer-carousel-progress-bar').closest('li').nextAll().find('.transition-timer-carousel-progress-bar').css({
+                width: '0'
+            });
+            $(this).find('.transition-timer-carousel-progress-bar').closest('li').prevAll().find('.transition-timer-carousel-progress-bar').css({
+                width: '100%'
+            });
+        })
+
+        function progressBarCarousel() {
+            $('.active .transition-timer-carousel-progress-bar').css({
+                width: percent + '%'
+            });
+            percent = percent +0.5
+            if (percent > 100) {
+                percent = 0
+                crsl.carousel('next')
+                if ($('.carousel-indicators li.active').data('slide-to') == 0) {
+                    $('.carousel-indicators li .transition-timer-carousel-progress-bar').css({
+                        width: 0
+                    });
+                }
+            }
+        }
+
+        function toggleCaption() {
+            var h3 = crsl.find('.active').find('.carousel-caption').find('h3');
+            var h2 = crsl.find('.active').find('.carousel-caption').find('h2');
+            var content = crsl.find('.active').find('.carousel-caption').find('.content-carousel-caption');
+            h3.addClass('animated fadeInUp').css({'visibility' : 'visible'});
+            h2.addClass('animated fadeInUp').css({'visibility' : 'visible'});
+            content.addClass('animated fadeInUp').css({'visibility' : 'visible'});
+        }
+
+        var barInterval = setInterval(progressBarCarousel, 40)
+        var linkSlider = $('.carousel-caption h3, .carousel-caption h2, .carousel-caption .content-carousel-caption');
+
+        linkSlider.hover(
+            function() {
+                clearInterval(barInterval)
+            }, function(){
+                barInterval = setInterval(progressBarCarousel, 40)
+            }
+        )
+    })
+</script>
 @endsection

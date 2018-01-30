@@ -104,11 +104,11 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <div class="clearfix">
                             <ul id="menu-secondary-menu" class="nav navbar-nav secondary-top-menu">
-                                <li><a href="#cari">Informasi Umum</a></li>
-                                <li><a href="#tanyakan">Informasi Khusus</a></li>
-                                <li><a href="#organisasi">Struktur Organisasi</a></li>
+                                @foreach($menus as $menu)
+                                <li><a href={{route('menu.index', ['menu' => $menu->id])}}>{{$menu->nama}}</a></li>
+                                @endforeach
                                 <li class="login hidden-xs">
-                                    <a href="http://its.ac.id">
+                                    <a href={{URL::to('/admin')}}>
                                         <img src="{{url('/img/icons/logo-login.png')}}" class="logo">
 
                                     </a>
@@ -212,5 +212,6 @@
         <script src="https://cdn.jsdelivr.net/sweetalert2/5.3.8/sweetalert2.js"></script>
         {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> --}}
         @yield('js')
+        
     </body>
 </html>

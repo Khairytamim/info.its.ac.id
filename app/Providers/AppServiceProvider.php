@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Menus;
+use View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::composer('layouts.layout', function($view)
+        {
+            $view->with('menus', Menus::get()->sortBy('created_at'));
+            // dd($view);
+        });
     }
 
     /**

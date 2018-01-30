@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Menus;
+use App\SubMenus;
 use Uuid;
 
 class MenusController extends Controller
@@ -15,6 +16,25 @@ class MenusController extends Controller
         $this->data['menus'] = Menus::get(); 
 		return view('admin.menus.index', $this->data);
 	}
+
+    public function menusIndex(Menus $menu)
+    {
+        $this->setActive('menu');
+        $this->setTitle('menu');
+        $this->data['menu'] = $menu;
+        // dd($menu->subMenus);
+        return view('konten.index', $this->data);
+    }
+
+    public function submenusIndex(Menus $menu, SubMenus $subMenu)
+    {
+        $this->setActive('menu');
+        $this->setTitle('menu');
+        $this->data['menu'] = $menu;
+        $this->data['subMenu'] = $subMenu;
+        // dd($menu->subMenus);
+        return view('subkonten.index', $this->data);
+    }
 
     public function add(Request $request)
     {

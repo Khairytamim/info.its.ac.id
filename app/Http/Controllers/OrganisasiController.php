@@ -28,7 +28,7 @@ class OrganisasiController extends Controller
         $this->setActive('organisasi');
         $this->setTitle('organisasi');
 
-        return view('organisasi.index', $this->data);
+        return view('konten.index', $this->data);
     }
 
     public function update(Request $request)
