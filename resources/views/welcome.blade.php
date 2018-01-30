@@ -95,22 +95,23 @@
     </style>
     <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
         <div class="row">
-            
-            <div id="custom-search-input" style="border-color: #ffcb10">
-                <form action="{{ route('searchlaporan') }}" method="get">
-                    <div class="col-md-12">
-                        <h2 style="color: #20417f">Pencarian Data ITS</h2>
-                        <span style="font-size: 18px; text-align: justify;">Bagian ini merupakan informasi yang dapat diketahui oleh publik secara langsung. Untuk mendapatkan informasi yang diinginkan, anda dapat mengisi kotak pencarian yang sudah kami sediakan dibawah ini. Apabila informasi yang dimaksud tidak dapat ditemukan, maka anda dapat mengajukan permintaan layanan informasi melalui bagian <a href="#tanyakan">pengajuan pertanyaan</a> dengan mengikuti prosedur yang tersedia.</span>
-                    </div>
-                    <div class="input-group col-md-12">
-                        <input type="text" name="cari" class="form-control input-lg" placeholder="Pencarian data" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-info btn-lg" type="submit">
-                                 <img src="{{url('/img/icons/ic_search_yellow.png')}}">
-                            </button>
-                        </span>
-                    </div>
-                </form>
+            <div class="col-md-10 col-md-offset-1" style="text-align: justify; margin-bottom: 5vh">
+                <h2 style="color: #20417f">Pencarian Data ITS</h2>
+                <span style="font-size: 18px; text-align: justify;">Bagian ini merupakan informasi yang dapat diketahui oleh publik secara langsung. Untuk mendapatkan informasi yang diinginkan, anda dapat mengisi kotak pencarian yang sudah kami sediakan dibawah ini. Apabila informasi yang dimaksud tidak dapat ditemukan, maka anda dapat mengajukan permintaan layanan informasi melalui bagian <a href="#tanyakan">pengajuan pertanyaan</a> dengan mengikuti prosedur yang tersedia.</span>
+            </div>
+            <div class="col-md-12">
+                <div id="custom-search-input" style="border-color: #ffcb10">
+                    <form action="{{ route('searchlaporan') }}" method="get">
+                        <div class="input-group col-md-12">
+                            <input type="text" name="cari" class="form-control input-lg" placeholder="Klik Untuk Pencarian Data" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-info btn-lg" type="submit">
+                                     <img src="{{url('/img/icons/ic_search_yellow.png')}}">
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
