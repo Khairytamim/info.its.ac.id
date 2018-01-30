@@ -14,11 +14,12 @@
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('css/landing-page.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}">
         {{-- <link rel="stylesheet" href="{{url('/admindist/dist/css/sweetalert.css')}}"> --}}
         <link href="https://cdn.jsdelivr.net/sweetalert2/5.3.8/sweetalert2.css" rel="stylesheet"/>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        {{-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> --}}
 {{--         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
  --}}
@@ -32,7 +33,6 @@
                 font-weight: 100;
                 margin: 0;
                 position: relative;
-                overflow: auto;
             }
 
             .full-height {
@@ -84,7 +84,7 @@
             }
         </style>
     </head>
-    <body style="background-image:url({{ URL::asset('bg.png') }}); background-repeat: repeat;background-size: 100%">
+    <body style="background-color: #f2f2f2; background-repeat: repeat;background-size: 100%">
       <!-- Navigation -->
       <div class="section-menu">
             <nav class="navbar navbar-default">
@@ -134,7 +134,7 @@
                             <br>Kampus ITS, Jalan Raya ITS, Keputih, Sukolilo, Keputih, Surabaya
                             <br>Jawa Timur 60117, Indonesia</p>
                         </div>
-                        <div class="col-sm-3 col-xs-4 border-right-white-in-mobile">
+                        <div class="col-sm-3 col-xs-6 border-right-white-in-mobile">
                             <div class="footer-top-content border-left-white">
                                 <div class="menu-footer-top-menu-container">
                                     <ul class="menu">
@@ -145,7 +145,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-2 col-xs-4 border-right-white-in-mobile">
+                        <div class="col-sm-2 col-xs-6 border-right-white-in-mobile">
                             <div class="footer-top-content border-left-white">
                                 <div class="title-footer padding-left-35 text-center">
                                     Temukan Kami :
@@ -186,9 +186,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-sm-2 col-xs-4">
+                        <div class="col-sm-2 col-xs-12">
                             <div class="footer-top-content border-left-white">
-                                <a href="https://www.lapor.go.id/" target="_blank"><img style="width: 100%" src="http://info.its.ac.id/logo/lapor.png"></a>
+                                <a href="https://www.lapor.go.id/" target="_blank"><img style="width: 100%; margin-left: 2vw; margin-top: 3vh" src="http://info.its.ac.id/logo/lapor.png"></a>
                             </div>
                         </div>
                     </div>
@@ -199,7 +199,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            Copyright © Informasi Publik ITS 2017
+                            Copyright © Informasi Publik ITS <?php echo date("Y"); ?>   
                         </div>
                     </div>
                 </div>
@@ -212,6 +212,6 @@
         <script src="https://cdn.jsdelivr.net/sweetalert2/5.3.8/sweetalert2.js"></script>
         {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> --}}
         @yield('js')
-        
+
     </body>
 </html>
