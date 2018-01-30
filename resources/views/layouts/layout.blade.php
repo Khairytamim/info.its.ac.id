@@ -33,7 +33,6 @@
                 font-weight: 100;
                 margin: 0;
                 position: relative;
-                overflow: auto;
             }
 
             .full-height {
@@ -135,7 +134,7 @@
                             <br>Kampus ITS, Jalan Raya ITS, Keputih, Sukolilo, Keputih, Surabaya
                             <br>Jawa Timur 60117, Indonesia</p>
                         </div>
-                        <div class="col-sm-3 col-xs-4 border-right-white-in-mobile">
+                        <div class="col-sm-3 col-xs-6 border-right-white-in-mobile">
                             <div class="footer-top-content border-left-white">
                                 <div class="menu-footer-top-menu-container">
                                     <ul class="menu">
@@ -146,7 +145,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-2 col-xs-4 border-right-white-in-mobile">
+                        <div class="col-sm-2 col-xs-6 border-right-white-in-mobile">
                             <div class="footer-top-content border-left-white">
                                 <div class="title-footer padding-left-35 text-center">
                                     Temukan Kami :
@@ -187,7 +186,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-sm-2 col-xs-4">
+                        <div class="col-sm-2 col-xs-12">
                             <div class="footer-top-content border-left-white">
                                 <a href="https://www.lapor.go.id/" target="_blank"><img style="width: 100%; margin-left: 2vw; margin-top: 3vh" src="http://info.its.ac.id/logo/lapor.png"></a>
                             </div>
