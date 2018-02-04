@@ -40,7 +40,7 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Banner Photo</label>
+                          <label for="exampleInputEmail1">Upload Banner Photo (link)</label>
                           <input class="form-control"  placeholder="Enter link" name="photo_path" value="{{$subMenu->photo_path}}" type="text">
                         </div>                        
                       </div>

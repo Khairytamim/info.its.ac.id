@@ -15,10 +15,10 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Daftar User</h3>
+              <h3 class="box-title">Daftar Menu</h3>
               <div class="pull-right">
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalFile"><span class="fa fa-plus"></span> Menu</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalFile"><span class="fa fa-plus"></span>Tambah Menu</button>
                 {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalURL"><span class="fa fa-plus"></span> URL</button> --}}
                 
               </div>
@@ -43,7 +43,7 @@
                   		<td>{{$menu->id}}</td>
                   		<td>{{$menu->nama}}</td>
                   		<td>
-                  			<a href="{{route('admin.menu.subMenu.index', ['menu' => $menu->id])}}" class="btn btn-primary">Sub Menu</a>
+                  			<a href="{{route('admin.menu.subMenu.index', ['menu' => $menu->id])}}" class="btn btn-primary">Detail {{$menu->nama}}</a>
                   		</td>
                   	</tr>
                   	@endforeach
@@ -64,7 +64,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">File</h4>
+              <h4 class="modal-title" id="myModalLabel">Tambahkan Menu Baru</h4>
             </div>
             <div class="modal-body">
               <form action="{{route('admin.menu.add')}}" method="post" enctype="multipart/form-data">

@@ -15,7 +15,7 @@
         <div class="col-md-12">
          <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Detail Sub Menu</h3>
+              <h3 class="box-title">Detail Menu</h3>
               {{-- <div class="pull-right"> --}}
 
                 {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalFile"><span class="fa fa-plus"></span> Menus</button> --}}
@@ -40,7 +40,7 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Banner Photo</label>
+                          <label for="exampleInputEmail1">Input Banner Photo (Link)</label>
                           <input class="form-control"  placeholder="Enter link" name="photo_path" value="{{$menu->photo_path}}" type="text">
                         </div>                        
                       </div>
@@ -66,7 +66,7 @@
               <h3 class="box-title">Daftar Sub Menu</h3>
               <div class="pull-right">
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalFile"><span class="fa fa-plus"></span> Sub Menu</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalFile"><span class="fa fa-plus"></span>Tambah Sub Menu</button>
                 {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalURL"><span class="fa fa-plus"></span> URL</button> --}}
                 
               </div>
@@ -91,7 +91,7 @@
                       <td>{{$subMenu->id}}</td>
                       <td>{{$subMenu->nama}}</td>
                       <td>
-                        <a href="{{route('admin.subMenu.index', ['menu' => $subMenu->id])}}" class="btn btn-primary">Sub Menu</a>
+                        <a href="{{route('admin.subMenu.index', ['menu' => $subMenu->id])}}" class="btn btn-primary">Detail {{$subMenu->nama}}</a>
                       </td>
                     </tr>
                     @endforeach

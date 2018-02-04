@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-<header class="header-img" style="background:url('https://www.its.ac.id/wp-content/uploads/2017/08/calon-mhs.jpg');background-size:cover;background-position: center;">
+<header class="header-img" style="background:url({{$menu->photo_path}});background-size:cover;background-position: center;">
  <div class="container">
     <div class="row">
        <div class="col-sm-4">

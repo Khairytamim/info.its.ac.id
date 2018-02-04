@@ -112,20 +112,20 @@
             <li class="" id="aktiforganisasi">
               <a href="{{route('adminorganisasi')}}"><i class="fa fa-users"></i> <span>Organisasi</span></a>
             </li>
+            <li class="" id="aktifstatistik">
+              <a href="{{route('statistik')}}"><i class="fa fa-bar-chart"></i> <span>Statistik Pertanyaan</span></a>
+            </li>
             <li class="" id="aktifusers">
               <a href="{{route('users')}}"><i class="fa fa-user"></i> <span>User</span></a>
             </li>
-            <li class="" id="aktifstatistik">
-              <a href="{{route('statistik')}}"><i class="fa fa-bar-chart"></i> <span>Statistik</span></a>
+            <li class="" id="aktifmenu">
+              <a href="{{route('admin.menu.index')}}"><i class="fa fa-bars"></i> <span>Menu</span></a>
             </li>
             <li class="" id="aktifdata">
-              <a href="{{route('data')}}"><i class="fa fa-paperclip"></i> <span>Data</span></a>
-            </li>
-            <li class="" id="aktifmenu">
-              <a href="{{route('admin.menu.index')}}"><i class="fa fa-paperclip"></i> <span>Menu</span></a>
+              <a href="{{route('data')}}"><i class="fa fa-paperclip"></i> <span>Upload File</span></a>
             </li>
             <li class="" id="aktifphotos">
-              <a href="{{route('photos')}}"><i class="fa fa-picture-o"></i> <span>Photos</span></a>
+              <a href="{{route('photos')}}"><i class="fa fa-picture-o"></i> <span>Upload Photos</span></a>
             </li> 
             </ul>
           </section>
@@ -141,10 +141,10 @@
     </div>
 
     <footer class="main-footer">
-    <div class="pull-right hidden-xs">
+    {{-- <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright © 2017 <a href="#">Informasi Publik ITS</a>.</strong> All rights
+    </div> --}}
+    <strong>Copyright © <?php echo date("Y"); ?> <a href="#">Informasi Publik ITS</a>.</strong> All rights
     reserved.
   </footer>
 
