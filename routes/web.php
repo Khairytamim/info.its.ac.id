@@ -118,6 +118,13 @@ Route::group(['prefix' => 'admin/sub-menu'], function () {
 });
 
 
+Route::group(['prefix' => 'admin/banner'], function () {
+	Route::get('/', 'BannerController@adminIndex')->name('admin.banner.index');
+	Route::post('/add', 'BannerController@add')->name('admin.banner.add');
+	Route::post('/{banner}/update', 'BannerController@update')->name('admin.banner.update');
+
+});
+
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
