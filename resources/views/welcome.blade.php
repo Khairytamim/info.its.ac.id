@@ -5,30 +5,30 @@
     <div class="section_slider">
         <div id="carousel-example-generic" class="carousel slide caption-animate" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                @for($i=0;$i<count($banner);$i++)
+                @if($banner[$i]->path_photo!=null)
+                <li data-target="#carousel-example-generic" data-slide-to="{{ $i }}" class="@if($i==0) active @endif">
                     <hr class="transition-timer-carousel-progress-bar"">
                 </li>
-                <li data-target="#carousel-example-generic" data-slide-to="1">
-                    <hr class="transition-timer-carousel-progress-bar"">
-                </li>
+                @endif
+                @endfor
             </ol>
             <div class="carousel-inner" role="listbox">
-                <div class="item full-screen active" style="background-image: url('https://www.its.ac.id/wp-content/uploads/2017/08/Picture1-1.jpg');">
+                @for($i=0;$i<count($banner);$i++)
+                @if($banner[$i]->path_photo!=null)
+                <div class="item full-screen  @if($i==0) active @endif" style="background-image: url('{{url($banner[$i]->path_photo)}}');">
                     <div class="carousel-caption carousel-left">
-                        <h3 class="animated visible fadeInUp" style="visibility: visible;">Layanan Informasi Publik </h3>
+                        <h3 class="animated visible fadeInUp" style="visibility: visible;">{{$banner[$i]->header}} </h3>
                         <div class="clearfix"></div>
-                        <h2 class="animated visible fadeInUp" style="visibility: visible;">Institut Teknologi Sepuluh Nopember </h2>
+                        <h2 class="animated visible fadeInUp" style="visibility: visible;">{{$banner[$i]->sub_header}} </h2>
                         <div class="clearfix"></div>
                         <div class="content-carousel-caption animated visible fadeInUp" style="visibility: visible;">
-                            <p>Layanan ini merupakan sarana berbasis web bagi pemohon informasi publik ITS yang dikelola oleh Pejabat Pengelola Informasi dan Dokumentasi (PPID) ITS.
-                            </p>
-                            {{-- <a href="#" target="_blank">
-                                <img src="https://www.its.ac.id/wp-content/themes/ITS/assets/img/icons/slider_read.png" alt="...">
-                            </a> --}}
+                            <p>{{$banner[$i]->content}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="item full-screen" style="background-image: url('https://www.its.ac.id/wp-content/uploads/2017/08/11226927_1457816264516133_7973153380646448602_oa-1.jpg');"></div>
+                @endif
+                @endfor
             </div>
         </div>
         <div class="container-arrow-down">

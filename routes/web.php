@@ -121,6 +121,7 @@ Route::group(['prefix' => 'admin/sub-menu'], function () {
 Route::group(['prefix' => 'admin/banner'], function () {
 	Route::get('/', 'BannerController@adminIndex')->name('admin.banner.index');
 	Route::post('/add', 'BannerController@add')->name('admin.banner.add');
+	Route::get('/{banner}/detail', 'BannerController@detail')->name('admin.banner.detail');
 	Route::post('/{banner}/update', 'BannerController@update')->name('admin.banner.update');
 
 });

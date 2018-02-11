@@ -121,6 +121,9 @@
             <li class="" id="aktifmenu">
               <a href="{{route('admin.menu.index')}}"><i class="fa fa-bars"></i> <span>Menu</span></a>
             </li>
+            <li class="" id="aktifbanner">
+              <a href="{{route('admin.banner.index')}}"><i class="fa fa-picture-o"></i> <span>Banner</span></a>
+            </li> 
             <li class="" id="aktifdata">
               <a href="{{route('data')}}"><i class="fa fa-paperclip"></i> <span>Upload File</span></a>
             </li>

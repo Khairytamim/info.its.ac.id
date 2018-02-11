@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Menus;
+use App\Banner;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $this->data['menus'] = Menus::get();
-        // dd($this->data['menus']);
-        return view('welcome');
+        $this->data['banner'] = Banner::get();
+        // dd($this->data['banner']);
+        return view('welcome', $this->data);
     }
 }
