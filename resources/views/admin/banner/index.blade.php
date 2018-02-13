@@ -3,7 +3,7 @@
 @section('content')
 	<div class="row">
 		<div class="col-md-12">
-			{{-- {!! Breadcrumbs::render('bannerIndex') !!} --}}
+			{!! Breadcrumbs::render('bannerIndex') !!}
 		</div>
         <div class="col-md-12">
           @if (session('status'))
@@ -41,12 +41,12 @@
                   	@foreach($banners as $banner)
                   	<tr>
                   		{{-- <td>{{$banner->id}}</td> --}}
-                  		<td>{{$banner->header}}</td>
+                  		<td id="copytarget">{{$banner->header}}</td>
                   		<td>
                   			<a href="{{route('admin.banner.detail', ['banner' => $banner->id])}}" class="btn btn-primary">Detail {{$banner->header}}</a>
                   		</td>
                       <td>
-                        <a href="{{route('admin.banner.detail', ['banner' => $banner->id])}}" class="btn btn-danger">Hapus {{$banner->header}}</a>
+                        <a data-toggle="modal" data-id="{{$banner->id}}" data-target="#delete" class="tomboldelete btn btn-danger">Hapus {{$banner->header}}</a>
                       </td>
                   	</tr>
                   	@endforeach
@@ -83,8 +83,46 @@
           </div>
         </div>
     </div>
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <form action="{{route('admin.banner.delete')}}" method="POST">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+            
+          </div>
+          <div class="modal-body">
+            <div id="delmsg"></div> 
+            <input type="hidden" id="id_banner" name="id_banner" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">Iya</button>
+            {{csrf_field()}}
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
 @endsection
 
 @section('js')
+<script type="text/javascript">
+  $(function () {
+    $(document).ready(function() {
+      $('#example').DataTable();
+      $('.tomboldelete').on('click', function(){
+        $('#id_banner').val($(this).data('id'));
+        var tr = $(this).closest('tr');
+        var msg = '';
+        $('#copytarget').each(function(index){
+            msg = msg + ' ' +tr.find('td').eq(index).html();
+          });
+        $('#delmsg').html('Apakah anda yakin ingin menghapus<b>' + msg + '</b>?');
 
+      });
+    });
+  });
+</script>
 @endsection

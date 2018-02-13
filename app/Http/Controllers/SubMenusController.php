@@ -37,4 +37,11 @@ class SubMenusController extends Controller
     	
     	return back()->with('sukses', 'Berhasil menambahkan sub menu');
     }
+
+    public function delete(Request $request)
+    {
+        SubMenus::where('id', $request->id)->delete();
+
+        return back()->with('status', 'Submenu Berhasil Dihapus!');
+    }
 }

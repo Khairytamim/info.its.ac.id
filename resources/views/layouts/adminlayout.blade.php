@@ -91,27 +91,12 @@
           <ul class="sidebar-menu tree" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
         
-        
-            {{-- <li id="aktifjadwal" class="treeview">
-              <a href="">
-                <i class="fa fa-calendar-check-o"></i> <span>Jadwal</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li id="anakjadwal" class=""><a href=""><i class="fa fa-circle-o"></i>Input</a></li>
-                <!-- <li id="anakhari" class=""><a href=""><i class="fa fa-circle-o"></i>Hari</a></li>
-                <!-- <li id="anakjam" class=""><a href=""><i class="fa fa-circle-o"></i>Jam</a></li> -->
-                <li id="anakruangan" class=""><a href=""><i class="fa fa-circle-o"></i>Ruangan</a></li>
-              </ul>
-            </li>  --}}
             <li class="" id="aktifmailbox">
               <a href="{{route('mailbox')}}"><i class="fa fa-envelope-o"></i> <span>Mailbox</span></a>
             </li>
-            <li class="" id="aktiforganisasi">
+            {{-- <li class="" id="aktiforganisasi">
               <a href="{{route('adminorganisasi')}}"><i class="fa fa-users"></i> <span>Organisasi</span></a>
-            </li>
+            </li> --}}
             <li class="" id="aktifstatistik">
               <a href="{{route('statistik')}}"><i class="fa fa-bar-chart"></i> <span>Statistik Pertanyaan</span></a>
             </li>

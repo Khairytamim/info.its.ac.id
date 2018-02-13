@@ -5,7 +5,7 @@
 @section('content')
 	<div class="row">
       <div class="col-md-12">
-        {{-- {!! Breadcrumbs::render('banner', $banner) !!} --}}
+        {!! Breadcrumbs::render('bannerDetail', $banner) !!}
       </div>
         <div class="col-md-12">
           @if (session('status'))

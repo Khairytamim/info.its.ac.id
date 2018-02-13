@@ -46,10 +46,12 @@ class MenusController extends Controller
     	return back()->with('sukses', 'Berhasil menambahkan menu');
     }
 
-    public function destroy(Menus $menu)
+    public function delete(Request $request)
     {
-    	$menu->delete();
-    	return back()->with('sukses', 'Berhasil menghapus menu');
+        SubMenus::where('menu_id', $request->id)->delete();
+        Menus::where('id', $request->id)->delete();
+
+        return back()->with('status', 'Menu dan Submenunya Berhasil Dihapus!');
     }
 
     public function update(Menus $menu, Request $request)

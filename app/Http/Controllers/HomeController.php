@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $this->data['banner'] = Banner::get();
-        // dd($this->data['banner']);
+        // dd($this->date(format)a['banner']);
         return view('welcome', $this->data);
     }
 }

@@ -106,7 +106,7 @@ Route::group(['prefix' => 'admin/menu'], function () {
 	Route::post('/add', 'MenusController@add')->name('admin.menu.add');
 	Route::post('/{menu}/update', 'MenusController@update')->name('admin.menu.update');
 	Route::get('/{menu}', 'MenusController@adminSubMenusIndex')->name('admin.menu.subMenu.index');
-
+	Route::post('/delete', 'MenusController@delete')->name('admin.menu.delete');
 });
 
 Route::group(['prefix' => 'admin/sub-menu'], function () {
@@ -114,6 +114,7 @@ Route::group(['prefix' => 'admin/sub-menu'], function () {
 	Route::post('/{subMenu}/update', 'SubMenusController@update')->name('admin.subMenu.update');
 	Route::post('/{menu}/add', 'SubMenusController@add')->name('admin.subMenu.add');
 	Route::get('/{subMenu}', 'SubMenusController@adminIndex')->name('admin.subMenu.index');
+	Route::post('/delete', 'SubMenusController@delete')->name('admin.subMenu.delete');
 
 });
 
@@ -123,6 +124,7 @@ Route::group(['prefix' => 'admin/banner'], function () {
 	Route::post('/add', 'BannerController@add')->name('admin.banner.add');
 	Route::get('/{banner}/detail', 'BannerController@detail')->name('admin.banner.detail');
 	Route::post('/{banner}/update', 'BannerController@update')->name('admin.banner.update');
+	Route::post('/delete', 'BannerController@delete')->name('admin.banner.delete');
 
 });
 

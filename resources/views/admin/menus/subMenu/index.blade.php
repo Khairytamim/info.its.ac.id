@@ -79,9 +79,8 @@
                       {{-- <th>path</th> --}}
                       <th>Path</th>
                       <th>Nama</th>
-                      <th>Action</th>
-                      {{-- <th>Action</th> --}}
-                      {{-- <th>Action</th> --}}
+                      <th>Detail</th>
+                      <th>Hapus</th>
                       {{-- <th>Role</th> --}}
                     </tr>
                   </thead>
@@ -89,9 +88,12 @@
                     @foreach($menu->subMenus as $subMenu)
                     <tr>
                       <td>{{$subMenu->id}}</td>
-                      <td>{{$subMenu->nama}}</td>
+                      <td id="copytarget">{{$subMenu->nama}}</td>
                       <td>
                         <a href="{{route('admin.subMenu.index', ['menu' => $subMenu->id])}}" class="btn btn-primary">Detail {{$subMenu->nama}}</a>
+                      </td>
+                      <td>
+                        <a data-toggle="modal" data-id="{{$subMenu->id}}" data-target="#delete" class="tomboldelete btn btn-danger">Hapus {{$subMenu->nama}}</a>
                       </td>
                     </tr>
                     @endforeach
@@ -130,6 +132,28 @@
           </div>
         </div>
     </div>
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <form action="{{route('admin.subMenu.delete')}}" method="POST">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+            
+          </div>
+          <div class="modal-body">
+            <div id="delmsg"></div> 
+            <input type="hidden" id="id" name="id" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">Iya</button>
+            {{csrf_field()}}
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
 @endsection
 
 @section('js')
@@ -165,6 +189,22 @@
         }
       });
     }
+  });
+</script>
+<script type="text/javascript">
+  $(function () {
+    $(document).ready(function() {
+      $('.tomboldelete').on('click', function(){
+        $('#id').val($(this).data('id'));
+        var tr = $(this).closest('tr');
+        var msg = '';
+        $('#copytarget').each(function(index){
+            msg = msg + ' ' +tr.find('td').eq(index).html();
+          });
+        $('#delmsg').html('Apakah anda yakin ingin menghapus<b>' + msg + '</b>?');
+
+      });
+    });
   });
 </script>
 @endsection

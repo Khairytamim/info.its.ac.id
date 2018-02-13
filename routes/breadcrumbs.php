@@ -18,3 +18,14 @@ Breadcrumbs::register('subMenu', function($breadcrumbs, $subMenu)
     $breadcrumbs->parent('menu', $subMenu->menu);
     $breadcrumbs->push($subMenu->nama, route('admin.subMenu.index', ['subMenu' => $subMenu->id]));
 });
+
+Breadcrumbs::register('bannerIndex', function($breadcrumbs)
+{
+    $breadcrumbs->push('Banner', route('admin.banner.index'));
+});
+
+Breadcrumbs::register('bannerDetail', function($breadcrumbs, $banner)
+{
+    $breadcrumbs->parent('bannerIndex');
+    $breadcrumbs->push($banner->header, route('admin.banner.detail', ['banner' => $banner->id]));
+});

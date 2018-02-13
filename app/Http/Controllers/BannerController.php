@@ -26,15 +26,6 @@ class BannerController extends Controller
         return view('admin.banner.detail', $this->data);
     }
 
-    // public function BannerIndex(Banner $banner)
-    // {
-    //     $this->setActive('banner');
-    //     $this->setTitle('banner');
-    //     $this->data['banner'] = $banner;
-    //     // dd($banner->subBanner);
-    //     return view('konten.index', $this->data);
-    // }
-
     public function add(Request $request)
     {
     	$banner = New Banner;
@@ -45,11 +36,14 @@ class BannerController extends Controller
     	return back()->with('sukses', 'Berhasil menambahkan banner');
     }
 
-    public function destroy(Banner $banner)
+    public function delete(Request $request)
     {
-    	$banner->delete();
-    	return back()->with('sukses', 'Berhasil menghapus banner');
+        
+        Banner::where('id', $request->id_banner)->delete();
+
+        return back()->with('status', 'Banner Berhasil Dihapus!');
     }
+
 
     public function update(Banner $banner, Request $request)
     {
@@ -69,6 +63,7 @@ class BannerController extends Controller
         $banner->sub_header = $request->sub_header;
         $banner->content = $request->content;
 
+        // dd($banner);
         if($request->hasFile('path_photo')){
             
             $file = $request->path_photo;
@@ -80,6 +75,7 @@ class BannerController extends Controller
             }
         }
         else{
+            $banner->save();
             return back()->with('gagal', 'Data Gagal diupload');
         }
         // dd($banner);
