@@ -54,7 +54,24 @@
 </div>
 <div class="row" style=";background-color: white; border-top: 1px solid lightgrey">
 	<div class="container">
-
+		<div class="col-sm-10 col-sm-offset-1" style="margin-top: 2vh">
+	      <p style="color: gray">About {{$results->response->numFound}} results  </p>
+	    </div>
+	 
+	    @foreach($results->response->docs as $data)
+	      <div class="col-sm-10 col-sm-offset-1" style="margin-bottom: 12px">
+	        <?php $array = explode('/', $data->id); ?>
+	        @if($data->tipe == 'url')
+	          <a href="{{$data->id}}" style="color: #1a0dab; font-size: 18px">{{end($array)}}</a>
+	          <p style="color: #006621; font-size: 14px; margin: 0">{{$data->id}}</p>
+	        @else
+	          <a href="{{url($data->filename)}}" style="color: #1a0dab; font-size: 18px">{{end($array)}}</a>
+	          <p style="color: #006621; font-size: 14px; margin: 0">{{url($data->filename)}}</p>
+	        @endif
+	        {{-- <span style="font-size: small;">The script depends on bootstrap-modal-fullscreen , bootstrap-modal-local and ... and .force-fullscreen (to place header and footer away) to the modal box.</span> --}}
+	      </div>
+	    @endforeach
+    
 	</div>
 </div>
 </div>
