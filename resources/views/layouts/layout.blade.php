@@ -84,7 +84,7 @@
             }
         </style>
     </head>
-    <body style="background-color: #f2f2f2; background-repeat: repeat;background-size: 100%">
+    <body>
       <!-- Navigation -->
       <div class="section-menu">
             <nav class="navbar navbar-default">
