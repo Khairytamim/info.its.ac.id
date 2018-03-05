@@ -152,7 +152,7 @@
         </center>
     </div>
 </section> --}}
-<section id="tanyakan" style="background: rgba(32,65,127,0.8);">
+<section id="tanyakan" style="background: rgb(32,65,127);">
     <div class="container" style="margin-top: 15vh;margin-bottom: 15vh">
         <style type="text/css">
             label,h2{
