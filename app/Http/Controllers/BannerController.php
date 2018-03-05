@@ -7,6 +7,7 @@ use App\Banner;
 use Validator;
 use Storage;
 use File;
+use Uuid;
 
 class BannerController extends Controller
 {
@@ -61,6 +62,7 @@ class BannerController extends Controller
                         ->withErrors($validator, 'gagalTambah')
                         ->withInput();
         }
+
         $banner->header = $request->header;
         $banner->sub_header = $request->sub_header;
         $banner->content = $request->content;
@@ -71,7 +73,7 @@ class BannerController extends Controller
             $file = $request->path_photo;
             if ($file) {
                 // dd(File::type($file));
-                $filename = 'photos/' . $banner->id . '.' . $file->getClientOriginalExtension();
+                $filename = 'photos/' . Uuid::generate(4) . '.' . $file->getClientOriginalExtension();
                 Storage::disk('public')->put($filename, File::get($file));
                 $banner->path_photo = "storage/$filename";
             }
