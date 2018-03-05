@@ -36,7 +36,7 @@
             </div>
             <div class="box-body">
               <form action="{{route('admin.banner.update', ['banner' => $banner->id])}}" method="post" enctype="multipart/form-data">
-                {{csrf_field()}}
+                {{-- {{csrf_field()}} --}}
                 <div class="row">
                   <div class="col-md-6">
                     <div class="row">

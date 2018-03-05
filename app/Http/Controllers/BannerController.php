@@ -47,6 +47,7 @@ class BannerController extends Controller
 
     public function update(Banner $banner, Request $request)
     {
+        // dd('a');
         $rules = [
             'header' => 'required',
             'sub_header' => 'required',
@@ -55,6 +56,7 @@ class BannerController extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
+            // dd('a');
             return back()
                         ->withErrors($validator, 'gagalTambah')
                         ->withInput();
@@ -76,12 +78,13 @@ class BannerController extends Controller
         }
         else{
             $banner->save();
-            return back()->with('gagal', 'Data Gagal diupload');
+            return back()->with('status', 'Data Gagal diupload');
         }
         // dd($banner);
+        // dd('a');
         $banner->save();
 
-        return back()->with('sukses', 'Berhasil update banner');
+        return back()->with('status', 'Berhasil update banner');
     }
 
 }
