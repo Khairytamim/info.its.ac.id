@@ -116,7 +116,7 @@
         </div>
     </div>
 </section>
-<section id="petunjuk" style="background: rgba(255,203,16,0.8);">
+{{-- <section id="petunjuk" style="background: rgba(255,203,16,0.8);">
     <div class="container" style="margin-top: 15vh;margin-bottom: 15vh;">
         <h2 style="font-size: 9vh">Tata Cara dan Formulir</h2>
         <p style="color: white; font-size: 18px">Permohonan dan Penyampaian Informasi Publik ITS</p>
@@ -151,7 +151,7 @@
         </div>
         </center>
     </div>
-</section>
+</section> --}}
 <section id="tanyakan" style="background: rgba(32,65,127,0.8);">
     <div class="container" style="margin-top: 15vh;margin-bottom: 15vh">
         <style type="text/css">
