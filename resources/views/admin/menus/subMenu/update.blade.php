@@ -90,7 +90,7 @@
 @endsection
 
 @section('js')
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=f3sg1vumz2lxhu0dnsl5siku8l31huewo0t2lgn6rkrjab8k"></script>
+<script src="https://cloud.tinymce.com/4.7.9/tinymce.min.js?apiKey=f3sg1vumz2lxhu0dnsl5siku8l31huewo0t2lgn6rkrjab8k"></script>
 <script>
   tinymce.init({
     selector: 'textarea.tes',
@@ -102,6 +102,14 @@
     'insertdatetime media nonbreaking save table contextmenu directionality',
     'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
     ],
+    table_default_attributes: {
+      'border': '1'
+    },
+    table_default_styles: {
+      'border-collapsed': 'collapse',
+      'width': '100%'
+    },
+    table_responsive_width: true,
     toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
     toolbar2: 'print preview media | forecolor backcolor emoticons | codesample help',
     image_advtab: true,

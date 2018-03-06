@@ -56,11 +56,12 @@ class MenusController extends Controller
 
     public function update(Menus $menu, Request $request)
     {
-        $menu->konten = $request->konten;
+        // $menu->id = str_slug($request->nama, '-');
+        $menu->nama = $request->nama;
         $menu->photo_path = $request->photo_path;
     	$menu->konten = $request->konten;
     	$menu->save();
-    	return back()->with('sukses', 'Berhasil update menu');
+    	return redirect()->route('admin.menu.subMenu.index', ['menu' => $menu->id])->with('sukses', 'Berhasil update menu');
     }
 
     public function adminSubMenusIndex(Menus $menu)
