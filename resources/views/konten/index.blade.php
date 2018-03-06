@@ -15,17 +15,17 @@
  <section class="vc_section vc_custom_1504082602155">
     <div class="vc_row wpb_row vc_row-fluid">
     	@if(count($menu->subMenus) > 0)
-       <div class="col-left-padding-50 wpb_column column_container col-sm-6" style="padding-left: 0">
+       <div class="col-left-padding-50 wpb_column column_container col-sm-7" style="padding-left: 0">
           <div class="vc_column-inner ">
              <div class="wpb_wrapper">
                 <div class="path-group ">
                    <div class="path">
-                      <h3 class="title" style="padding-left: 15px; padding-right: 15px">Bagian {{$menu->nama}}</h3>
+                      <h3 class="title" style="padding-left: 15px; padding-right: 15px; margin-top: 0">Bagian {{$menu->nama}}</h3>
                       <div class="row">
                       	@foreach($menu->subMenus as $subMenus)
                          <div class="col-md-6">
                             <ul>
-                               <li style="padding-left: 15px; padding-right: 15px"><a href={{route('submenu.index', ['menu' => $menu->id, 'subMenu' => $subMenus->id])}} target=" _blank" style="font-size: 16px; font-weight: bolder;">{{$subMenus->nama}}<i class="fa fa-chevron-circle-right" aria-hidden="true" style="margin-left: 10px; float: right;"></i></a></li>
+                               <li style="padding-left: 15px; padding-right: 15px"><a href={{route('submenu.index', ['menu' => $menu->id, 'subMenu' => $subMenus->id])}} target=" _blank" style="font-size: 16px; font-weight: bolder;">{{str_limit($subMenus->nama, 25, '...')}}<i class="fa fa-chevron-circle-right" aria-hidden="true" style="margin-left: 10px; float: right;"></i></a></li>
                             </ul>
                          </div>
                         @endforeach
@@ -37,10 +37,10 @@
        </div>
        @endif
        <div class="col-right-padding-50 wpb_column column_container 
-       @if(count($menu->subMenus) > 0)col-sm-6 @else col-sm-12 @endif" style="padding-right: 0; padding-left: 0">
+       @if(count($menu->subMenus) > 0)col-sm-5 @else col-sm-12 @endif" style="padding-right: 0; padding-left: 0">
           <div class="vc_column-inner ">
              <div class="wpb_wrapper">
-                <div class="box-form-program " style="background:url('https://www.its.ac.id/wp-content/uploads/2017/08/13388631_1121350254605412_1451881451_n_2-1024x1024.jpg')">
+                <div class="box-form-program">
                    {{-- <h3 class="title">Tahukah Kamu?</h3> --}}
                    {!!html_entity_decode($menu->konten)!!}
                 </div>
