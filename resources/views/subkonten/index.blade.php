@@ -17,7 +17,7 @@
                <div class="col-sm-12">
                   <div class="article">
                      <h1 class="title">
-                        Penjelasan {{$subMenu->nama}}                        
+                        {{-- Penjelasan {{$subMenu->nama}}                         --}}
                      </h1>
                      <p>
                      <div class="vc_row wpb_row vc_row-fluid">
