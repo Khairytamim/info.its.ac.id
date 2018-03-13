@@ -124,7 +124,7 @@ class MailboxController extends Controller
     	$create->judul_jawaban = $request->judul_jawaban;
     	$create->id_pertanyaan = $request->id_pertanyaan;
         $create->status_jawaban = 0;
-    	$create->jawaban = $request->jawaban;
+    	$create->jawaban = htmlentities($request->jawaban);
     	$create->save();
 
     	$update = Pertanyaan::find($request->id_pertanyaan);
@@ -263,7 +263,7 @@ class MailboxController extends Controller
         $update = Pertanyaan::find($request->id);
         // dd($update);
         $update->tipe = $request->tipe;
-        $update->notes = $request->notes;
+        $update->notes = htmlentities($request->notes);
         $update->tanggal_tipe = Carbon::now();
         $update->save();
 
