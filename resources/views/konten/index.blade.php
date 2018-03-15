@@ -15,7 +15,7 @@
  <section class="vc_section vc_custom_1504082602155">
     <div class="vc_row wpb_row vc_row-fluid">
     	@if(count($menu->subMenus) > 0)
-       <div class="col-left-padding-50 wpb_column column_container col-sm-7" style="padding-left: 0">
+       <div class="col-left-padding-50 wpb_column column_container col-md-8" style="padding-left: 0">
           <div class="vc_column-inner ">
              <div class="wpb_wrapper">
                 <div class="path-group ">
@@ -37,10 +37,17 @@
        </div>
        @endif
        <div class="col-right-padding-50 wpb_column column_container 
-       @if(count($menu->subMenus) > 0)col-sm-5 @else col-sm-12 @endif" style="padding-right: 0; padding-left: 0">
+       @if(count($menu->subMenus) > 0)col-md-4 @else col-md-10 col-md-offset-1 @endif" style="padding-right: 0; padding-left: 0">
           <div class="vc_column-inner ">
              <div class="wpb_wrapper">
-                <div class="box-form-program">
+                @if(count($menu->subMenus) == 0)
+                <div class="path-group">
+                  <div class="path">
+                    <h3 class="title" style="padding-left: 15px; padding-right: 15px; margin-top: 0">{{$menu->nama}}</h3>
+                  </div>
+                </div>
+                @endif
+                <div class="box-form-program" style="background:url({{$menu->photo_path}})">
                    {{-- <h3 class="title">Tahukah Kamu?</h3> --}}
                    {!!html_entity_decode($menu->konten)!!}
                 </div>
