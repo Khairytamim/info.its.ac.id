@@ -173,7 +173,7 @@
     
     $('#example').DataTable();
 
-    $(".clickable-row").click(function() {
+    $(document.body).on('click', '.clickable-row', function() {
         window.location = $(this).data("href");
     });
 } );
