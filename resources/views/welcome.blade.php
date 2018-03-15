@@ -159,7 +159,7 @@
                 color: white;
             }
         </style>
-        <h2 style="font-size: 9vh">Informasi Khusus</h2>
+        <h2 style="font-size: 6vh">Formulir Permohonan Informasi dan Dokumentasi</h2>
         @if (session('status'))
           <div class="alert alert-success">
               {{ session('status') }}

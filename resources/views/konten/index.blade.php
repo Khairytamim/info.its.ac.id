@@ -5,7 +5,7 @@
     <div class="row">
        <div class="col-sm-4">
           <div class="headtitle">
-             <h1 class="title">{{$menu->nama}}</h1>
+             {{-- <h1 class="title">{{$menu->nama}}</h1> --}}
           </div>
        </div>
     </div>
@@ -20,9 +20,9 @@
              <div class="wpb_wrapper">
                 <div class="path-group ">
                    <div class="path">
-                      <h3 class="title" style="padding-left: 15px; padding-right: 15px; margin-top: 0">Bagian {{$menu->nama}}</h3>
+                      <h3 class="title" style="padding-left: 15px; padding-right: 15px; margin-top: 0">{{$menu->nama}}</h3>
                       <div class="row">
-                      	@foreach($menu->subMenus as $subMenus)
+                      	@foreach($menu->subMenus->sortBy('created_at') as $subMenus)
                          <div class="col-md-6">
                             <ul>
                                <li style="padding-left: 15px; padding-right: 15px"><a href={{route('submenu.index', ['menu' => $menu->id, 'subMenu' => $subMenus->id])}} target=" _blank" style="font-size: 16px; font-weight: bolder;">{{str_limit($subMenus->nama, 25, '...')}}<i class="fa fa-chevron-circle-right" aria-hidden="true" style="margin-left: 10px; float: right;"></i></a></li>
