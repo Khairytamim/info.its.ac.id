@@ -188,7 +188,7 @@
                         </div>
                         <div class="col-sm-2 col-xs-12">
                             <div class="footer-top-content border-left-white">
-                                <a href="https://www.lapor.go.id/" target="_blank"><img style="width: 100%; margin-left: 2vw; margin-top: 3vh" src="https://info.its.ac.id/logo/lapor.png"></a>
+                                <a href="https://www.lapor.go.id/" target="_blank"><img style="width: 100%; margin-left: 2vw; margin-top: 3vh" src="//info.its.ac.id/logo/lapor.png"></a>
                             </div>
                         </div>
                     </div>
