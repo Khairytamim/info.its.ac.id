@@ -31,7 +31,7 @@ class MailboxController extends Controller
     {
     	$this->setActive('mailbox');
     	$this->setTitle('mailbox');
-    	$this->data['pertanyaan'] = Pertanyaan::whereNull('id_jawaban')->whereNotNull('status_email')->orderBy('created_at', 'DESC')->paginate(10);
+    	$this->data['pertanyaan'] = Pertanyaan::whereNull('id_jawaban')->whereNotNull('status_email')->orderBy('created_at', 'DESC')->paginate(15);
 
         return view('admin.mailbox.index', $this->data);
     	
@@ -83,7 +83,8 @@ class MailboxController extends Controller
     	$this->setTitle('mailbox');
 		
     	$this->data['pertanyaan'] = Pertanyaan::find($request->mail_id);
-
+        // dd($this->data['pertanyaan']->jawaban);
+        // dd('a');
     	return view('admin.mailbox.read', $this->data);
     }
 
@@ -212,7 +213,7 @@ class MailboxController extends Controller
     	$this->setActive('sent');
     	$this->setTitle('sent');
 
-    	$this->data['pertanyaan'] = Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',1)->orderBy('jawaban.created_at', 'DESC')->paginate(10);
+    	$this->data['pertanyaan'] = Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',1)->orderBy('jawaban.created_at', 'DESC')->paginate(15);
 
     	return view('admin.mailbox.index', $this->data);
 
@@ -225,7 +226,7 @@ class MailboxController extends Controller
             
         $name = $request->name;
         //echo $name;
-        $this->data['pertanyaan'] = Pertanyaan::whereNull('id_jawaban')->where('tipe',$name)->paginate(10);
+        $this->data['pertanyaan'] = Pertanyaan::whereNull('id_jawaban')->where('tipe',$name)->paginate(15);
         //$this->data['pertanyaan'] = Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('tipe',$name)->paginate(10);
         return view('admin.mailbox.index', $this->data);
 
@@ -235,6 +236,7 @@ class MailboxController extends Controller
     {
         $update = Jawaban::find($request->id);
         $update->status_jawaban = 1;
+        $update->tgl_konfirmasi = Carbon::now();
         $update->save();
         
         
@@ -250,7 +252,7 @@ class MailboxController extends Controller
         $this->setActive('konfirmasi');
         $this->setTitle('konfirmasi');
 
-        $this->data['pertanyaan']= Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',0)->orderBy('jawaban.created_at', 'DESC')->paginate(10);
+        $this->data['pertanyaan']= Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',0)->orderBy('jawaban.created_at', 'DESC')->paginate(15);
         // dd($result);
         // dd($this->data['pertanyaan']);
         return view('admin.mailbox.index', $this->data);

@@ -41,9 +41,19 @@
                           @endif
                         </td>
                         <td>{{$value->respon_1}}</td>
-                        @if(!is_null($value->id_jawaban))
+                        @php
+                          $jawaban = $value->jawaban->where('status_jawaban', 1)->sortBy('created_at')->first();
+                        @endphp
+                        @if($jawaban != null)
                         <td>{{-- {{$value->jawaban->created_at->diffInDays($value->created_at)}} --}}
-                          {{$value->created_at->diffInDays($value->tanggal_tipe)}}</td>
+                          @if($jawaban->tgl_konfirmasi == null)
+                            {{$value->created_at->diffInDays($jawaban->updated_at)}}
+                          @else
+                            {{$value->created_at->diffInDays($jawaban->tgl_konfirmasi)}}
+                            {{-- {{$value->created_at}} - {{$jawaban->tgl_konfirmasi}} --}}
+                          @endif
+
+                        </td>
                         @else
                         <td></td>
                         @endif

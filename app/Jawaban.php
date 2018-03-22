@@ -10,7 +10,11 @@ class Jawaban extends Model
     protected $primaryKey = 'id_jawaban';
     public $timestamps = true;
     public $incrementing = false;
-
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'tgl_konfirmasi'
+    ];
     public function data()
     {
     	return $this->hasMany('App\Data', 'id_jawaban');

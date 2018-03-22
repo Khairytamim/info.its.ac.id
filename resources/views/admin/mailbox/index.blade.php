@@ -111,7 +111,7 @@
               <!-- /.mail-box-messages -->
             </div>
             <!-- /.box-body -->
-            @if($pertanyaan->count() != 0)
+            @if($pertanyaan->links() != '')
               <div class="box-footer ">
                 
                   <!-- Check all button -->
@@ -121,7 +121,6 @@
                   {{-- @isset($pertaanyaan) --}}
                     {{ $pertanyaan->links() }}
                     {{-- @endisset --}}
-                    
                     <!-- /.btn-group -->
                   </div>
                   <!-- /.pull-right -->

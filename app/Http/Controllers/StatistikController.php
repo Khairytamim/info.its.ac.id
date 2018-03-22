@@ -19,9 +19,16 @@ class StatistikController extends Controller
     	$this->setActive('statistik');
     	$this->setTitle('statistik');
 
-    	$this->data['pertanyaan'] = Pertanyaan::select('*', DB::raw('DATEDIFF(DATE(tanggal_tipe),DATE(created_at)) as respon_1'))->whereNotNull('status_email')->get();
+    	
+        $pertanyaan = Pertanyaan::with(['jawaban'])->whereNotNull('status_email')->get();
          
-    	return view('admin.statistik.index', $this->data);
+        $pertanyaan = $pertanyaan->map(function ($value) {
+            $value->respon_1 = $value->created_at->diffInDays($value->tanggal_tipe);
+            return $value;
+        });
+        $this->data['pertanyaan'] = $pertanyaan;
+    	
+        return view('admin.statistik.index', $this->data);
     }
 
     public function respon(Request $request)
@@ -31,14 +38,14 @@ class StatistikController extends Controller
         $jumlahrespon1=0;
         $jumlahrespon2=0;
 
-    	$pertanyaan = Pertanyaan::select('*', DB::raw('DATEDIFF(DATE(tanggal_tipe),DATE(created_at)) as respon_1'))->whereNotNull('status_email')->get();
+    	$pertanyaan = Pertanyaan::with(['jawaban'])->whereNotNull('status_email')->get();
 
         $pertanyaan = $pertanyaan->map(function ($value) {
             if($value->tipe != null && $value->id_jawaban == null) $value->status = 'IN PROGRESS';
             else if($value->tipe != null && $value->id_jawaban != null) $value->status = 'DONE';
             else if($value->tipe == null && $value->id_jawaban == null) $value->status = 'PENDING';
             else $value->status = 'OTHER';
-
+            $value->respon_1 = $value->created_at->diffInDays($value->tanggal_tipe);
             return $value;
         });
 
@@ -50,19 +57,24 @@ class StatistikController extends Controller
                 $jumlahrespon1++;
                 $respon1 = $respon1 + $value->respon_1;
             } 
-    		
-            if(!is_null($value->id_jawaban)){
+    		$jawaban = $value->jawaban->where('status_jawaban', 1)->sortBy('created_at')->first();
+            if($jawaban != null){
                 $jumlahrespon2++;
-                $datepertanyaan = Carbon::parse($value->created_at);
-                $datepertanyaan->hour = 0;
-                $datepertanyaan->minute = 0;
-                $datepertanyaan->second = 0;
+                // $datepertanyaan = Carbon::parse($value->created_at);
+                // $datepertanyaan->hour = 0;
+                // $datepertanyaan->minute = 0;
+                // $datepertanyaan->second = 0;
 
-                $datejawaban = Carbon::parse($value->jawaban->created_at);
-                $datejawaban->hour = 0;
-                $datejawaban->minute = 0;
-                $datejawaban->second = 0;
-                $respon2 = $respon2 + $datejawaban->diffInDays($datepertanyaan);
+                // $datejawaban = Carbon::parse($value->jawaban->created_at);
+                // $datejawaban->hour = 0;
+                // $datejawaban->minute = 0;
+                // $datejawaban->second = 0;
+                // respon2 = respon2 + value
+                // dd();
+                if($jawaban->tgl_konfirmasi == null)
+                    $respon2 = $respon2 + $value->created_at->diffInDays($jawaban->updated_at);
+                else 
+                    $respon2 = $respon2 + $value->created_at->diffInDays($jawaban->tgl_konfirmasi);
             }
     	}
 

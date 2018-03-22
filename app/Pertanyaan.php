@@ -18,7 +18,7 @@ class Pertanyaan extends Model
 
     public function jawaban()
     {
-    	return $this->hasOne('App\Jawaban', 'id_pertanyaan');
+    	return $this->hasMany('App\Jawaban', 'id_pertanyaan');
     }
 
     public function data()

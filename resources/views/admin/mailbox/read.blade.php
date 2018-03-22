@@ -83,8 +83,6 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <h3 class="box-title">Read Mail</h3>
-
-
           </div>
           <!-- /.box-header -->
           <div class="box-body no-padding" >
@@ -97,34 +95,31 @@
               @else
               <h5>Tipe: {{$pertanyaan->tipe}}</h5>
               @endif
-              </div>
-                    <div class="mailbox-read-message">
-                      {{$pertanyaan->pertanyaan}}
-                    </div>
-                    <div class="mailbox-read-message">
-                      <h4>ID Penanya</h4>
-                      @isset($pertanyaan->ktp)
-                      <img src="{{asset($pertanyaan->ktp)}}" style="overflow: hidden; height: 30vh ">
-                      @endisset
-                    </div>
-                    <!-- /.mailbox-read-message -->
-                  </div>
-                  <!-- /.box-body -->
-
-                  <!-- /.box-footer -->
-                  <div class="box-footer">
-
-                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#settipe"><i class="fa fa-reply"></i> Tipe Pertanyaan</button>
-                  <form action="{{route('deletemailbox')}}" method="post" style="display: inline;">
-                    <input type="hidden" name="id_pertanyaan" value="{{$pertanyaan->id_pertanyaan}}">
-                    {{csrf_field()}}
-                    <button type="submit" class="btn btn-default"><i class="fa fa-trash"></i> Delete</button>
-                  </form>
-                </div>
-                <!-- /.box-footer -->
-              </div>
             </div>
-            @if(!is_null($pertanyaan->tipe))
+            <div class="mailbox-read-message">
+              {{$pertanyaan->pertanyaan}}
+            </div>
+            <div class="mailbox-read-message">
+              <h4>ID Penanya</h4>
+              @isset($pertanyaan->ktp)
+              <img src="{{asset($pertanyaan->ktp)}}" style="overflow: hidden; height: 30vh ">
+              @endisset
+            </div>
+                    <!-- /.mailbox-read-message -->
+          </div>
+          <div class="box-footer">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#settipe"><i class="fa fa-reply"></i> Tipe Pertanyaan</button>
+            <form action="{{route('deletemailbox')}}" method="post" style="display: inline;">
+              <input type="hidden" name="id_pertanyaan" value="{{$pertanyaan->id_pertanyaan}}">
+              {{csrf_field()}}
+              <button type="submit" class="btn btn-default"><i class="fa fa-trash"></i> Delete</button>
+            </form>
+          </div>
+                <!-- /.box-footer -->
+        </div>
+      </div>
+            
+            @foreach($pertanyaan->jawaban->sortBy('created_at') as $jawaban)
             <div class="col-md-12">
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -150,117 +145,149 @@
 
                     </div>
                     <div class="form-group">
-                      @if(!is_null($pertanyaan->id_jawaban))
                         <input class="form-control" name="judul_jawaban" placeholder="Subject:" value="Re: {{$pertanyaan->judul_pertanyaan}}" disabled="">
-                      @else
-                      <input class="form-control" name="judul_jawaban" placeholder="Subject:" value="Re: {{$pertanyaan->judul_pertanyaan}}">
-                      @endif
+                      
                       <!-- <input class="form-control" name="judul_jawaban" placeholder="Subject:" value="Re: {{$pertanyaan->judul_pertanyaan}}"> -->
                     </div>
                     <div class="form-group">
-                      @if(!is_null($pertanyaan->id_jawaban))
-                        {!!html_entity_decode($pertanyaan->jawaban->jawaban)!!}
-                      @else
-                      <textarea id="compose-textarea" name="jawaban" class="form-control" >
-                      </textarea>
-                      @endif
+                        {!!html_entity_decode($jawaban->jawaban)!!}
                     </div>
 
-                    <button title="Tambah Data Pelamar" type="button" onclick="createRow()" class="btn btn-primary">
+                    {{-- <button title="Tambah Data Pelamar" type="button" onclick="createRow()" class="btn btn-primary">
                       <span class="fa fa-plus"></span> Link 
-                    </button>
-                    <table class="table table-sriped tableganteng" id="tableToModify" >
-                      <thead>
-                        <tr><th class="col-md-6">Link</th>
+                    </button> --}}
+                    @if($jawaban->data->where('tipe', 'link')->isNotEmpty())
+                        <table class="table table-sriped tableganteng" id="tableToModify" >
+                          <thead>
+                            <tr><th class="col-md-6">Link</th>
 
-                          <th>Action</th>
+                              <th>Action</th>
 
-                        </tr></thead>
-                        <tbody id="body">
-                          @if(!is_null($pertanyaan->id_jawaban) && !old('link'))
-                            @php $ea = $pertanyaan->jawaban->data; 
-                            // dd($pertanyaan->jawaban->data);
-                            @endphp
-                            @foreach($ea as $value)
-                              @continue($value->tipe == 'file')
-                              <tr>
-                                <td><input class="form-control" name="link[]" type="text" value='{{$value->data}}' disabled=""></td>
+                            </tr></thead>
+                            
+                            <tbody id="body">
+                                @foreach($jawaban->data as $value)
+                                  @continue($value->tipe == 'file')
+                                  <tr>
+                                    <td><input class="form-control" name="link[]" type="text" value='{{$value->data}}' disabled=""></td>
 
-                                <td><button type="button" class="btn btn-danger tombol" title="Hapus Data Pelamar"><span class="fa fa-trash"></span></button></td>
-                              </tr>
-                            @endforeach
-                         
+                                    <td><button type="button" class="btn btn-danger tombol" title="Hapus Data Pelamar"><span class="fa fa-trash"></span></button></td>
+                                  </tr>
+                                @endforeach
+                             
 
-                          {{-- @elseif(count(old('link')) == 0) --}}
-                          @elseif(count(old('link')) > 0)
-                            @for ($i = 0; $i < (count(old('link')) == 0 ? 1 : count(old('link'))); $i++)
-                            <tr>
+                              {{-- @elseif(count(old('link')) == 0) --}}
+                              
+                            </tbody>
 
-                              <td><input class="form-control" name="link[]" type="text" value='{{old("link.$i") }}' ></td>
+                          </table>
+                    @endif
 
-                              <td><button type="button" class="btn btn-danger tombol" title="Hapus Data Pelamar"><span class="fa fa-trash"></span></button></td>
-                            </tr>
-                            @endfor
-                            {{-- {{}} --}}
-                          @endif
-                        </tbody>
-
-                      </table>
-                      {{-- <div class="form-group"> --}}
-                      @if(!is_null($pertanyaan->id_jawaban))
+                        @if($jawaban->data->where('tipe', 'link')->isNotEmpty())
                          <label>Uploaded file:</label><br>
-                            @foreach($ea as $value4)
+                            @foreach($jawaban->data as $value4)
                               @continue($value4->tipe == 'link')
                                 <?php $file = explode('/', $value4->data); ?>
                                 <a href="{{url($value4->data)}}"><div class="btn btn-default btn-file">{{end($file)}}</div></a>
                             @endforeach
-                         
-
-                        
-                      @else
-                      <div class="btn btn-default btn-file">
-                        
-                          <i class="fa fa-paperclip"></i> Upload file
-                          <input type="file" name="data[]" multiple>
-                        
-                      </div>
-                      @endif
+                        @endif
                       
                     {{-- </div> --}}
                     </div>
                     <!-- /.box-body -->
+                    @if($jawaban->status_jawaban == 0)
                     <div class="box-footer">
-                    @if(!is_null($pertanyaan->id_jawaban))
-                      @if($pertanyaan->jawaban->status_jawaban == 0)
+                    {{-- @if(!is_null($pertanyaan->id_jawaban)) --}}
+                      
                         <div class="pull-right">
                         <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
                         <a id="sent1" href="{{route('confirmationadd')}}?id={{$pertanyaan->id_jawaban}}" class="btn btn-primary"><i class="fa fa-check"></i> Confirm</a>
                         
                       
                         </div>
-                      @elseif($pertanyaan->jawaban->status_jawaban == 1)
-                      @endif
-
-                      @else
-                      <div class="pull-right">
-                        <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
-                        {{csrf_field()}}
                       
-                      </div>
-
-                      <a href="{{route('mailbox')}}" class="btn btn-default"><i class="fa fa-times"></i> Discard</a>
-                      @endif
                       </form>
                     </div>
+                    @endif
                   <!-- /.box-footer -->
                 </div>
 
+              </div>
+            
+            @endforeach
+
+            @if(!is_null($pertanyaan->tipe))
+            <div class="col-md-12">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Reply Message</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  @if (count($errors) > 0)
+                      <div class="alert alert-danger">
+                          <ul>
+                              @foreach ($errors->all() as $error)
+                                  <li>{{ $error }}</li>
+                              @endforeach
+                          </ul>
+                      </div>
+                  @endif
+                
+                  <form action="{{route('balas')}}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                      <input class="form-control" placeholder="To:" disabled="" value="{{$pertanyaan->nama_penanya}}{{urldecode('%3C')}}{{$pertanyaan->email_penanya}}{{urldecode('%3E')}}">
+                      <input type="hidden" name="email" value="{{$pertanyaan->email_penanya}}">
+                      <input type="hidden" name="id_pertanyaan" value="{{$pertanyaan->id_pertanyaan}}">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="judul_jawaban" placeholder="Subject:" value="{{old('judul_jawaban') ? old('judul_jawaban') : "Re: ".$pertanyaan->judul_pertanyaan}}">
+                    </div>
+                    <div class="form-group">
+                      <textarea  name="jawaban" class="form-control compose-textarea" >{!!old('jawaban')!!}</textarea>
+                    </div>
+                    <button title="Tambah Data Pelamar" type="button" onclick="createRow()" class="btn btn-primary">
+                      <span class="fa fa-plus"></span> Link 
+                    </button>
+                    <table class="table table-sriped tableganteng" id="tableToModify" >
+                      <thead>
+                        <tr>
+                          <th class="col-md-6">Link</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody id="body">
+                        
+                          @for ($i = 0; $i < (count(old('link')) == 0 ? 0 : count(old('link'))); $i++)
+                          <tr>
+                            <td><input class="form-control" name="link[]" type="text" value='{{old("link.$i") }}' ></td>
+                            <td><button type="button" class="btn btn-danger tombol" title="Hapus Data Pelamar"><span class="fa fa-trash"></span></button></td>
+                          </tr>
+                          @endfor
+                        
+                      </tbody>
+                      </table>
+                      {{-- <hr> --}}
+
+                      <div class="btn btn-default btn-file">
+                          <i class="fa fa-paperclip"></i> Upload file
+                          <input type="file" name="data[]" multiple>
+                      </div>
+                </div>
+                  <div class="box-footer">
+                    <div class="pull-right">
+                      <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
+                      {{csrf_field()}}
+                    </div>
+                    <a href="{{route('mailbox')}}" class="btn btn-default"><i class="fa fa-times"></i> Discard</a>
+                    </form>
+                  </div>
               </div>
             </div>
             @endif
             <!-- /. box -->
           </div>
+
           <!-- /.col -->
         
         <!-- Modal -->
@@ -311,11 +338,11 @@
 
         @section('js')
         <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=f3sg1vumz2lxhu0dnsl5siku8l31huewo0t2lgn6rkrjab8k"></script>
-        @if(is_null($pertanyaan->id_jawaban))
+        {{-- @if(is_null($pertanyaan->id_jawaban)) --}}
         <script>
 
           tinymce.init({
-            selector: 'textarea#compose-textarea',
+            selector: 'textarea.compose-textarea',
             height: 200,
             theme: 'modern',
             plugins: [
@@ -346,7 +373,7 @@
             }
           });
         </script>
-        @endif
+        {{-- @endif --}}
 
         <script type="text/javascript">
           function createRow() {
