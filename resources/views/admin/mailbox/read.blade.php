@@ -207,7 +207,7 @@
                         <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
                         <a id="sent1" href="{{route('confirmationadd')}}?id={{$pertanyaan->id_jawaban}}" class="btn btn-primary"><i class="fa fa-check"></i> Confirm</a>
                       @else
-                        <p>Confirmed at : {{$jawaban->tgl_konfirmasi == null ? $jawaban->updated_at->timezone('Asia/Jakarta') : $jawaban->tgl_konfirmasi->tgl_konfirmasi->timezone('Asia/Jakarta')}}</p>
+                        <p>Confirmed at : {{$jawaban->tgl_konfirmasi == null ? $jawaban->updated_at->timezone('Asia/Jakarta') : $jawaban->tgl_konfirmasi->timezone('Asia/Jakarta')}}</p>
                       @endif
 
                       
