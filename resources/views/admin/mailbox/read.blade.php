@@ -124,6 +124,9 @@
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Reply Message</h3>
+                  <div class="pull-right">
+                    <p>Replied at : {{$jawaban->created_at->timezone('Asia/Jakarta')}}</p>
+                  </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -195,20 +198,24 @@
                     {{-- </div> --}}
                     </div>
                     <!-- /.box-body -->
-                    @if($jawaban->status_jawaban == 0)
+                    
                     <div class="box-footer">
                     {{-- @if(!is_null($pertanyaan->id_jawaban)) --}}
-                      
-                        <div class="pull-right">
+                      <div class="pull-left">
+                      @if($jawaban->status_jawaban == 0)
+                        
                         <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
                         <a id="sent1" href="{{route('confirmationadd')}}?id={{$pertanyaan->id_jawaban}}" class="btn btn-primary"><i class="fa fa-check"></i> Confirm</a>
-                        
+                      @else
+                        <p>Confirmed at : {{$jawaban->tgl_konfirmasi == null ? $jawaban->updated_at->timezone('Asia/Jakarta') : $jawaban->tgl_konfirmasi->tgl_konfirmasi->timezone('Asia/Jakarta')}}</p>
+                      @endif
+
                       
                         </div>
                       
                       </form>
                     </div>
-                    @endif
+                    
                   <!-- /.box-footer -->
                 </div>
 
