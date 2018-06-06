@@ -14,6 +14,9 @@
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">Daftar Pertanyaan</h3>
+              <div class="pull-right">
+              <a href="{{route('export')}}" class="btn btn-primary">Export</a>
+              </div>
             </div>
             <div class="box-body">
               <div class="table-responsive">
