@@ -95,12 +95,6 @@ class MailboxController extends Controller
                 $key1=$key+1;
                 
                 $result["link.$key.url"]="URL $key1 tidak sesuai format!";
-                // $result["nama.$key.min"]="Nama $key1 minimal 3";
-                // $result["nim.$key.required"]="NIM $key1 harus diisi";
-                // $result["Kota.required"]="Kota universitas harus diisi";
-                // $result["ipk.$key.numeric"]="IPK $key1 yang anda masukkan belum sesuai format";
-                // $result["ipk.$key.min"]="IPK $key1 harus lebih besar dari 0";
-                // $result["ipk.$key.max"]="IPK $key1 harus lebih kecil dari 4";
 
             }
 
