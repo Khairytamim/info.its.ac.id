@@ -7,6 +7,8 @@ use App\Pertanyaan;
 use DB;
 use Carbon\Carbon;
 use Response;
+use Excel;
+
 class StatistikController extends Controller
 {
 	public function __construct()
@@ -29,6 +31,49 @@ class StatistikController extends Controller
         $this->data['pertanyaan'] = $pertanyaan;
     	
         return view('admin.statistik.index', $this->data);
+    }
+
+    public function export(Request $request){
+        Excel::create('export', function($excel) {
+
+            $excel->sheet('Sheetname', function($sheet) {
+                $sheet->appendRow([
+                    'Judul Pertanyaan',
+                    'Tipe Pertanyaan',
+                    'Status',
+                    'Respon 1',
+                    'Respon 2'
+                ]);
+                
+                $pertanyaan = Pertanyaan::with(['jawaban'])->whereNotNull('status_email')->get();
+         
+                $pertanyaan = $pertanyaan->map(function ($value) {
+                    $value->respon_1 = $value->created_at->diffInDays($value->tanggal_tipe);
+                    return $value;
+                });
+                foreach ($pertanyaan as $key => $value) {
+                    if($value->tipe != null && $value->id_jawaban == null)$status = 'IN PROGRESS';
+                    else if($value->tipe != null && $value->id_jawaban != null) $status = 'DONE';
+                    else if($value->tipe == null && $value->id_jawaban == null) $status = 'PENDING';
+                    else $status = 'OTHER';
+
+                    $jawaban = $value->jawaban->where('status_jawaban', 1)->sortBy('created_at')->first();
+
+                    if($jawaban->tgl_konfirmasi == null)
+                    $respon_2 = $value->created_at->diffInDays($jawaban->updated_at);
+                    else $respon_2 = $value->created_at->diffInDays($jawaban->tgl_konfirmasi);
+                    $sheet->appendRow([
+                        $value->judul_pertanyaan,
+                        $value->tipe,
+                        $status,
+                        $value->respon_1,
+                        $respon_2
+                    ]);
+                }
+        
+            });
+        
+        })->download('xlsx');
     }
 
     public function respon(Request $request)

@@ -69,6 +69,7 @@ Route::group(['prefix' => 'admin/data', 'middleware' => 'auth'], function () {
 Route::group(['prefix' => 'admin/statistik', 'middleware' => 'auth'], function () {
 	Route::get('/', 'StatistikController@index')->name('statistik');
 	Route::get('/get/response', 'StatistikController@respon')->name('respon');
+	Route::get('/export', 'StatistikController@export')->name('export');
 });
 
 Route::group(['prefix' => 'organisasi'], function () {
