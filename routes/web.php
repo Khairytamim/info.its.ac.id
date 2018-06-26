@@ -21,7 +21,7 @@ Route::get('/admin', function () {
     return redirect('/admin/mailbox');
 });
 
-
+Route::get('/script', '\App\Http\Controllers\PertanyaanController@script');
 // Auth::routes();
 
 Route::group(['prefix' => 'admin/mailbox'], function () {
@@ -48,6 +48,11 @@ Route::group(['prefix' => 'admin/mailbox'], function () {
 Route::group(['prefix' => 'admin/organisasi'], function () {
 	Route::get('/', 'OrganisasiController@adminorganisasi')->name('adminorganisasi');
 	Route::post('/update', 'OrganisasiController@update')->name('updateorganisasi');
+});
+
+Route::group(['prefix' => 'admin/offline'], function () {
+	Route::get('/', 'LayananOfflineController@create')->name('offline.create');
+	// Route::post('/update', 'LayananOfflineController@update')->name('updateorganisasi');
 });
 
 Route::group(['prefix' => 'admin/users'], function () {
@@ -87,7 +92,9 @@ Route::group(['prefix' => 'trending'], function () {
 
 Route::group(['prefix' => 'tanyakan'], function () {
 	Route::get('/', 'PertanyaanController@index')->name('tanyakan');
-	Route::post('/add', 'PertanyaanController@add')->name('addtanyakan'); 
+	Route::post('/add', 'PertanyaanController@add')->name('addtanyakan');
+	Route::post('/add/gratifikasi', 'PertanyaanController@createGratifikasi')->name('gratifikasi');
+	Route::post('/add/keberatan', 'PertanyaanController@createKeberatan')->name('keberatan');
 	Route::get('/list', 'PertanyaanController@list')->name('listtanyakan');  
 });
 Route::group(['prefix' => 'photos'], function () {

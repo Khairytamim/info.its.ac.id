@@ -88,13 +88,23 @@
           <div class="box-body no-padding" >
             <div class="mailbox-read-info">
               <h3>{{$pertanyaan->judul_pertanyaan}}</h3>
+              <h5><b>No. Surat: {{$pertanyaan->no_surat}}</b></h5>
               <h5>From: {{$pertanyaan->nama_penanya}}{{urldecode('%3C')}}{{$pertanyaan->email_penanya}}{{urldecode('%3E')}}
-                <span class="mailbox-read-time pull-right">{{$pertanyaan->created_at}}</span></h5>
+                <span class="mailbox-read-time pull-right">
+                {{$pertanyaan->created_at}}</span></h5>
+              @if($pertanyaan->tipe_layanan == 'info')
+              <h5>Layanan: Permohonan Informasi dan Dokumentasi</h5>
+              @elseif($pertanyaan->tipe_layanan == 'keberatan')
+              <h5>Layanan: Pengajuan Keberatan</h5>
+              @elseif($pertanyaan->tipe_layanan == 'gratifikasi')
+              <h5>Layanan: Pengaduan Gratifikasi dan Pungli</h5>
+              @endif
               @if($pertanyaan->tipe == '')
               <h5>Tipe: -</h5>
               @else
               <h5>Tipe: {{$pertanyaan->tipe}}</h5>
               @endif
+              
             </div>
             <div class="mailbox-read-message">
               {{$pertanyaan->pertanyaan}}
@@ -311,6 +321,7 @@
           <div class="modal-body">
                 <form id="sent" action="{{route('changetype')}}" method="post">
                   <div class="form-group">
+                    @if($pertanyaan->tipe_layanan == 'info')
                     <label class="radio-inline">
                       <input type="radio" name="tipe" id="inlineRadio1" value="Publik"> Publik
                     </label>
@@ -320,6 +331,15 @@
                     <label class="radio-inline">
                       <input type="radio" name="tipe" id="inlineRadio3" value="Rahasia"> Rahasia
                     </label>
+                    @elseif($pertanyaan->tipe_layanan == 'keberatan')
+                      <label class="radio-inline">
+                        <input type="radio" name="tipe" id="inlineRadio3" value="Keberatan" checked="checked"> Keberatan
+                      </label>
+                    @elseif($pertanyaan->tipe_layanan == 'gratifikasi')
+                      <label class="radio-inline">
+                        <input type="radio" name="tipe" id="inlineRadio3" value="Gratifikasi" checked="checked"> Gratifikasi
+                      </label>
+                    @endif
                   </div>
                   <div class="form-group">
                     <label>Pesan</label>

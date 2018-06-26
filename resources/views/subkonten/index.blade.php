@@ -11,6 +11,7 @@
             </div>
          </div>
       </header>
+      @if($subMenu->konten != null)
       <section class="section-prospective2">
          <div class="container container-page-its">
             <div class="row">
@@ -39,4 +40,31 @@
             </div>
          </div>
       </section>
+      @endif
+      @if($subMenu->id == 'pengaduan-pungli-dan-gratifikasi')
+            @include('subkonten.pengaduan')
+      @elseif($subMenu->id == 'permohonan-informasi-dan-dokumentasi')
+            @include('subkonten.permohonanInfo')
+      @elseif($subMenu->id == 'pengajuan-keberatan')
+            @include('subkonten.pengajuanKeberatan')
+      @endif
+@endsection
+@section('js')
+<script>
+      @if ($errors->gagalTambah->any() || session('errormsg'))
+      swal({
+        title: "Error!",
+        text: $('#errormsg').html(),
+        
+      });
+      @endif
+      @if (session('status'))
+          swal("Sukses!", "Pengajuan pertanyaan Anda akan segera kami proses!", "success")
+      @endif
+      $("#sent").submit(function( event ) {
+        // swal("Loading","done","success");
+        swal('Pengajuan pertanyaan')
+        swal.showLoading()
+      });
+</script>
 @endsection

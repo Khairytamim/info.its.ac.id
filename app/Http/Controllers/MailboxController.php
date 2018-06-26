@@ -12,6 +12,7 @@ use App\Jawaban;
 use Uuid;
 use App\Data;
 use File;
+use App\Mail\NotifikasiKonfirmasi;
 use Storage;
 use Validator;
 use Illuminate\Routing\Route;
@@ -197,7 +198,9 @@ class MailboxController extends Controller
 
         
         // dd($request->email);
-    	
+        Mail::to('melania.muntini@gmail.com')->send(new NotifikasiKonfirmasi($update->id_pertanyaan));
+        
+
     	return back()->with('status', 'Balasan pertanyaan sudah terjawab, tunggu konfirmasi!');
     }
 

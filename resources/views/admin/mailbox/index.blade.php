@@ -92,7 +92,19 @@
                   @foreach($pertanyaan as $value)
 
                     <tr class='clickable-row' data-href='{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}'>
-                      <td>{{$value->tipe}}</td>
+                      <td >
+                          @if($value->tipe_layanan == 'info')
+                          <h5>Permohonan Informasi dan Dokumentasi</h5>
+                          @elseif($value->tipe_layanan == 'keberatan')
+                          <h5>Pengajuan Keberatan</h5>
+                          @elseif($value->tipe_layanan == 'gratifikasi')
+                          <h5>Pengaduan Gratifikasi dan Pungli</h5>
+                          @else
+                          -
+                          @endif
+                      </td>
+                      <td>{{$value->tipe == null ? 
+                      '-' : $value->tipe}}</td>
                       {{-- <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td> --}}
                       <td class="mailbox-name"><a href="#">{{$value->nama_penanya}}</a></td>
                       @php $tanyaan = explode(" ", $value->pertanyaan); @endphp

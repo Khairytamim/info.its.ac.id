@@ -94,6 +94,9 @@
             <li class="" id="aktifmailbox">
               <a href="{{route('mailbox')}}"><i class="fa fa-envelope-o"></i> <span>Mailbox</span></a>
             </li>
+            <li class="" id="aktifoffline">
+              <a href="{{route('offline.create')}}"><i class="fa fa-bars"></i> <span>Layanan Offline</span></a>
+            </li>
             {{-- <li class="" id="aktiforganisasi">
               <a href="{{route('adminorganisasi')}}"><i class="fa fa-users"></i> <span>Organisasi</span></a>
             </li> --}}
