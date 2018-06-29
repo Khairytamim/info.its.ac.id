@@ -51,18 +51,18 @@ class PertanyaanController extends Controller
         $create->nama_penanya = $request->nama;
         // $urutTahun = Pertanyaan::whereYear('created_at', date('Y'))->count();
         // Config::set("app.timezone","Asia/Jakarta");
-        (int)$urutHari = Pertanyaan::whereDate('tanggal_jakarta', Carbon::now('Asia/Jakarta')->toDateString())->count()+1;
-        // dd($urutTahun);
-        (int)$urutTahun = Pertanyaan::whereYear('tanggal_jakarta', Carbon::now('Asia/Jakarta')->format('Y'))->count()+1;
+        // (int)$urutHari = Pertanyaan::whereDate('tanggal_jakarta', Carbon::now('Asia/Jakarta')->toDateString())->count()+1;
+        // // dd($urutTahun);
+        // (int)$urutTahun = Pertanyaan::whereYear('tanggal_jakarta', Carbon::now('Asia/Jakarta')->format('Y'))->count()+1;
         // dd($urutTahun);
         // dd(date('Y-m-d'));
         // dd(Carbon::now()->toDateString());
         // $urutTahun->where
         // dd(Carbon::now('Asia/Jakarta')->toDateString());
         // dd(Carbon::now('Asia/Jakarta')->format('Y'));
-        $create->no_surat = $urutTahun .'/'. $urutHari . '/' . Carbon::now('Asia/Jakarta')->toDateString() .'/'. Carbon::now('Asia/Jakarta')->format('Y');
+        // $create->no_surat = $urutTahun .'/'. $urutHari . '/' . Carbon::now('Asia/Jakarta')->toDateString() .'/'. Carbon::now('Asia/Jakarta')->format('Y');
         // dd($create->no_surat);
-        $create->tanggal_jakarta = Carbon::now('Asia/Jakarta')->toDateTimeString();
+        // $create->tanggal_jakarta = Carbon::now('Asia/Jakarta')->toDateTimeString();
         $create->alamat_penanya = $request->alamat;
         $create->nohp_penanya = $request->kontak;
         $create->email_penanya = $request->email;
@@ -112,18 +112,18 @@ class PertanyaanController extends Controller
         $create->nama_penanya = $request->nama;
         // $urutTahun = Pertanyaan::whereYear('created_at', date('Y'))->count();
         // Config::set("app.timezone","Asia/Jakarta");
-        (int)$urutHari = Pertanyaan::whereDate('tanggal_jakarta', Carbon::now('Asia/Jakarta')->toDateString())->count()+1;
-        // dd($urutTahun);
-        (int)$urutTahun = Pertanyaan::whereYear('tanggal_jakarta', Carbon::now('Asia/Jakarta')->format('Y'))->count()+1;
+        // (int)$urutHari = Pertanyaan::whereDate('tanggal_jakarta', Carbon::now('Asia/Jakarta')->toDateString())->count()+1;
+        // // dd($urutTahun);
+        // (int)$urutTahun = Pertanyaan::whereYear('tanggal_jakarta', Carbon::now('Asia/Jakarta')->format('Y'))->count()+1;
         // dd($urutTahun);
         // dd(date('Y-m-d'));
         // dd(Carbon::now()->toDateString());
         // $urutTahun->where
         // dd(Carbon::now('Asia/Jakarta')->toDateString());
         // dd(Carbon::now('Asia/Jakarta')->format('Y'));
-        $create->no_surat = $urutTahun .'/'. $urutHari . '/' . Carbon::now('Asia/Jakarta')->toDateString() .'/'. Carbon::now('Asia/Jakarta')->format('Y');
+        // $create->no_surat = $urutTahun .'/'. $urutHari . '/' . Carbon::now('Asia/Jakarta')->toDateString() .'/'. Carbon::now('Asia/Jakarta')->format('Y');
         // dd($create->no_surat);
-        $create->tanggal_jakarta = Carbon::now('Asia/Jakarta')->toDateTimeString();
+        // $create->tanggal_jakarta = Carbon::now('Asia/Jakarta')->toDateTimeString();
         $create->alamat_penanya = $request->alamat;
         $create->nohp_penanya = $request->kontak;
         $create->email_penanya = $request->email;
@@ -172,18 +172,18 @@ class PertanyaanController extends Controller
         $create->nama_penanya = $request->nama;
         // $urutTahun = Pertanyaan::whereYear('created_at', date('Y'))->count();
         // Config::set("app.timezone","Asia/Jakarta");
-        (int)$urutHari = Pertanyaan::whereDate('tanggal_jakarta', Carbon::now('Asia/Jakarta')->toDateString())->count()+1;
-        // dd($urutTahun);
-        (int)$urutTahun = Pertanyaan::whereYear('tanggal_jakarta', Carbon::now('Asia/Jakarta')->format('Y'))->count()+1;
+        // (int)$urutHari = Pertanyaan::whereDate('tanggal_jakarta', Carbon::now('Asia/Jakarta')->toDateString())->count()+1;
+        // // dd($urutTahun);
+        // (int)$urutTahun = Pertanyaan::whereYear('tanggal_jakarta', Carbon::now('Asia/Jakarta')->format('Y'))->count()+1;
         // dd($urutTahun);
         // dd(date('Y-m-d'));
         // dd(Carbon::now()->toDateString());
         // $urutTahun->where
         // dd(Carbon::now('Asia/Jakarta')->toDateString());
         // dd(Carbon::now('Asia/Jakarta')->format('Y'));
-        $create->no_surat = $urutTahun .'/'. $urutHari . '/' . Carbon::now('Asia/Jakarta')->toDateString() .'/'. Carbon::now('Asia/Jakarta')->format('Y');
+        
         // dd($create->no_surat);
-        $create->tanggal_jakarta = Carbon::now('Asia/Jakarta')->toDateTimeString();
+        
         $create->alamat_penanya = $request->alamat;
         $create->nohp_penanya = $request->kontak;
         $create->email_penanya = $request->email;
@@ -221,7 +221,7 @@ class PertanyaanController extends Controller
         $date = '';
         $counterHarian = 0; 
         $counterTahun = 0;
-        $pertanyaan = Pertanyaan::orderBy('tanggal_jakarta', "ASC")->get();
+        $pertanyaan = Pertanyaan::whereNotNull('tanggal_jakarta')->orderBy('tanggal_jakarta', "ASC")->get();
         foreach ($pertanyaan as $key => $value) {
             $php_date = getdate(strtotime($value->tanggal_jakarta));
             $tahun =  $php_date['year'];
@@ -237,8 +237,18 @@ class PertanyaanController extends Controller
             $date = $tanggal;
             // echo $value->tanggal_jakarta . '|' . $;
             
-
+            
         }
+        // $pertanyaan = Pertanyaan::whereNotNull('tanggal_tipe')->get();
+        // // $pertanyaan = Pertanyaan::get();
+        // // dd($pertanyaan);
+        // foreach ($pertanyaan as $key => $value) {
+        //     $value->tanggal_jakarta = $value->tanggal_tipe->timezone('Asia/Jakarta');
+        //     // $value->tanggal_jakarta = null;
+        //     // $value->no_surat = null;
+        //     $value->save();
+        // }
+        
         
         
     }

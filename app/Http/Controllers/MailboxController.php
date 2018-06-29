@@ -261,9 +261,14 @@ class MailboxController extends Controller
     {
         $update = Pertanyaan::find($request->id);
         // dd($update);
+        (int)$urutHari = Pertanyaan::whereDate('tanggal_jakarta', Carbon::now('Asia/Jakarta')->toDateString())->count()+1;
+        // dd($urutTahun);
+        (int)$urutTahun = Pertanyaan::whereYear('tanggal_jakarta', Carbon::now('Asia/Jakarta')->format('Y'))->count()+1;
         $update->tipe = $request->tipe;
         $update->notes = htmlentities($request->notes);
         $update->tanggal_tipe = Carbon::now();
+        $update->tanggal_jakarta = Carbon::now('Asia/Jakarta')->toDateTimeString();
+        $update->no_surat = $urutTahun .'/'. $urutHari . '/' . Carbon::now('Asia/Jakarta')->toDateString() .'/'. Carbon::now('Asia/Jakarta')->format('Y');
         $update->save();
 
 

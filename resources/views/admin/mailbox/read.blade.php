@@ -88,7 +88,7 @@
           <div class="box-body no-padding" >
             <div class="mailbox-read-info">
               <h3>{{$pertanyaan->judul_pertanyaan}}</h3>
-              <h5><b>No. Surat: {{$pertanyaan->no_surat}}</b></h5>
+              <h5><b>No. Surat: {{$pertanyaan->no_surat ? $pertanyaan->no_surat : '-'}}</b></h5>
               <h5>From: {{$pertanyaan->nama_penanya}}{{urldecode('%3C')}}{{$pertanyaan->email_penanya}}{{urldecode('%3E')}}
                 <span class="mailbox-read-time pull-right">
                 {{$pertanyaan->created_at}}</span></h5>
