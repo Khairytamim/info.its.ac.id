@@ -83,7 +83,13 @@ class MailboxController extends Controller
     	$this->setActive('mailbox');
     	$this->setTitle('mailbox');
 		
-    	$this->data['pertanyaan'] = Pertanyaan::find($request->mail_id);
+        $pertanyaan = Pertanyaan::with(['jawaban'])->findOrFail($request->mail_id);
+        
+        if($pertanyaan->jawaban->where('status_jawaban', 1)->count() > 0)
+        $this->data['cetak'] = 1;
+        else $this->data['cetak'] = 0;
+
+        $this->data['pertanyaan'] = $pertanyaan;
         // dd($this->data['pertanyaan']->jawaban);
         // dd('a');
     	return view('admin.mailbox.read', $this->data);

@@ -119,6 +119,9 @@
           </div>
           <div class="box-footer">
             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#settipe"><i class="fa fa-reply"></i> Tipe Pertanyaan</button>
+            @if($cetak)
+            <a href="{{route('offline.cetak', ['pertanyaan' => $pertanyaan->id_pertanyaan])}}" class="btn btn-default" ><i class="fa fa-print"></i> Cetak</a>
+            @endif
             <form action="{{route('deletemailbox')}}" method="post" style="display: inline;">
               <input type="hidden" name="id_pertanyaan" value="{{$pertanyaan->id_pertanyaan}}">
               {{csrf_field()}}

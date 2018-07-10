@@ -52,6 +52,10 @@ Route::group(['prefix' => 'admin/organisasi'], function () {
 
 Route::group(['prefix' => 'admin/offline'], function () {
 	Route::get('/', 'LayananOfflineController@create')->name('offline.create');
+	Route::post('/add/informasi', 'LayananOfflineController@add')->name('offline.add.informasi');
+	Route::post('/add/gratifikasi', 'LayananOfflineController@addGratifikasi')->name('offline.add.gratifikasi');
+	Route::post('/add/keberatan', 'LayananOfflineController@addKeberatan')->name('offline.add.keberatan');
+	Route::get('/cetak/{pertanyaan}', '\App\Http\Controllers\LayananOfflineController@cetak')->name('offline.cetak');
 	// Route::post('/update', 'LayananOfflineController@update')->name('updateorganisasi');
 });
 

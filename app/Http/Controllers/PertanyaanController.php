@@ -217,27 +217,32 @@ class PertanyaanController extends Controller
     }
     public function script(){
         // $pertanyaan = Pertanyaan::select(DB::raw('date(tanggal_jakarta) as a'))->groupBy('a')->get();
-        $year = '2017';
-        $date = '';
-        $counterHarian = 0; 
-        $counterTahun = 0;
-        $pertanyaan = Pertanyaan::whereNotNull('tanggal_jakarta')->orderBy('tanggal_jakarta', "ASC")->get();
-        foreach ($pertanyaan as $key => $value) {
-            $php_date = getdate(strtotime($value->tanggal_jakarta));
-            $tahun =  $php_date['year'];
-            $tanggal = date('Y-m-d', strtotime($value->tanggal_jakarta));
-            if ($year != $tahun) $counterTahun = 0;
-            if ($date != $tanggal) $counterHarian =0;
-            $counterHarian++;
-            $counterTahun++;
-            echo $value->tanggal_jakarta.' '.$counterTahun . '/' . $counterHarian . '/'. date('Y-m-d', strtotime($value->tanggal_jakarta)) .'/'. date('Y', strtotime($value->tanggal_jakarta)) .'<br>';
-            $value->no_surat =  $counterTahun . '/' . $counterHarian . '/'. date('Y-m-d', strtotime($value->tanggal_jakarta)) .'/'. date('Y', strtotime($value->tanggal_jakarta));
-            $value->save();
-            $year = $tahun;
-            $date = $tanggal;
-            // echo $value->tanggal_jakarta . '|' . $;
+        // $year = '2017';
+        // $date = '';
+        // $counterHarian = 0; 
+        // $counterTahun = 0;
+        // $pertanyaan = Pertanyaan::whereNotNull('tanggal_jakarta')->orderBy('tanggal_jakarta', "ASC")->get();
+        // foreach ($pertanyaan as $key => $value) {
+        //     $php_date = getdate(strtotime($value->tanggal_jakarta));
+        //     $tahun =  $php_date['year'];
+        //     $tanggal = date('Y-m-d', strtotime($value->tanggal_jakarta));
+        //     if ($year != $tahun) $counterTahun = 0;
+        //     if ($date != $tanggal) $counterHarian =0;
+        //     $counterHarian++;
+        //     $counterTahun++;
+        //     echo $value->tanggal_jakarta.' '.$counterTahun . '/' . $counterHarian . '/'. date('Y-m-d', strtotime($value->tanggal_jakarta)) .'/'. date('Y', strtotime($value->tanggal_jakarta)) .'<br>';
+        //     $value->no_surat =  $counterTahun . '/' . $counterHarian . '/'. date('Y-m-d', strtotime($value->tanggal_jakarta)) .'/'. date('Y', strtotime($value->tanggal_jakarta));
+        //     $value->save();
+        //     $year = $tahun;
+        //     $date = $tanggal;
+        //     // echo $value->tanggal_jakarta . '|' . $;
             
             
+        // }
+        $pertanyaan = Pertanyaan::where('tipe_layanan', 'Layanan: Permohonan Informasi dan Dokumentasi')->get();
+        foreach($pertanyaan as $tanya){
+            $tanya->tipe_layanan = 'info';
+            $tanya->save();
         }
         // $pertanyaan = Pertanyaan::whereNotNull('tanggal_tipe')->get();
         // // $pertanyaan = Pertanyaan::get();
