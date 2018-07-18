@@ -82,16 +82,12 @@ Route::group(['prefix' => 'admin/statistik', 'middleware' => 'auth'], function (
 });
 
 Route::group(['prefix' => 'organisasi'], function () {
-	Route::get('/', 'OrganisasiController@index')->name('organisasi');  
+	Route::get('/', 'OrganisasiController@index')->name('organisasi'); 
 });
 
 Route::group(['prefix' => 'laporan'], function () {
 	Route::get('/', 'DataController@laporan')->name('laporan');
 	Route::get('/search', 'DataController@search')->name('searchlaporan');    
-});
-
-Route::group(['prefix' => 'trending'], function () {
-	Route::get('/', 'TrendingController@index')->name('trending');  
 });
 
 Route::group(['prefix' => 'tanyakan'], function () {

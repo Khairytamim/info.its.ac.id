@@ -1,16 +1,3 @@
-{{-- 
-<table>
-    <tbody>
-        <tr>
-            <td>dsadasda</td>
-            <td>:</td>
-            <td>dsadsadasdasdsadsa</td>
-
-
-        </tr>
-        
-    </tbody>
-</table> --}}
 <!doctype html>
 <html lang="en">
 <head>
@@ -38,86 +25,114 @@
 
   <table width="100%">
     <tr>
-        <td valign="top">LOGO PPID / LOGO ITS</td>
-        <td align="right" valign="top">
-        {{-- <h3>{{$pertanyaan->nama_penanya}}</h3> --}}
-            <pre>
-                {{$pertanyaan->nama_penanya}}
-                {{$pertanyaan->nohp_penanya}}
-                {{$pertanyaan->email_penanya}}
-                @php                     
-                    $str = preg_replace( '~((?:\S*?\s){5})~', "$1\n", $pertanyaan->alamat_penanya );
-                    $string = explode("\n", $str);
-                @endphp
-                @foreach($string as $value)
-                @if($value[-1] == ' ')
-                    @php
-                        $array = str_split($value);
-                        array_pop($array);
-                        $array = implode($array);
-                    @endphp
-                    {{$array}}
-                @else {{$value}}
-                @endif
-                @endforeach
-            </pre>
+        <td><a style="background-color: #fbc300; padding: 3px; font-weight: bolder;">LAYANAN INFORMASI PUBLIK</a><p style="font-style: italic;padding: 0 8px; font-size: 12px; color: gray; font-weight: bold;">Public Information Service</p></td>
+        <td align="right">
+            <img src="{{url('/img/icons/its.png')}}" width="80" height="auto">
+            <img src="{{url('/img/icons/its2.png')}}" width="150" height="auto">
+        </td>
+    </tr>
+</table>
+<table width="100%">
+    <tr>
+        <td>
+            <p style="font-size: 20px; text-align: center; font-weight: bold; margin-bottom: 0">FORMULIR<br>PERMOHONAN INFORMASI & DOKUMENTASI</p>
+            <p style="font-style: italic; text-align: center; font-size: 12px; font-weight: bold; color: gray">Information & Documentation Request Form</p>
+            <p style="font-weight: bold; font-size: 14px; text-align: center;">No. {{$pertanyaan->no_surat}}</p>
         </td>
     </tr>
 
-  </table>
-
-  <table width="100%">
+</table>
+<table width="100%">
+<tbody style="padding-bottom: 10px">
     <tr>
-    <td><strong>No. {{$pertanyaan->no_surat}}</strong></td>
+        <br>
+        <td style="font-weight: bold;font-size: 12px;">PERSONAL IDENTITY</td>
     </tr>
-
-  </table>
-  <hr>
-  <h3>Pertanyaan</h3>
-  <table width="100%">
-    {{-- <thead style="background-color: lightgray;">
-      <tr>
-        <th>#</th>
-        <th>Description</th>
-        <th>Quantity</th>
-        <th>Unit Price $</th>
-        <th>Total $</th>
-      </tr>
-    </thead> --}}
-    <tbody>
-      <tr>
-        <td width="150" valign="top">Judul Pertanyaan</td>
+    <tr>
+        <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">Nama Lengkap</p><p style="font-style: italic; color: gray; margin: 0">Complete Name</p></td>
+        <td width="1" valign="top">:</td>
+        <td valign="top">{{$pertanyaan->nama_penanya}}</td>
+    </tr>
+    <tr>
+        <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">Alamat tempat tinggal</p><p style="font-style: italic; color: gray; margin: 0">Address</p></td>
+        <td width="1" valign="top">:</td>
+        <td valign="top">
+            @php                     
+                $str = preg_replace( '~((?:\S*?\s){5})~', "$1\n", $pertanyaan->alamat_penanya );
+                $string = explode("\n", $str);
+            @endphp
+            @foreach($string as $value)
+            @if($value[-1] == ' ')
+                @php
+                    $array = str_split($value);
+                    array_pop($array);
+                    $array = implode($array);
+                @endphp
+                {{$array}}
+            @else {{$value}}
+            @endif
+            @endforeach
+        </td>
+    </tr>
+    <tr>
+        <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">Nomor telp./HP</p><p style="font-style: italic; color: gray; margin: 0">Phone/Mobile number</p></td>
+        <td width="1" valign="top">:</td>
+        <td valign="top">{{$pertanyaan->nohp_penanya}}</td>
+    </tr>
+    <tr>
+        <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">E-mail</p><p style="font-style: italic; color: gray; margin: 0">E-mail</p></td>
+        <td width="1" valign="top">:</td>
+        <td valign="top">{{$pertanyaan->email_penanya}}</td>
+    </tr>
+</tbody>
+</table>
+<table style="width: 100%; margin-top: 15px">
+<tbody>
+    <tr>
+        <td style="font-weight: bold;font-size: 12px">QUESTION</td>
+    </tr>
+    <tr>
+        <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">Judul Pertanyaan</p><p style="font-style: italic; color: gray; margin: 0">Title</p></td>
         <td width="1" valign="top">:</td>
         <td valign="top">{{$pertanyaan->judul_pertanyaan}}</td>
-      </tr>
-      <tr>
-            <td width="150" valign="top">Deskripsi Pertanyaan</td>
-            <td width="1" valign="top">:</td>
-            <td valign="top">{{$pertanyaan->pertanyaan}}</td>
-        </tr>
-    </tbody>
-  </table>
-  @foreach($pertanyaan->jawaban->sortBy('created_at') as $key => $jawaban)
-  <h3>Jawaban #{{$key+1}}</h3>
-  <table width="100%">
-    <tbody>
-        
-        <tr>
-        <td width="150" valign="top">Judul Jawaban</td>
+    </tr>
+    <tr>
+        <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">Pertanyaan</p><p style="font-style: italic; color: gray; margin: 0">Question</p></td>
+        <td width="1" valign="top">:</td>
+        <td valign="top">{{$pertanyaan->pertanyaan}}</td>
+    </tr>
+</tbody>
+</table>
+@foreach($pertanyaan->jawaban->sortBy('created_at') as $key => $jawaban)
+<table style="width: 100%; margin-top: 15px">
+<tbody>
+    <tr>
+        <td style="font-weight: bold;font-size: 12px">ANSWER #{{$key+1}}</td>
+    </tr>
+    <tr>
+        <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">Judul Jawaban</p><p style="font-style: italic; color: gray; margin: 0">Title</p></td>
         <td width="1" valign="top">:</td>
         <td valign="top">{{$jawaban->judul_jawaban}}</td>
-        </tr>
-        <tr>
-            <td width="150" valign="top">Deskripsi Jawaban</td>
-            <td width="1" valign="top">:</td>
-            <td valign="top">{!!html_entity_decode($jawaban->jawaban)!!}</td>
-        </tr>
-        
-    </tbody>
-    </table>
-    @endforeach
+    </tr>
+    <tr>
+        <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">Jawaban</p><p style="font-style: italic; color: gray; margin: 0">Answer</p></td>
+        <td width="1" valign="top">:</td>
+        <td valign="top">{!!html_entity_decode($jawaban->jawaban)!!}</td>
+    </tr>
+</tbody>
+</table>
+@endforeach
+<table style="width: 100%; margin-top: 70px">
+<tbody>
+    <tr><td>...................................................................</td></tr>
+    <tr>
+        <td style="font-weight: bold;font-size: 12px">Melania S Muntini</td>
+    </tr>
+    <tr>
+        <td>Kepala Unit Protokoler, Promosi, dan Humas ITS</td>
+    </tr>
+    <tr><td>Surabaya, @php echo date("j F Y"); @endphp</td></tr>
+</tbody>
+</table>
 </body>
 </html>
-{{-- @foreach($pertanyaan->jawaban as $jawaban)
-{!!html_entity_decode($jawaban->jawaban)!!}
-@endforeach --}}

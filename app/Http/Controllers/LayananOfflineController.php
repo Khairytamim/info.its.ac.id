@@ -225,6 +225,6 @@ class LayananOfflineController extends Controller
         // return view('admin.pdf.invoice', $this->data);
         $pdf = PDF::setPaper('a4', 'portrait')
         ->loadView('admin.pdf.invoice', $this->data);
-        return $pdf->download('invoice.pdf');
+        return $pdf->download($pertanyaan->no_surat, '.pdf');
     }
 }
