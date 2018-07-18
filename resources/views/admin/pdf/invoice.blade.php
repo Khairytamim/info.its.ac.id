@@ -46,7 +46,7 @@
 <tbody style="padding-bottom: 10px">
     <tr>
         <br>
-        <td style="font-weight: bold;font-size: 12px;">PERSONAL IDENTITY</td>
+        <td style="font-weight: bold;font-size: 12px;">IDENTITAS DIRI</td>
     </tr>
     <tr>
         <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">Nama Lengkap</p><p style="font-style: italic; color: gray; margin: 0">Complete Name</p></td>
@@ -89,7 +89,7 @@
 <table style="width: 100%; margin-top: 15px">
 <tbody>
     <tr>
-        <td style="font-weight: bold;font-size: 12px">QUESTION</td>
+        <td style="font-weight: bold;font-size: 12px">PERTANYAAN</td>
     </tr>
     <tr>
         <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">Judul Pertanyaan</p><p style="font-style: italic; color: gray; margin: 0">Title</p></td>
@@ -107,7 +107,7 @@
 <table style="width: 100%; margin-top: 15px">
 <tbody>
     <tr>
-        <td style="font-weight: bold;font-size: 12px">ANSWER #{{$key+1}}</td>
+        <td style="font-weight: bold;font-size: 12px">JAWABAN #{{$key+1}}</td>
     </tr>
     <tr>
         <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">Judul Jawaban</p><p style="font-style: italic; color: gray; margin: 0">Title</p></td>
