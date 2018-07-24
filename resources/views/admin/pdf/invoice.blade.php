@@ -27,8 +27,8 @@
     <tr>
         <td><a style="background-color: #fbc300; padding: 3px; font-weight: bolder;">LAYANAN INFORMASI PUBLIK</a><p style="font-style: italic;padding: 0 8px; font-size: 12px; color: gray; font-weight: bold;">Public Information Service</p></td>
         <td align="right">
-            <img src="{{url('/img/icons/its.png')}}" width="80" height="auto">
-            <img src="{{url('/img/icons/its2.png')}}" width="150" height="auto">
+            <img src="{{public_path('/img/icons/its.png')}}" width="80" height="auto">
+            <img src="{{public_path('/img/icons/its2.png')}}" width="150" height="auto">
         </td>
     </tr>
 </table>
@@ -57,7 +57,7 @@
         <td width="150" valign="top"><p style="margin: 0;font-weight: bold;font-size: 12px">Alamat tempat tinggal</p><p style="font-style: italic; color: gray; margin: 0">Address</p></td>
         <td width="1" valign="top">:</td>
         <td valign="top">
-            @php                     
+            {{-- @php                     
                 $str = preg_replace( '~((?:\S*?\s){5})~', "$1\n", $pertanyaan->alamat_penanya );
                 $string = explode("\n", $str);
             @endphp
@@ -71,7 +71,7 @@
                 {{$array}}
             @else {{$value}}
             @endif
-            @endforeach
+            @endforeach --}}
         </td>
     </tr>
     <tr>
@@ -136,3 +136,4 @@
 </table>
 </body>
 </html>
+{{-- a --}}
