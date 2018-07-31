@@ -140,7 +140,7 @@
                                     <ul class="menu">
                                         <li>Kontak Kami</li>
                                         <li style="font-size: 12px">(031) 599-4251</li>
-                                        <a style="padding: 6px; font-weight: normal; font-size: 12px" href="mailto:fikry.labsky08@gmail.com" class="btn btn-primary btn-block">Developed By</a>
+                                        {{-- <a style="padding: 6px; font-weight: normal; font-size: 12px" href="mailto:fikry.labsky08@gmail.com" class="btn btn-primary btn-block">Developed By</a> --}}
                                     </ul>
                                 </div>
                             </div>
