@@ -52,16 +52,26 @@ class StatistikController extends Controller
                     return $value;
                 });
                 foreach ($pertanyaan as $key => $value) {
+                    // if($value->id_pertanyaan == 'bbcdac28-c4fb-40cc-ac78-d96e5c24fd4b') continue;
                     if($value->tipe != null && $value->id_jawaban == null)$status = 'IN PROGRESS';
                     else if($value->tipe != null && $value->id_jawaban != null) $status = 'DONE';
                     else if($value->tipe == null && $value->id_jawaban == null) $status = 'PENDING';
                     else $status = 'OTHER';
 
                     $jawaban = $value->jawaban->where('status_jawaban', 1)->sortBy('created_at')->first();
+                    
+                    // dd($jawaban);
+                    // echo $value->id_pertanyaan."<br>";
+                    if(!$jawaban)
+                    $respon_2 = 'Belum Konfirmasi';
+                    // echo $jawaban; 
+                    else{
+                        if($jawaban->tgl_konfirmasi == null)
+                        $respon_2 = $value->created_at->diffInDays($jawaban->updated_at);
+                        else $respon_2 = $value->created_at->diffInDays($jawaban->tgl_konfirmasi);
+                    }
+                    
 
-                    if($jawaban->tgl_konfirmasi == null)
-                    $respon_2 = $value->created_at->diffInDays($jawaban->updated_at);
-                    else $respon_2 = $value->created_at->diffInDays($jawaban->tgl_konfirmasi);
                     $sheet->appendRow([
                         $value->judul_pertanyaan,
                         $value->tipe,
