@@ -127,12 +127,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-2 col-xs-5">
-                            <img src="{{url('/img/logo.png')}}" class="logo-in-footer">
+                            <a href="https://its.ac.id"><img src="{{url('/img/logo.png')}}" class="logo-in-footer"></a>
                         </div>
-                        <div class="col-sm-3 col-xs-7">
-                            <p>Rektorat Building 1st Floor
-                            <br>Kampus ITS, Jalan Raya ITS, Keputih, Sukolilo, Keputih, Surabaya
-                            <br>Jawa Timur 60117, Indonesia</p>
+                        <div class="col-sm-3 col-xs-7"> 
+                            <p>Gedung Rektorat Lt.1 
+                            <br>Kampus ITS Sukolilo
+                            <br>Surabaya, Jawa Timur, Indonesia, 60111</p>
                         </div>
                         <div class="col-sm-3 col-xs-6 border-right-white-in-mobile">
                             <div class="footer-top-content border-left-white">
@@ -210,7 +210,7 @@
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         {{-- <script src="{{url('/admindist/dist/js/sweetalert.min.js')}}"></script> --}}
         <script src="https://cdn.jsdelivr.net/sweetalert2/5.3.8/sweetalert2.js"></script>
-        {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> --}}
+        {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootsap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> --}}
         @yield('js')
 
     </body>
