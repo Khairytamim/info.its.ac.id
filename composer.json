@@ -11,6 +11,7 @@
         "guzzlehttp/guzzle": "^6.2",
         "ixudra/curl": "^6.11",
         "laravel/framework": "5.4.*",
+        "laravel/passport": "4.0.3",
         "laravel/tinker": "~1.0",
         "maatwebsite/excel": "~2.1.0",
         "webpatser/laravel-uuid": "2.*"
