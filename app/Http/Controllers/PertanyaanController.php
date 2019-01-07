@@ -207,6 +207,126 @@ class PertanyaanController extends Controller
         return back()->with('status', 'Silahkan Cek Email/Spam Pada Email');
     }
 
+    public function createSengketa(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required',
+            'alamat' => 'required',
+            'kontak' => 'required',
+            'email' => 'required',
+            'judul' => 'required',
+            'pertanyaan' => 'required',
+            'ktp' => 'required|image|max:5000',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+                        ->withErrors($validator, 'gagalTambah')
+                        ->withInput();
+        }
+
+        
+        
+        $create = new Pertanyaan;
+        $create->id_pertanyaan = Uuid::generate(4);
+        $create->nama_penanya = $request->nama;
+        // $urutTahun = Pertanyaan::whereYear('created_at', date('Y'))->count();
+        // Config::set("app.timezone","Asia/Jakarta");
+        // (int)$urutHari = Pertanyaan::whereDate('tanggal_jakarta', Carbon::now('Asia/Jakarta')->toDateString())->count()+1;
+        // // dd($urutTahun);
+        // (int)$urutTahun = Pertanyaan::whereYear('tanggal_jakarta', Carbon::now('Asia/Jakarta')->format('Y'))->count()+1;
+        // dd($urutTahun);
+        // dd(date('Y-m-d'));
+        // dd(Carbon::now()->toDateString());
+        // $urutTahun->where
+        // dd(Carbon::now('Asia/Jakarta')->toDateString());
+        // dd(Carbon::now('Asia/Jakarta')->format('Y'));
+        
+        // dd($create->no_surat);
+        
+        $create->alamat_penanya = $request->alamat;
+        $create->nohp_penanya = $request->kontak;
+        $create->email_penanya = $request->email;
+        $create->judul_pertanyaan = $request->judul;
+        $create->pertanyaan = $request->pertanyaan;
+        $create->tipe_layanan = 'sengketa';
+        
+                     
+        if ($request->hasFile('ktp')) {
+            $file = $request->ktp;
+            $filename = 'ktp/'. Uuid::generate(4) . '.' . $file->getClientOriginalExtension();
+            Storage::disk('public')->put($filename, File::get($file));
+            $create->ktp = "storage/$filename";
+
+        }
+
+        $create->save();
+
+        Mail::to($request->email)->send(new AddPertanyaan($create->id_pertanyaan));
+
+        return back()->with('status', 'Silahkan Cek Email/Spam Pada Email');
+    }
+
+    public function createWewenang(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required',
+            'alamat' => 'required',
+            'kontak' => 'required',
+            'email' => 'required',
+            'judul' => 'required',
+            'pertanyaan' => 'required',
+            'ktp' => 'required|image|max:5000',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+                        ->withErrors($validator, 'gagalTambah')
+                        ->withInput();
+        }
+
+        
+        
+        $create = new Pertanyaan;
+        $create->id_pertanyaan = Uuid::generate(4);
+        $create->nama_penanya = $request->nama;
+        // $urutTahun = Pertanyaan::whereYear('created_at', date('Y'))->count();
+        // Config::set("app.timezone","Asia/Jakarta");
+        // (int)$urutHari = Pertanyaan::whereDate('tanggal_jakarta', Carbon::now('Asia/Jakarta')->toDateString())->count()+1;
+        // // dd($urutTahun);
+        // (int)$urutTahun = Pertanyaan::whereYear('tanggal_jakarta', Carbon::now('Asia/Jakarta')->format('Y'))->count()+1;
+        // dd($urutTahun);
+        // dd(date('Y-m-d'));
+        // dd(Carbon::now()->toDateString());
+        // $urutTahun->where
+        // dd(Carbon::now('Asia/Jakarta')->toDateString());
+        // dd(Carbon::now('Asia/Jakarta')->format('Y'));
+        
+        // dd($create->no_surat);
+        
+        $create->alamat_penanya = $request->alamat;
+        $create->nohp_penanya = $request->kontak;
+        $create->email_penanya = $request->email;
+        $create->judul_pertanyaan = $request->judul;
+        $create->pertanyaan = $request->pertanyaan;
+        $create->tipe_layanan = 'wewenang';
+        
+                     
+        if ($request->hasFile('ktp')) {
+            $file = $request->ktp;
+            $filename = 'ktp/'. Uuid::generate(4) . '.' . $file->getClientOriginalExtension();
+            Storage::disk('public')->put($filename, File::get($file));
+            $create->ktp = "storage/$filename";
+
+        }
+
+        $create->save();
+
+        Mail::to($request->email)->send(new AddPertanyaan($create->id_pertanyaan));
+
+        return back()->with('status', 'Silahkan Cek Email/Spam Pada Email');
+    }
+
     public function list()
     {
         $this->setActive('list');

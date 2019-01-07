@@ -95,6 +95,8 @@ Route::group(['prefix' => 'tanyakan'], function () {
 	Route::post('/add', 'PertanyaanController@add')->name('addtanyakan');
 	Route::post('/add/gratifikasi', 'PertanyaanController@createGratifikasi')->name('gratifikasi');
 	Route::post('/add/keberatan', 'PertanyaanController@createKeberatan')->name('keberatan');
+	Route::post('/add/sengketa', 'PertanyaanController@createSengketa')->name('sengketa');
+	Route::post('/add/wewenang', 'PertanyaanController@createWewenang')->name('wewenang');
 	Route::get('/list', 'PertanyaanController@list')->name('listtanyakan');  
 });
 Route::group(['prefix' => 'photos'], function () {

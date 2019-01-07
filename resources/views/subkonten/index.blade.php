@@ -47,6 +47,10 @@
             @include('subkonten.permohonanInfo')
       @elseif($subMenu->id == 'pengajuan-keberatan')
             @include('subkonten.pengajuanKeberatan')
+      @elseif($subMenu->id == 'permohonan-penyelesaian-sengketa-ke-komisi-informasi')
+            @include('subkonten.sengketa')
+      @elseif($subMenu->id == 'pengaduan-penyalahgunaan-wewenang')
+            @include('subkonten.wewenang')
       @endif
 @endsection
 @section('js')
