@@ -765,6 +765,30 @@ footer .social-icon
 }
 /* end of flip box */
 
+/* start of greenbutton */
+.btngreen
+{
+    background: #93ca3a;
+    border-radius: 0;
+    border: 2px solid transparent;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 0 0 0 0;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    height: 50px;
+    width: 250px;
+    padding: 12px 10px 10px 10px;
+    display: inline-block;
+}
+.btngreen:hover,
+.btngreen:focus {
+    background: #fff;
+    color: #93ca3a;
+    border: 2px solid transparent;
+}
+/* end of greenbutton */
+
 @media only screen and (max-width: 1199px) {
     .flexslider h1 { font-size: 30px; }
     .flexslider h2 { font-size: 24px; }

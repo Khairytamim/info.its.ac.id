@@ -65,17 +65,17 @@ http://www.tooplate.com/view/2081-solution
 		        <li>
 		        	<img src="{{url('img/front.jpg')}}" alt="Slide 1">
 		        	<div class="slider-caption">
-					    <div class="templatemo_homewrapper">
-					      {{-- <h1 class="wow fadeInDown" data-wow-delay="2000">Solution Company</h1> --}}
-					      <h2 class="wow fadeInDown" data-wow-delay="2000">
-							<span>Pejabat Pengelola Informasi Publik</span>
-                        </h2>
-                        <h2 class="wow fadeInDown" data-wow-delay="2000">
-							<span>Institut Teknologi Sepuluh Nopember</span>
-						</h2>
-                        <a href="#service" class="smoothScroll btn btn-default wow fadeInDown" style="width: auto" data-wow-delay="2000">FORMULIR PERMOHONAN INFORMASI PUBLIK</a>	
-                        <a href="#service" class="smoothScroll btn btn-default wow fadeInDown" style="width: auto" data-wow-delay="2000">HUBUNGI KAMI VIA WHATSAPP</a>	
-					    </div>
+								<div class="templatemo_homewrapper">
+									{{-- <h1 class="wow fadeInDown" data-wow-delay="2000">Solution Company</h1> --}}
+									<h2 class="wow fadeInDown" data-wow-delay="2000">
+								<span>Pejabat Pengelola Informasi Publik</span>
+													</h2>
+													<h2 class="wow fadeInDown" data-wow-delay="2000">
+								<span>Institut Teknologi Sepuluh Nopember</span>
+							</h2>
+								<a href="#service" class="smoothScroll btn btn-default wow fadeInDown" style="width: auto" data-wow-delay="2000">FORMULIR PERMOHONAN INFORMASI PUBLIK</a>	
+								<a href="#service" class="smoothScroll btn btn-default wow fadeInDown" style="width: auto" data-wow-delay="2000">HUBUNGI KAMI VIA WHATSAPP</a>	
+								</div>
 				  	</div>
 		        </li>
 		      </ul>
@@ -86,7 +86,7 @@ http://www.tooplate.com/view/2081-solution
 
 		<!-- start service -->
 		<div id="service">
-			<div class="container">
+			<div class="container wow fadeIn" data-wow-delay="0.6s"">
 				<div class="row">
 					<div class="col-md-8 col-sm-8">
 						<div class="media">
@@ -159,9 +159,12 @@ http://www.tooplate.com/view/2081-solution
 											</div>
 									
 										</div><!-- panel-group -->
+										<div class="templatemo_homewrapper">
+												<a href="#service" class="smoothScroll btngreen btn-default wow fadeInDown" style="width: auto" data-wow-delay="2000">Profil PPID</a>	<!-- container -->
+										</div>
 										
-										
-									</div><!-- container -->
+									</div>
+									
 
 							</div>
 						</div>
@@ -278,15 +281,66 @@ http://www.tooplate.com/view/2081-solution
 				<div class="row">
 					<div class="col-md-1 col-sm-1"></div>
 					<div class="col-md-8 col-sm-8">
-						<h2 class="wow bounce">We provide <strong>solutions</strong></h2>
-						<h3 class="wow fadeIn" data-wow-delay="0.6s"><mark>Creative</mark> Designers &amp; <mark>Talented</mark> Developers</h3>
-						<p class="wow fadeInUp" data-wow-delay="0.9s">Nulla ultricies bibendum augue et molestie. Suspendisse pellentesque mollis imperdiet. Quisque sodales laoreet tincidunt. Phasellus ut mi orci. Vivamus id odio ac justo tincidunt placerat. Nulla facilisi. Vivamus et dolor urna. Sed vestibulum urna justo, nec malesuada urna aliquet et.</p>
+						<h2 class="wow bounce">Formulir Permohonan Informasi Publik</h2>
+						{{-- <h3 class="wow fadeIn" data-wow-delay="0.6s"><mark>Creative</mark> Designers &amp; <mark>Talented</mark> Developers</h3> --}}
+						{{-- <p class="wow fadeInUp" data-wow-delay="0.9s">Nulla ultricies bibendum augue et molestie. Suspendisse pellentesque mollis imperdiet. Quisque sodales laoreet tincidunt. Phasellus ut mi orci. Vivamus id odio ac justo tincidunt placerat. Nulla facilisi. Vivamus et dolor urna. Sed vestibulum urna justo, nec malesuada urna aliquet et.</p> --}}
+						<div class="templatemo_homewrapper">
+								<a href="#service" class="smoothScroll btngreen btn-default wow fadeInDown" style="width: auto" data-wow-delay="2000">Formulir Permohonan</a>	<!-- container -->
+						</div>
 					</div>
 					<div class="col-md-2 col-sm-2"></div>
 				</div>
 			</div>
 		</div>
 		<!-- end divider -->
+
+		{{-- start tata cara permohonan --}}
+		<div id="team">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="wow bounce">Tata Cara Permohonan</h2>
+					</div>
+					<div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+						<img src="{{url('img/tatacara.jpg')}}" class="img-responsive" alt="team img">
+						{{-- <h4>Director</h4> --}}
+						<h3>Permohonan Informasi Publik</h3>
+						{{-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+						 <ul class="social-icon text-center">
+           					<li><a href="#" class="wow fadeInUp fa fa-facebook" data-wow-delay="2s"></a></li>
+          					 <li><a href="#" class="wow fadeInDown fa fa-twitter" data-wow-delay="2s"></a></li>
+          					 <li><a href="#" class="wow fadeIn fa fa-instagram" data-wow-delay="2s"></a></li>
+         					 <li><a href="#" class="wow fadeInUp fa fa-pinterest" data-wow-delay="2s"></a></li>
+       					 </ul> --}}
+					</div>
+					<div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.6s">
+						<img src="{{url('img/tatacara.jpg')}}" class="img-responsive" alt="team img">
+						{{-- <h4>Developer</h4> --}}
+						<h3>Keberatan Atas Permohonan Informasi</h3>
+						{{-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+						 <ul class="social-icon text-center">
+           					<li><a href="#" class="wow fadeInUp fa fa-facebook" data-wow-delay="2s"></a></li>
+          					 <li><a href="#" class="wow fadeInDown fa fa-twitter" data-wow-delay="2s"></a></li>
+          					 <li><a href="#" class="wow fadeIn fa fa-instagram" data-wow-delay="2s"></a></li>
+         					 <li><a href="#" class="wow fadeInUp fa fa-pinterest" data-wow-delay="2s"></a></li>
+       					 </ul> --}}
+					</div>
+					<div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.9s">
+						<img src="{{url('img/tatacara.jpg')}}" class="img-responsive" alt="team img">
+						{{-- <h4>Manager</h4> --}}
+						<h3>Penyelesaian Sengketa Informas</h3>
+						{{-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+						 <ul class="social-icon text-center">
+           					<li><a href="#" class="wow fadeInUp fa fa-facebook" data-wow-delay="2s"></a></li>
+          					 <li><a href="#" class="wow fadeInDown fa fa-twitter" data-wow-delay="2s"></a></li>
+          					 <li><a href="#" class="wow fadeIn fa fa-instagram" data-wow-delay="2s"></a></li>
+         					 <li><a href="#" class="wow fadeInUp fa fa-pinterest" data-wow-delay="2s"></a></li>
+       					 </ul> --}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end tata cara permohonan -->
 
 		<!-- start about -->
 		<div id="about">
@@ -629,6 +683,8 @@ http://www.tooplate.com/view/2081-solution
 
 
 		<!-- jQuery -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 		<script src="{{url('v2/js/jquery.js')}}"></script>
 		<!-- bootstrap -->
 		<script src="{{url('v2/js/bootstrap.min.js')}}"></script>
@@ -644,6 +700,19 @@ http://www.tooplate.com/view/2081-solution
 		<script src="{{url('v2/js/jquery.flexslider.js')}}"></script>
 		<!-- custom -->
 		<script src="{{url('v2/js/custom.js')}}"></script>
+
+		<script type="text/javascript">	
+		$(document).ready(function(){
+				// set up hover panels
+				// although this can be done without JavaScript, we've attached these events
+				// because it causes the hover to be triggered when the element is tapped on a touch device
+				$('.hover').hover(function(){
+					$(this).addClass('flip');
+				},function(){
+					$(this).removeClass('flip');
+				});
+			});
+			</script>
 
 	</body>
 </html>
