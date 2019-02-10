@@ -153,7 +153,11 @@ http://www.tooplate.com/view/2081-solution
 												</div>
 												<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 													<div class="panel-body">
-														Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+														Kami sepakat untuk menerapkan standar pelayanan permohonan informasi publik di lingkungan Institut Teknologi Sepuluh Nopember, oleh karena itu kami berkomitmen untuk:
+
+Menerapkan dan memelihara standar pelayanan informasi publik secara konsisten dan berkesinambungan
+Melayani permintaan informasi publik sesuai persyaratan yang ada di UU KIP dan Peraturan Komisi Informasi
+Meningkatkan kinerja layanan informasi publik melalui penerapan prinsip pelayanan prima dengan sepenuh hati, transparan, cepat, akurat dan aman
 													</div>
 												</div>
 											</div>
@@ -342,7 +346,151 @@ http://www.tooplate.com/view/2081-solution
 		</div>
 		<!-- end tata cara permohonan -->
 
-		<!-- start about -->
+		<!-- start divider -->
+		<div id="divider">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-1 col-sm-1"></div>
+					<div class="col-md-8 col-sm-8">
+						<h2 class="wow bounce">Unduh Aplikasi Info ITS di Google Play</h2>
+						{{-- <h3 class="wow fadeIn" data-wow-delay="0.6s"><mark>Creative</mark> Designers &amp; <mark>Talented</mark> Developers</h3> --}}
+						{{-- <p class="wow fadeInUp" data-wow-delay="0.9s">Nulla ultricies bibendum augue et molestie. Suspendisse pellentesque mollis imperdiet. Quisque sodales laoreet tincidunt. Phasellus ut mi orci. Vivamus id odio ac justo tincidunt placerat. Nulla facilisi. Vivamus et dolor urna. Sed vestibulum urna justo, nec malesuada urna aliquet et.</p> --}}
+						<div class="templatemo_homewrapper">
+								<a href="#service" class="smoothScroll btngreen btn-default wow fadeInDown" style="width: auto" data-wow-delay="2000">Unduh</a>	<!-- container -->
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+		<!-- end divider -->
+
+		<!-- start portfolio -->
+		<div id="portfolio">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h2 class="wow bounce">Daftar Informasi Publik</h2>
+							<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
+
+								<ul class="filter-wrapper clearfix">
+                   					 <li><a href="#" data-filter="*" class="selected opc-main-bg">All</a></li>
+                   					 <li><a href="#" class="opc-main-bg" data-filter=".graphic">DIP</a></li>
+                   					 <li><a href="#" class="opc-main-bg" data-filter=".photoshop">Serta Merta</a></li>
+                    				<li><a href="#" class="opc-main-bg" data-filter=".wallpaper">Tersedia Setiap Saat</a></li>
+               					 </ul>
+
+               				 	<div class="iso-box-section">
+               				 		<div class="iso-box-wrapper col4-iso-box">
+
+               				 			<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">
+               				 				<div class="portfolio-thumb">
+               				 					<img src="{{url('v2/images/portfolio-img1.jpg')}}" class="fluid-img" alt="portfolio img">
+               				 						<div class="portfolio-overlay">
+               				 							<a href="#" class="fa fa-search"></a>
+               				 							<a href="#" class="fa fa-link"></a>
+               				 							<h4>Project title</h4>
+               				 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+               				 						</div>
+               				 				</div>
+               				 			</div>
+
+               				 			<div class="iso-box graphic wallpaper col-md-4 col-sm-6 col-xs-12">
+               				 				<div class="portfolio-thumb">
+               				 					<img src="{{url('v2/images/portfolio-img2.jpg')}}" class="fluid-img" alt="portfolio img">
+               				 						<div class="portfolio-overlay">
+               				 							<a href="#" class="fa fa-search"></a>
+               				 							<a href="#" class="fa fa-link"></a>
+               				 							<h4>Project title</h4>
+               				 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+               				 						</div>
+               				 				</div>
+               				 			</div>
+
+               				 			<div class="iso-box wallpaper col-md-4 col-sm-6 col-xs-12">
+               				 				<div class="portfolio-thumb">
+               				 					<img src="{{url('v2/images/portfolio-img3.jpg')}}" class="fluid-img" alt="portfolio img">
+               				 						<div class="portfolio-overlay">
+               				 							<a href="#" class="fa fa-search"></a>
+               				 							<a href="#" class="fa fa-link"></a>
+               				 							<h4>Project title</h4>
+               				 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+               				 						</div>
+               				 				</div>
+               				 			</div>
+
+               				 			<div class="iso-box graphic col-md-4 col-sm-6 col-xs-12">
+               				 				<div class="portfolio-thumb">
+               				 					<img src="{{url('v2/images/portfolio-img4.jpg')}}" class="fluid-img" alt="portfolio img">
+               				 						<div class="portfolio-overlay">
+               				 							<a href="#" class="fa fa-search"></a>
+               				 							<a href="#" class="fa fa-link"></a>
+               				 							<h4>Project title</h4>
+               				 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+               				 						</div>
+               				 				</div>
+               				 			</div>
+
+               				 			<div class="iso-box wallpaper col-md-4 col-sm-6 col-xs-12">
+               				 				<div class="portfolio-thumb">
+               				 					<img src="{{url('v2/images/portfolio-img5.jpg')}}" class="fluid-img" alt="portfolio img">
+               				 						<div class="portfolio-overlay">
+               				 							<a href="#" class="fa fa-search"></a>
+               				 							<a href="#" class="fa fa-link"></a>
+               				 							<h4>Project title</h4>
+               				 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+               				 						</div>
+               				 				</div>
+               				 			</div>
+
+               				 			<div class="iso-box graphic photoshop col-md-4 col-sm-6 col-xs-12">
+               				 				<div class="portfolio-thumb">
+               				 					<img src="{{url('v2/images/portfolio-img6.jpg')}}" class="fluid-img" alt="portfolio img">
+               				 						<div class="portfolio-overlay">
+               				 							<a href="#" class="fa fa-search"></a>
+               				 							<a href="#" class="fa fa-link"></a>
+               				 							<h4>Project title</h4>
+               				 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+               				 						</div>
+               				 				</div>
+               				 			</div>
+
+               				 		</div>
+               				 	</div>
+
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end portfolio -->
+
+		<!-- start newsletter -->
+		<div id="newsletter">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title">
+							<p class="wow fadeIn" data-wow-delay="0.6s">“Hak atas informasi yang terbuka menjadi pembuka jalan bagi terjaminnya pelaksanaan hak-hak asasi lainnya, seperti hak atas pendidikan, hak untuk hidup sejahtera, hak untuk hidup aman, dan hak warga negara lainnya.”</p>
+							<h4 class="wow bounce">Kominfo RI</h4>
+						</div>
+						{{-- <form action="#" method="get" class="wow fadeInUp" data-wow-delay="0.9s">
+							<div class="col-md-3 col-sm-3"></div>
+							<div class="col-md-4 col-sm-4">
+								<input name="email" type="email" class="form-control" id="email" placeholder="Enter your email">
+							</div>
+							<div class="col-md-2 col-sm-2">
+								<input name="submit" type="submit" class="form-control" id="submit" value="Sign Up">
+							</div>
+							<div class="col-md-3 col-sm-3"></div>
+						</form> --}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end newsletter -->
+
+		{{-- <!-- start about -->
 		<div id="about">
 			<div class="container">
 				<div class="row">
@@ -656,7 +804,7 @@ http://www.tooplate.com/view/2081-solution
 		<div class="google_map">
 			<div id="map-canvas"></div>
 		</div>
-		<!-- end google map -->
+		<!-- end google map --> --}}
 
 		<!-- start footer -->
 		<footer>
