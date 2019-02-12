@@ -63,7 +63,7 @@ http://www.tooplate.com/view/2081-solution
 		    <div class="flexslider">
 		      <ul class="slides">
 		        <li>
-		        	<img src="{{url('img/front.jpg')}}" alt="Slide 1">
+		        	<img src="{{url('img/front.jpg')}}" style="opacity: 0.7"alt="Slide 1">
 		        	<div class="slider-caption">
 								<div class="templatemo_homewrapper">
 									{{-- <h1 class="wow fadeInDown" data-wow-delay="2000">Solution Company</h1> --}}
@@ -111,7 +111,7 @@ http://www.tooplate.com/view/2081-solution
 														</a>
 													</h4>
 												</div>
-												<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+												<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 													<div class="panel-body">
 															Visi: <br><br>
 				
@@ -153,11 +153,15 @@ http://www.tooplate.com/view/2081-solution
 												</div>
 												<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 													<div class="panel-body">
-														Kami sepakat untuk menerapkan standar pelayanan permohonan informasi publik di lingkungan Institut Teknologi Sepuluh Nopember, oleh karena itu kami berkomitmen untuk:
+														Kami sepakat untuk menerapkan standar pelayanan permohonan informasi publik di lingkungan Institut Teknologi Sepuluh Nopember, oleh karena itu kami berkomitmen untuk:<br><br>
+<ol>
+	<li><p>Menerapkan dan memelihara standar pelayanan informasi publik secara konsisten dan berkesinambungan</p></li>
+	<li><p>Melayani permintaan informasi publik sesuai persyaratan yang ada di UU KIP dan Peraturan Komisi Informasi</p></li>
+	<li><p>Meningkatkan kinerja layanan informasi publik melalui penerapan prinsip pelayanan prima dengan sepenuh hati, transparan, cepat, akurat dan aman</p></li>
+</ol>
 
-Menerapkan dan memelihara standar pelayanan informasi publik secara konsisten dan berkesinambungan
-Melayani permintaan informasi publik sesuai persyaratan yang ada di UU KIP dan Peraturan Komisi Informasi
-Meningkatkan kinerja layanan informasi publik melalui penerapan prinsip pelayanan prima dengan sepenuh hati, transparan, cepat, akurat dan aman
+
+
 													</div>
 												</div>
 											</div>
@@ -185,21 +189,42 @@ Meningkatkan kinerja layanan informasi publik melalui penerapan prinsip pelayana
 						</div>
 					</div> --}}
 					<div class="col-md-4 col-sm-4">
-							<div class="flip-wrapper">
-									<div class="col_third">
-										<div class="hover flip-panel">
-											<div class="front">
-												<div class="box1">
-													<p>Front Side</p>
-												</div>
-											</div>
-											<div class="back">
-												<div class="box2">
-													<p>Back Side</p>
-												</div>
-											</div>
-										</div>
+						<div class="flipbox">
+							<div class="back">
+								<div class="row">
+									<p>Waktu Layanan</p>
+									<h4>Senin - Jumat</h4>
+									<h4>08.00-16.00 WIB</h4>
 								</div>
+							</div>
+							<div class="front">
+								<h2>Waktu Layanan</h2>
+								<p>Senin - Jumat 08.00-16.00 WIB</p>
+							</div>
+						</div>
+
+						<div class="flipbox">
+							<div class="back">
+								<p>Tile 0</p>
+								<a href="" target="_blank">Enter!</a>
+							</div>
+							<div class="front">
+								<h2>Tile 0</h2>
+								<i class="fa fa-wrench"></i>
+							</div>
+						</div>
+
+						<div class="flipbox">
+							<div class="back">
+								<p>Tile 0</p>
+								<a href="" target="_blank">Enter!</a>
+							</div>
+							<div class="front">
+								<h2>Tile 0</h2>
+								<i class="fa fa-wrench"></i>
+							</div>
+						</div>
+					</div>
 						
 								{{-- <div class="col_third">
 										<div class="hover panel">
@@ -240,7 +265,7 @@ Meningkatkan kinerja layanan informasi publik melalui penerapan prinsip pelayana
 								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism.</p>
 							</div>
 						</div> --}}
-					</div>
+					{{-- </div> --}}
 					{{-- <div class="col-md-8 col-sm-8">
 						<div class="media">
 							<div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
@@ -848,19 +873,16 @@ Meningkatkan kinerja layanan informasi publik melalui penerapan prinsip pelayana
 		<script src="{{url('v2/js/jquery.flexslider.js')}}"></script>
 		<!-- custom -->
 		<script src="{{url('v2/js/custom.js')}}"></script>
-
-		<script type="text/javascript">	
+		<script type="text/javascript">
 		$(document).ready(function(){
-				// set up hover panels
-				// although this can be done without JavaScript, we've attached these events
-				// because it causes the hover to be triggered when the element is tapped on a touch device
-				$('.hover').hover(function(){
-					$(this).addClass('flip');
-				},function(){
-					$(this).removeClass('flip');
-				});
+			$('.hover').hover(function(){
+				$(this).addClass('flip');
+			},function(){
+				$(this).removeClass('flip');
 			});
-			</script>
+		});
+		</script>
+
 
 	</body>
 </html>
