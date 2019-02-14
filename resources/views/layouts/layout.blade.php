@@ -86,7 +86,7 @@ http://www.tooplate.com/view/2081-solution
 
 		<!-- start service -->
 		<div id="service">
-			<div class="container wow fadeIn" data-wow-delay="0.6s"">
+			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-sm-8">
 						<div class="media">
@@ -102,7 +102,7 @@ http://www.tooplate.com/view/2081-solution
 	
 										<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 									
-											<div class="panel panel-default">
+											<div class="panel panel-default wow fadeInDown" data-wow-offset="10" data-wow-delay="0.4s">
 												<div class="panel-heading" role="tab" id="headingOne">
 													<h4 class="panel-title">
 														<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -126,7 +126,7 @@ http://www.tooplate.com/view/2081-solution
 												</div>
 											</div>
 									
-											<div class="panel panel-default">
+											<div class="panel panel-default wow fadeInDown" data-wow-offset="10" data-wow-delay="0.6s">
 												<div class="panel-heading" role="tab" id="headingTwo">
 													<h4 class="panel-title">
 														<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -142,7 +142,7 @@ http://www.tooplate.com/view/2081-solution
 												</div>
 											</div>
 									
-											<div class="panel panel-default">
+											<div class="panel panel-default wow fadeInDown" data-wow-offset="10" data-wow-delay="0.8s">
 												<div class="panel-heading" role="tab" id="headingThree">
 													<h4 class="panel-title">
 														<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -168,7 +168,7 @@ http://www.tooplate.com/view/2081-solution
 									
 										</div><!-- panel-group -->
 										<div class="templatemo_homewrapper">
-												<a href="#service" class="smoothScroll btngreen btn-default wow fadeInDown" style="width: auto" data-wow-delay="2000">Profil PPID</a>	<!-- container -->
+												<a href="#service" class="smoothScroll btngreen btn-default wow fadeInDown" style="width: auto" data-wow-offset="10" data-wow-delay="1.0s">Profil PPID</a>	<!-- container -->
 										</div>
 										
 									</div>
@@ -191,37 +191,43 @@ http://www.tooplate.com/view/2081-solution
 					<div class="col-md-4 col-sm-4">
 						<div class="flipbox">
 							<div class="back">
-								<div class="row">
+								<div class="row" style="margin-top: 8%; margin-bottom: 8%">
 									<p>Waktu Layanan</p>
 									<h4>Senin - Jumat</h4>
 									<h4>08.00-16.00 WIB</h4>
 								</div>
 							</div>
-							<div class="front">
-								<h2>Waktu Layanan</h2>
-								<p>Senin - Jumat 08.00-16.00 WIB</p>
+							<div class="front wow fadeInDown" data-wow-offset="10" data-wow-delay="0.4s">
+								<h2 style="margin-top: 15%">Waktu Layanan</h2>
+								<p style="margin-bottom: 15%">Senin - Jumat 08.00-16.00 WIB</p>
 							</div>
 						</div>
 
 						<div class="flipbox">
 							<div class="back">
-								<p>Tile 0</p>
-								<a href="" target="_blank">Enter!</a>
+								<div class="row">
+									<p>Alamat</p>
+									<h4>Gedung Rektorat Lt.1<br><br>
+									Kampus ITS Sukolilo<br><br>
+									Surabaya 60111</h4>
+								</div>
 							</div>
-							<div class="front">
-								<h2>Tile 0</h2>
-								<i class="fa fa-wrench"></i>
+							<div class="front wow fadeInDown" data-wow-offset="10" data-wow-delay="0.6s">
+								<h2 style="margin-top: 5%">Alamat</h2>
+								<p>Gedung Rektorat Lt.1<br>
+								Kampus ITS Sukolilo<br>
+								Surabaya 60111</p>
 							</div>
 						</div>
 
 						<div class="flipbox">
 							<div class="back">
-								<p>Tile 0</p>
-								<a href="" target="_blank">Enter!</a>
+								<p>Gratis</p>
+								<h5>Biaya layanan informasi publik adalah gratis.<br><br>Biaya yang timbul atas permohonan informasi (biaya pengiriman, penggandaan dokumen atau media penyimpanan) dibebankan kepada pemohon</h5>
 							</div>
-							<div class="front">
-								<h2>Tile 0</h2>
-								<i class="fa fa-wrench"></i>
+							<div class="front wow fadeInDown" data-wow-offset="10" data-wow-delay="0.8s">
+								<h2>Gratis</h2>
+								<p>Biaya layanan informasi publik adalah GRATIS. Biaya yang timbul atas permohonan informasi (biaya pengiriman, penggandaan dokumen atau media penyimpanan) dibebankan kepada pemohon</p>
 							</div>
 						</div>
 					</div>
