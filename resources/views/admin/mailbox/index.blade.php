@@ -111,7 +111,7 @@
                       <td class="mailbox-subject"><b>{{$value->judul_pertanyaan}}</b> - {{implode(' ', array_splice($tanyaan, 0, 5))}}
                       </td>
                       <td class="mailbox-attachment"></td>
-                      <td class="mailbox-date">{{$value->created_at->timezone('Asia/Jakarta')}}</td>
+                      <td class="mailbox-date">{{$value->tgl_konfirmasi}}</td>
                       {{-- <td class="mailbox-date"><a href="{{route('readmail')}}?mail_id={{$value->id_pertanyaan}}">View</a></td> --}}
                     </tr>
                   @endforeach

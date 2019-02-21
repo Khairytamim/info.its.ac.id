@@ -216,7 +216,7 @@ class MailboxController extends Controller
     	$this->setActive('sent');
     	$this->setTitle('sent');
 
-    	$this->data['pertanyaan'] = Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',1)->orderBy('jawaban.created_at', 'DESC')->paginate(15);
+        $this->data['pertanyaan'] = Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('status_jawaban',1)->orderBy('jawaban.created_at', 'DESC')->paginate(15);
 
     	return view('admin.mailbox.index', $this->data);
 
