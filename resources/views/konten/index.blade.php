@@ -47,7 +47,7 @@
                   </div>
                 </div>
                 @endif
-                <div class="box-form-program" style="background:url({{$menu->photo_path}})">
+                <div class="box-form-program">
                    {{-- <h3 class="title">Tahukah Kamu?</h3> --}}
                    {!!html_entity_decode($menu->konten)!!}
                 </div>
