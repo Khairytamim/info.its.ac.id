@@ -13,7 +13,8 @@ class Pertanyaan extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'tanggal_tipe'
+        'tanggal_tipe',
+        'tanggal_pertanyaan'
     ];
 
     public function jawaban()
