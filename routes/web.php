@@ -16,6 +16,9 @@
 // });
 
 Route::get('/', 'HomeController@index');
+Route::get('/profil-ppid', 'HomeController@profil');
+Route::get('/informasi-publik', 'HomeController@informasipublik');
+Route::get('/contact-us', 'HomeController@hubungikami');
 
 Route::get('/admin', function () {
     return redirect('/admin/mailbox');

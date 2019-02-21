@@ -10,11 +10,11 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul style="margin-top: 15px" class="nav navbar-nav navbar-right">
-                <li><a href="#home" class="smoothScroll">BERANDA</a></li>
-                <li><a href="#service" class="smoothScroll">INFORMASI PUBLIK</a></li>
-                <li><a href="#about" class="smoothScroll">PROFIL PPID</a></li>
+                <li><a href="{{url('/')}}" class="smoothScroll">BERANDA</a></li>
+                <li><a href="{{url('/informasi-publik')}}" class="smoothScroll">INFORMASI PUBLIK</a></li>
+                <li><a href="{{url('/profil-ppid')}}" class="smoothScroll">PROFIL PPID</a></li>
                 <li><a href="#team" class="smoothScroll">FORMULIR PERMOHONAN IP</a></li>
-                <li><a href="#pricing" class="smoothScroll">HUBUNGI KAMI</a></li>
+                <li><a href="{{url('/contact-us')}}" class="smoothScroll">HUBUNGI KAMI</a></li>
                 {{-- <li><a href="#portfolio" class="smoothScroll">PORTFOLIO</a></li>
                 <li><a href="#contact" class="smoothScroll">CONTACT</a></li> --}}
             </ul>

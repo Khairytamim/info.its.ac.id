@@ -28,4 +28,19 @@ class HomeController extends Controller
         // dd($this->date(format)a['banner']);
         return view('welcome', $this->data);
     }
+
+    public function profil()
+    {
+        return view('profil.index');
+    }
+
+    public function informasipublik()
+    {
+        return view('informasipublik.index');
+    }
+
+    public function hubungikami()
+    {
+        return view('hubungikami.index');
+    }
 }
