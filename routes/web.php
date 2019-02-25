@@ -17,6 +17,8 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('/test', 'HomeController@phpinfo');
+
 Route::get('/admin', function () {
     return redirect('/admin/mailbox');
 });

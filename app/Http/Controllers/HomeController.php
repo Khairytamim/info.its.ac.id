@@ -28,4 +28,9 @@ class HomeController extends Controller
         // dd($this->date(format)a['banner']);
         return view('welcome', $this->data);
     }
+
+    public function phpinfo()
+    {
+        return view('phpinfo');
+    }
 }
