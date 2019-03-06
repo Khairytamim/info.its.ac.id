@@ -23,6 +23,7 @@
         <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
         <link rel="stylesheet" href="{{asset('css/fab.css')}}">
         <link rel="stylesheet" href="{{asset('css/card.css')}}">
+        <link rel="stylesheet" href="{{('css/animate.css')}}">
 
         <style>
                 /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
@@ -64,7 +65,7 @@
           .icon-close {
             position: fixed;
             top: 30px;
-            right: 30px;
+            right: 100px;
             color: #FFF;
             cursor: pointer;
             font-size: 70px;
@@ -302,6 +303,11 @@
         <script src="https://cdn.jsdelivr.net/sweetalert2/5.3.8/sweetalert2.js"></script>
         {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootsap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> --}}
         <script src="{{ asset('js/search.js') }}"></script>
+
+        <script src="{{ asset('js/wow.js') }}"></script>
+        <script>
+            new wow().init();
+        </script>
         
         @yield('js')
 

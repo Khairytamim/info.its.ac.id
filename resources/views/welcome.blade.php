@@ -18,7 +18,7 @@
                 @for($i=0;$i<count($banner);$i++)
                 @if($banner[$i]->path_photo!=null)
                 <div class="item full-screen  @if($i==0) active @endif" style="background-image: url('{{url($banner[$i]->path_photo)}}');">
-                    <div class="carousel-caption" style="left: 30%; top: 40%">
+                    <div class="carousel-caption">
                         <h3 class="animated visible fadeInUp" style="visibility: visible; ">{{$banner[$i]->header}} </h3>
                         <div class="clearfix"></div>
                         <h2 class="animated visible fadeInUp" style="visibility: visible;">{{$banner[$i]->sub_header}} </h2>

@@ -292,9 +292,10 @@ body {
       margin: 1px; }
   .section_slider .carousel-caption {
     text-shadow: none;
-    right: 8.2%;
-    left: 8.2%;
-    padding-bottom: 120px; }
+    /* right: 8.2%; */
+    /* left: 8.2%; */
+    /* padding-bottom: 120px;  */
+  }
     .section_slider .carousel-caption img {
       max-width: 44px; }
     .section_slider .carousel-caption h3 {
@@ -2621,7 +2622,8 @@ ul.timeline:after {
 
   .section_slider .carousel-caption {
     text-align: center !important;
-    top: 30%; }
+    /* top: 30%;  */
+  }
     .section_slider .carousel-caption .content-carousel-caption {
       display: none; }
     .section_slider .carousel-caption h3 {
