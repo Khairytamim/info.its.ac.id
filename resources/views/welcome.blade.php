@@ -19,9 +19,9 @@
                 @if($banner[$i]->path_photo!=null)
                 <div class="item full-screen  @if($i==0) active @endif" style="background-image: url('{{url($banner[$i]->path_photo)}}');">
                     <div class="carousel-caption">
-                        <h3 class="animated visible fadeInUp" style="visibility: visible; ">{{$banner[$i]->header}} </h3>
+                        <h3 class="wow visible fadeInUp" data-wow-delay="0.0s" style="visibility: visible; ">{{$banner[$i]->header}} </h3>
                         <div class="clearfix"></div>
-                        <h2 class="animated visible fadeInUp" style="visibility: visible;">{{$banner[$i]->sub_header}} </h2>
+                        <h2 class="wow visible fadeInUp" data-wow-delay="0.0s" style="visibility: visible;">{{$banner[$i]->sub_header}} </h2>
                         <div class="clearfix"></div>
                         {{-- <div class="content-carousel-caption animated visible fadeInUp" style="visibility: visible;">
                             <p>{{$banner[$i]->content}}</p>
@@ -55,32 +55,31 @@
 </section>
 <section id="layanan" style="background: #fff;">
     <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
-        <h2 style="font-size: 6vh; color: black">Layanan</h2>
+        <h2 style="font-size: 6vh; color: black" class="wow visible fadeInDown" data-wow-delay="0.0s">Layanan</h2>
         <div class="row">
             <div class="col-md-3">
                 <a href="">
-                    <cardblue>
+                    <cardblue class="wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.8s">
+                    </cardblue>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="">
+                    <cardblue class="wow fadeInLeft" data-wow-delay="0.4s" data-wow-duration="0.8s">
 
                     </cardblue>
                 </a>
             </div>
             <div class="col-md-3">
                 <a href="">
-                    <cardblue>
+                    <cardblue class="wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.8s">
 
                     </cardblue>
                 </a>
             </div>
             <div class="col-md-3">
                 <a href="">
-                    <cardblue>
-
-                    </cardblue>
-                </a>
-            </div>
-            <div class="col-md-3">
-                <a href="">
-                    <cardblue>
+                    <cardblue class="wow fadeInLeft" data-wow-delay="0.8s" data-wow-duration="0.8s">
 
                     </cardblue>
                 </a>
@@ -91,39 +90,39 @@
 
 <section id="prosedur" style="background: #013880;">
         <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
-            <h2 style="font-size: 6vh; color: white">Prosedur</h2>
+            <h2 style="font-size: 6vh; color: white" class="wow visible fadeInDown" data-wow-delay="0.0s">Prosedur</h2>
             <div class="row">
                 <div class="col-md-15">
                     <a href="">
-                        <cardyellow>
+                        <cardyellow class="wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.8s">
     
                         </cardyellow>
                     </a>
                 </div>
                 <div class="col-md-15">
                     <a href="">
-                        <cardyellow>
+                        <cardyellow class="wow fadeInLeft" data-wow-delay="0.4s" data-wow-duration="0.8s">
     
                         </cardyellow>
                     </a>
                 </div>
                 <div class="col-md-15">
                     <a href="">
-                        <cardyellow>
+                        <cardyellow class="wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.8s">
     
                         </cardyellow>
                     </a>
                 </div>
                 <div class="col-md-15">
                     <a href="">
-                        <cardyellow>
+                        <cardyellow class="wow fadeInLeft" data-wow-delay="0.8s" data-wow-duration="0.8s">
     
                         </cardyellow>
                     </a>
                 </div>
                 <div class="col-md-15">
                     <a href="">
-                        <cardyellow>
+                        <cardyellow class="wow fadeInLeft" data-wow-delay="1.0s" data-wow-duration="0.8s">
     
                         </cardyellow>
                     </a>
@@ -134,32 +133,32 @@
 
     <section id="quicklink" style="background: #fff;">
             <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
-                <h2 style="font-size: 6vh; color: black">Quick Link</h2>
+                <h2 style="font-size: 6vh; color: black" class="wow visible fadeInDown" data-wow-delay="0.0s">Quick Link</h2>
                 <div class="row">
                     <div class="col-md-3">
                         <a href="">
-                            <cardblue>
+                            <cardblue class="wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.8s">
         
                             </cardblue>
                         </a>
                     </div>
                     <div class="col-md-3">
                         <a href="">
-                            <cardblue>
+                            <cardblue class="wow fadeInLeft" data-wow-delay="0.4s" data-wow-duration="0.8s">
         
                             </cardblue>
                         </a>
                     </div>
                     <div class="col-md-3">
                         <a href="">
-                            <cardblue>
+                            <cardblue class="wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.8s">
         
                             </cardblue>
                         </a>
                     </div>
                     <div class="col-md-3">
                         <a href="">
-                            <cardblue>
+                            <cardblue class="wow fadeInLeft" data-wow-delay="0.8s" data-wow-duration="0.8s">
         
                             </cardblue>
                         </a>

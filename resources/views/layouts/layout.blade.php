@@ -31,7 +31,7 @@
           body {
             width: 100%;
             height: 100%;
-            overflow-x: hidden;
+            /* overflow-x: hidden; */
           }
           
           
@@ -216,9 +216,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3 col-xs-5">
-                            <a href="https://its.ac.id"><img src="{{url('/img/logo.png')}}" class="logo-in-footer"></a>
+                            <a href="https://its.ac.id"><img src="{{url('/img/logo.png')}}" class="logo-in-footer wow visible fadeInDown" data-wow-delay="0.0s"></a>
                         </div>
-                        <div class="col-sm-3 col-xs-7"> 
+                        <div class="col-sm-3 col-xs-7 wow visible fadeInLeft" data-wow-delay="0.4s"> 
                             <p>Alamat</p>
                             <p>Gedung Rektorat Lt.1 
                             <br>Kampus ITS Sukolilo
@@ -227,20 +227,20 @@
                             <p>(031) 599-4251</p>
                         </div>
                         <div class="col-sm-3 col-xs-6 border-right-white-in-mobile">
-                            <div class="footer-top-content border-left-white">
+                            <div class="footer-top-content border-left-white wow visible fadeInLeft" data-wow-delay="0.4s">
                                 <div class="menu-footer-top-menu-container">
-                                    <div class="title-footer padding-left-35 text-center">
+                                    <div class="title-footer padding-left-35 text-center wow visible fadeInLeft" data-wow-delay="0.4s">
                                         Waktu Layanan
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6 border-right-white-in-mobile">
-                            <div class="footer-top-content border-left-white">
-                                <div class="title-footer padding-left-35 text-center">
+                            <div class="footer-top-content border-left-white wow visible fadeInLeft" data-wow-delay="0.4s">
+                                <div class="title-footer padding-left-35 text-center wow visible fadeInLeft" data-wow-delay="0.4s">
                                     Temukan Kami :
                                 </div>
-                                <ul class="sosmed">
+                                <ul class="sosmed wow visible fadeInLeft" data-wow-delay="0.4s">
                                     <li>
                                         <a href="#" target="_blank">
                                             <img src="{{url('/img/icons/logo-youtube.png')}}">
@@ -306,7 +306,7 @@
 
         <script src="{{ asset('js/wow.js') }}"></script>
         <script>
-            new wow().init();
+            new WOW().init();
         </script>
         
         @yield('js')
