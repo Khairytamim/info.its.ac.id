@@ -32,12 +32,6 @@
                 @endfor
             </div>
         </div>
-        <div class="container-arrow-down">
-            Pencarian Data Yang Bersangkutan Dengan ITS
-            <div class="container-arrow-slider">
-                <div class="arrow-down-slider"></div>
-            </div>
-        </div>
     </div>
     {{-- <div class="intro-header">
     <div class="content" id="content" style="height: 100vh">
@@ -59,64 +53,120 @@
     </div>
     </div> --}}
 </section>
-<section id="cari" style="background: rgba(255,255,255,0.8);">
-    <style type="text/css">
-        #custom-search-input{
-        padding: 3px;
-        border: solid 1px #E4E4E4;
-        border-radius: 3px;
-        background-color: #fff;
-        margin: 0 10vw;
-        }
-
-        #custom-search-input input{
-            border: 0;
-            box-shadow: none;
-        }
-
-        #custom-search-input button{
-            margin: 2px 0 0 0;
-            background: none;
-            box-shadow: none;
-            border: 0;
-            color: #666666;
-            padding: 0 8px 0 10px;
-            border-left: solid 1px #ccc;
-        }
-
-        #custom-search-input button:hover{
-            border: 0;
-            box-shadow: none;
-            border-left: solid 1px #ccc;
-        }
-
-        #custom-search-input .glyphicon-search{
-            font-size: 23px;
-        }
-    </style>
+<section id="layanan" style="background: #fff;">
     <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
+        <h2 style="font-size: 6vh; color: black">Layanan</h2>
         <div class="row">
-            <div class="col-md-10 col-md-offset-1" style="text-align: justify; margin-bottom: 5vh">
-                <h2 style="color: #20417f">Pencarian Data ITS</h2>
-                <span style="font-size: 18px; text-align: justify;">Bagian ini merupakan informasi yang dapat diketahui oleh publik secara langsung. Untuk mendapatkan informasi yang diinginkan, anda dapat mengisi kotak pencarian yang sudah kami sediakan dibawah ini. Apabila informasi yang dimaksud tidak dapat ditemukan, maka anda dapat mengajukan permintaan layanan informasi melalui bagian <a href="#tanyakan">pengajuan pertanyaan</a> dengan mengikuti prosedur yang tersedia.</span>
+            <div class="col-md-3">
+                <a href="">
+                    <cardblue>
+
+                    </cardblue>
+                </a>
             </div>
-            <div class="col-md-12">
-                <div id="custom-search-input" style="border-color: #ffcb10">
-                    <form action="{{ route('searchlaporan') }}" method="get">
-                        <div class="input-group col-md-12">
-                            <input type="text" name="cari" class="form-control input-lg" placeholder="Klik Untuk Pencarian Data" />
-                            <span class="input-group-btn">
-                                <button class="btn btn-info btn-lg" type="submit">
-                                     <img src="{{url('/img/icons/ic_search_yellow.png')}}">
-                                </button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
+            <div class="col-md-3">
+                <a href="">
+                    <cardblue>
+
+                    </cardblue>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="">
+                    <cardblue>
+
+                    </cardblue>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="">
+                    <cardblue>
+
+                    </cardblue>
+                </a>
             </div>
         </div>
     </div>
 </section>
+
+<section id="prosedur" style="background: #013880;">
+        <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
+            <h2 style="font-size: 6vh; color: white">Prosedur</h2>
+            <div class="row">
+                <div class="col-md-15">
+                    <a href="">
+                        <cardyellow>
+    
+                        </cardyellow>
+                    </a>
+                </div>
+                <div class="col-md-15">
+                    <a href="">
+                        <cardyellow>
+    
+                        </cardyellow>
+                    </a>
+                </div>
+                <div class="col-md-15">
+                    <a href="">
+                        <cardyellow>
+    
+                        </cardyellow>
+                    </a>
+                </div>
+                <div class="col-md-15">
+                    <a href="">
+                        <cardyellow>
+    
+                        </cardyellow>
+                    </a>
+                </div>
+                <div class="col-md-15">
+                    <a href="">
+                        <cardyellow>
+    
+                        </cardyellow>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quicklink" style="background: #fff;">
+            <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
+                <h2 style="font-size: 6vh; color: black">Quick Link</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="">
+                            <cardblue>
+        
+                            </cardblue>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="">
+                            <cardblue>
+        
+                            </cardblue>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="">
+                            <cardblue>
+        
+                            </cardblue>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="">
+                            <cardblue>
+        
+                            </cardblue>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 {{-- <section id="petunjuk" style="background: rgba(255,203,16,0.8);">
     <div class="container" style="margin-top: 15vh;margin-bottom: 15vh;">
         <h2 style="font-size: 9vh">Tata Cara dan Formulir</h2>
@@ -153,7 +203,7 @@
         </center>
     </div>
 </section> --}}
-<section id="tanyakan" style="background: rgb(32,65,127);">
+{{-- <section id="tanyakan" style="background: rgb(32,65,127);">
     <div class="container" style="margin-top: 15vh;margin-bottom: 15vh">
         <style type="text/css">
             label,h2{
@@ -222,7 +272,7 @@
         </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!--section id="organisasi">
     <div class="container" style="padding-top: 15vh; padding-bottom: 15vh">
         <div class="row">

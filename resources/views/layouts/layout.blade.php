@@ -22,6 +22,7 @@
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,300'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
         <link rel="stylesheet" href="{{asset('css/fab.css')}}">
+        <link rel="stylesheet" href="{{asset('css/card.css')}}">
 
         <style>
                 /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
@@ -32,12 +33,7 @@
             overflow-x: hidden;
           }
           
-          body {
-            font-family: 'Roboto', sans-serif;
-            color: #2d2d2d;
-            letter-spacing: 0.2px;
-            /* Search Active */
-          }
+          
           body.search-active {
             overflow: hidden;
           }
@@ -119,15 +115,6 @@
           }
           
           /* Container */
-          .container {
-            padding-right: 50px;
-            padding-left: 50px;
-            position: relative;
-          }
-          .container.container-dark {
-            background: #22313F;
-            color: #FFF;
-          }
           
           /* Control btn */
           .control {
@@ -160,95 +147,20 @@
           }
           
           /* Utilities */
-          .p-y-md {
-            padding-top: 2.8rem;
-            padding-bottom: 2.8rem;
-          }
           
           /* Typo */
-          h1,
-          h2 {
-            font-weight: 300;
-          }
           
               </style>
               <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
-        <!-- Fonts -->
-        {{-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> --}}
-{{--         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
- --}}
-
-
-        <!-- Styles -->
-        {{-- <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-weight: 100;
-                margin: 0;
-                position: relative;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .top-left {
-                position: absolute;
-                left: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 74px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style> --}}
     </head>
     <body>
 
-    <div class='container p-y-md'>
-        <div class='control'>
-            <div class="btn-material"></div>
-            <a class="float">
-                <i class="fa fa-search my-float"></i>
-            </a>
-        </div>
+    <div class='control'>
+        <div class="btn-material"></div>
+        <a class="float">
+            <i class="fa fa-search my-float"></i>
+        </a>
     </div>
 
       <!-- Navigation -->
@@ -302,26 +214,27 @@
             <div class="footer-top">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-2 col-xs-5">
+                        <div class="col-sm-3 col-xs-5">
                             <a href="https://its.ac.id"><img src="{{url('/img/logo.png')}}" class="logo-in-footer"></a>
                         </div>
                         <div class="col-sm-3 col-xs-7"> 
+                            <p>Alamat</p>
                             <p>Gedung Rektorat Lt.1 
                             <br>Kampus ITS Sukolilo
                             <br>Surabaya, Jawa Timur, Indonesia, 60111</p>
+                            <p>Kontak Kami</p>
+                            <p>(031) 599-4251</p>
                         </div>
                         <div class="col-sm-3 col-xs-6 border-right-white-in-mobile">
                             <div class="footer-top-content border-left-white">
                                 <div class="menu-footer-top-menu-container">
-                                    <ul class="menu">
-                                        <li>Kontak Kami</li>
-                                        <li style="font-size: 12px">(031) 599-4251</li>
-                                        {{-- <a style="padding: 6px; font-weight: normal; font-size: 12px" href="mailto:fikry.labsky08@gmail.com" class="btn btn-primary btn-block">Developed By</a> --}}
-                                    </ul>
+                                    <div class="title-footer padding-left-35 text-center">
+                                        Waktu Layanan
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-2 col-xs-6 border-right-white-in-mobile">
+                        <div class="col-sm-3 col-xs-6 border-right-white-in-mobile">
                             <div class="footer-top-content border-left-white">
                                 <div class="title-footer padding-left-35 text-center">
                                     Temukan Kami :
@@ -362,11 +275,11 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-sm-2 col-xs-12">
+                        {{-- <div class="col-sm-2 col-xs-12">
                             <div class="footer-top-content border-left-white">
                                 <a href="https://www.lapor.go.id/" target="_blank"><img style="width: 100%; margin-left: 2vw; margin-top: 3vh" src="//info.its.ac.id/logo/lapor.png"></a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
