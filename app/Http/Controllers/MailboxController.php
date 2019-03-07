@@ -229,8 +229,10 @@ class MailboxController extends Controller
             
         $name = $request->name;
         //echo $name;
-        $this->data['pertanyaan'] = Pertanyaan::whereNull('id_jawaban')->where('tipe',$name)->paginate(15);
-        //$this->data['pertanyaan'] = Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->where('tipe',$name)->paginate(10);
+        // $this->data['pertanyaan'] = Pertanyaan::whereNull('id_jawaban')->where('tipe',$name)->paginate(15);
+      
+        $this->data['pertanyaan'] = Pertanyaan::join('jawaban', 'pertanyaan.id_jawaban', '=', 'jawaban.id_jawaban')->whereNotNull('tipe')->where('tipe',$name)->orderBy('jawaban.created_at', 'DESC')->paginate(15)->withPath('label?name=Publik');
+      
         return view('admin.mailbox.index', $this->data);
 
     }
