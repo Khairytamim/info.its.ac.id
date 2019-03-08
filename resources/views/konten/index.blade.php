@@ -14,6 +14,13 @@
 <div class="container container-page-its" style="padding-left: 0; padding-right: 0; padding-top: 30px">
  <section class="vc_section vc_custom_1504082602155">
     <div class="vc_row wpb_row vc_row-fluid">
+      <div class="col-md-4">
+         <a href="">
+               <cardblue class="wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.8s">
+                  <img src="{{ asset('logo/document.png') }}">
+               </cardblue>
+         </a>
+      </div>
     	@if(count($menu->subMenus) > 0)
        <div class="col-left-padding-50 wpb_column column_container col-md-8" style="padding-left: 0">
           <div class="vc_column-inner ">
@@ -23,9 +30,9 @@
                       <h3 class="title" style="padding-left: 15px; padding-right: 15px; margin-top: 0">{{$menu->nama}}</h3>
                       <div class="row">
                       	@foreach($menu->subMenus->sortBy('created_at') as $subMenus)
-                         <div class="col-md-6">
+                         <div class="col-md-12">
                             <ul>
-                               <li style="padding-left: 15px; padding-right: 15px"><a href={{route('submenu.index', ['menu' => $menu->id, 'subMenu' => $subMenus->id])}} target=" _blank" style="font-size: 16px; font-weight: bolder;">{{str_limit($subMenus->nama, 25, '...')}}<i class="fa fa-chevron-circle-right" aria-hidden="true" style="margin-left: 10px; float: right;"></i></a></li>
+                               <li style="padding-left: 15px; padding-right: 15px"><a href={{route('submenu.index', ['menu' => $menu->id, 'subMenu' => $subMenus->id])}} target=" _blank" style="font-size: 16px; font-weight: bolder;">{{str_limit($subMenus->nama, 50, '...')}}<i class="fa fa-chevron-circle-right" aria-hidden="true" style="margin-left: 10px; float: right;"></i></a></li>
                             </ul>
                          </div>
                         @endforeach
