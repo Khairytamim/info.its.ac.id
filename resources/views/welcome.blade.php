@@ -60,27 +60,28 @@
             <div class="col-md-3">
                 <a href="">
                     <cardblue class="wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.8s">
+                        <p style="color: white">Permohonan Informasi dan Dokumentasi</p>
                     </cardblue>
                 </a>
             </div>
             <div class="col-md-3">
                 <a href="">
                     <cardblue class="wow fadeInLeft" data-wow-delay="0.4s" data-wow-duration="0.8s">
-
+                        <p style="color: white">Pengajuan Keberatan</p>
                     </cardblue>
                 </a>
             </div>
             <div class="col-md-3">
                 <a href="">
                     <cardblue class="wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.8s">
-
+                        <p style="color: white">Pengaduan Pungli dan Gratifikasi</p>
                     </cardblue>
                 </a>
             </div>
             <div class="col-md-3">
                 <a href="">
                     <cardblue class="wow fadeInLeft" data-wow-delay="0.8s" data-wow-duration="0.8s">
-
+                        <p style="color: white">Pengaduan Penyalahgunaan Wewenang</p>
                     </cardblue>
                 </a>
             </div>
@@ -95,35 +96,35 @@
                 <div class="col-md-15">
                     <a href="">
                         <cardyellow class="wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.8s">
-    
+                                <p style="color: blue">Permohonan Informasi dan Dokumentasi</p>
                         </cardyellow>
                     </a>
                 </div>
                 <div class="col-md-15">
                     <a href="">
                         <cardyellow class="wow fadeInLeft" data-wow-delay="0.4s" data-wow-duration="0.8s">
-    
+                                <p style="color: blue">Pengajuan Keberatan</p>
                         </cardyellow>
                     </a>
                 </div>
                 <div class="col-md-15">
                     <a href="">
                         <cardyellow class="wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.8s">
-    
+                                <p style="color: blue">Pengaduan Pungli dan Gratifikasi</p>
                         </cardyellow>
                     </a>
                 </div>
                 <div class="col-md-15">
                     <a href="">
                         <cardyellow class="wow fadeInLeft" data-wow-delay="0.8s" data-wow-duration="0.8s">
-    
+                                <p style="color: blue">Penyalahgunaan Wewenang</p>
                         </cardyellow>
                     </a>
                 </div>
                 <div class="col-md-15">
                     <a href="">
                         <cardyellow class="wow fadeInLeft" data-wow-delay="1.0s" data-wow-duration="0.8s">
-    
+                                <p style="color: blue">Permohonan Penyelesaian Sengketa ke Komisi Informasi</p>
                         </cardyellow>
                     </a>
                 </div>
@@ -138,28 +139,28 @@
                     <div class="col-md-3">
                         <a href="">
                             <cardblue class="wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.8s">
-        
+                                <p style="color: white">Lapor</p>
                             </cardblue>
                         </a>
                     </div>
                     <div class="col-md-3">
                         <a href="">
                             <cardblue class="wow fadeInLeft" data-wow-delay="0.4s" data-wow-duration="0.8s">
-        
+                                <p style="color: white">Kemenristek</p>
                             </cardblue>
                         </a>
                     </div>
                     <div class="col-md-3">
                         <a href="">
                             <cardblue class="wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.8s">
-        
+                                <p style="color: white">Kominfo</p>
                             </cardblue>
                         </a>
                     </div>
                     <div class="col-md-3">
                         <a href="">
                             <cardblue class="wow fadeInLeft" data-wow-delay="0.8s" data-wow-duration="0.8s">
-        
+                                <p style="color: white">ITS</p>
                             </cardblue>
                         </a>
                     </div>
