@@ -22,8 +22,15 @@ class MenusController extends Controller
         $this->setActive('menu');
         $this->setTitle('menu');
         $this->data['menu'] = $menu;
-        // dd($menu->subMenus);
-        return view('konten.index', $this->data);
+        if($this->data['menu']->id == "informasi-publik") {
+            return view('konten.informasipublik', $this->data);
+        }
+        elseif ($this->data['menu']->id == "layanan") {
+            return view('konten.layanan', $this->data);
+        }
+        else {
+            return view('konten.index', $this->data);
+        }
     }
 
     public function submenusIndex(Menus $menu, SubMenus $subMenu)

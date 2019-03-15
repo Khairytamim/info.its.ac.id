@@ -23,7 +23,8 @@
         <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
         <link rel="stylesheet" href="{{asset('css/fab.css')}}">
         <link rel="stylesheet" href="{{asset('css/card.css')}}">
-        <link rel="stylesheet" href="{{('css/animate.css')}}">
+        <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+        <link rel="stylesheet" href="{{asset('css/radio.css')}}">
 
         <style>
                 /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
