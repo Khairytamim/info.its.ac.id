@@ -309,6 +309,7 @@
         <script>
             new WOW().init();
         </script>
+        <script src="{{url('js/form.js')}}"></script>
         
         @yield('js')
 

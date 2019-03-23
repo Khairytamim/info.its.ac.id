@@ -24,7 +24,7 @@
                       <div class="row">
                       	@foreach($menu->subMenus->sortBy('created_at') as $subMenus)
                          <div class="col-md-12">
-                            <section style="padding-left: 15px; padding-right: 15px">
+                            <section style="padding-left: 15px; padding-right: 15px" class="test">
                                 <input type="radio" name="radio" id="radio{{$loop->iteration}}" class="radio"/>
                                 <label for="radio{{$loop->iteration}}">{{str_limit($subMenus->nama, 500, '...')}}<i class="fa fa-chevron-circle-right" aria-hidden="true" style="margin-left: 10px; float: right;"></i></label>
                             </section>
@@ -37,7 +37,7 @@
           </div>
        </div>
        @endif
-       <div class="col-right-padding-50 wpb_column column_container col-md-8" style="padding-right: 0; padding-left: 0">
+       <div class="col-right-padding-50 wpb_column column_container col-md-8 form-content" id="radio1" style="padding-right: 0; padding-left: 0">
             <form id="sent" action="{{ route('addtanyakan') }}" method="post" enctype="multipart/form-data">
                {{ csrf_field() }}
                <div class="col-sm-12 col-md-12">
