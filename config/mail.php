@@ -120,6 +120,25 @@ return [
         ],
     ],
 
+    // $default = [];
+
+    // $turnOffSSL = [
+    //     'stream' => [
+    //         'ssl' => [
+    //             'allow_self_signed' => true,
+    //             'verify_peer' => false,
+    //             'verify_peer_name' => false,
+    //         ],
+    //     ],
+    // ];
+
+    // $environment = env('APP_ENV');
+
+    // if ($environment === 'local') {
+    //     return array_merge($default, $turnOffSSL);
+    // }
+
+    // return $default;
     'stream' => [
         'ssl' => [
            'allow_self_signed' => true,
